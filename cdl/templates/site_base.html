@@ -10,6 +10,7 @@
 
 {% block style_base %}
     <link href="{% static "symposion/css/symposion.css" %}" rel="stylesheet">
+    <link href="{% static "cdl2014/css/theme.css" %}" rel="stylesheet">
     {% block extra_style %}{% endblock %}
 {% endblock %}
 
@@ -32,7 +33,14 @@
 {% endblock %}
 
 {% block body_base %}
-    <div class="container">
+    <div id="main" class="container">
+            <div class="row">
+                <div class="span12"> 
+                    <a href="http://2014.capitoledulibre.org/" alt="home"><img src="{% static "cdl2014/img/banniere-teaser.jpg" %}" alt="bannière"></a>
+                    <h1 class="text-hide">Capitole du Libre 2014</h1>
+                    <p class="text-hide">L'événement du Logiciel Libre à Toulouse</p>
+                </div>
+            </div>
         
         {% include "_messages.html" %}
         
