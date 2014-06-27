@@ -39,11 +39,11 @@ DATABASES = {
 # although not all choices may be available on all operating systems.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = "US/Eastern"
+TIME_ZONE = "Europe/Paris"
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "fr-fr"
 
 SITE_ID = 1
 
@@ -84,7 +84,7 @@ STATICFILES_FINDERS = [
 ADMIN_MEDIA_PREFIX = posixpath.join(STATIC_URL, "admin/")
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = "{{ secret_key }}"
+SECRET_KEY = "sqwbp+qv%t(*c!u&3p_#d1_1s-8i-!i&rvms39+b0419poefte"
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = [
@@ -103,7 +103,7 @@ MIDDLEWARE_CLASSES = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
-ROOT_URLCONF = "{{ project_name }}.urls"
+ROOT_URLCONF = "cdl.urls"
 
 TEMPLATE_DIRS = [
     os.path.join(PACKAGE_ROOT, "templates"),
@@ -120,6 +120,7 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "django.contrib.messages.context_processors.messages",
     "pinax_theme_bootstrap.context_processors.theme",
     "symposion.reviews.context_processors.reviews",
+    "account.context_processors.account",
 ]
 
 INSTALLED_APPS = [
@@ -132,11 +133,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.humanize",
-    
+
     # theme
     "pinax_theme_bootstrap",
     "django_forms_bootstrap",
-    
+
     # external
     "debug_toolbar",
     "timezones",
@@ -147,7 +148,7 @@ INSTALLED_APPS = [
     "easy_thumbnails",
     "sitetree",
     "account",
-    
+
     # symposion
     "symposion",
     "symposion.sponsorship",
@@ -159,9 +160,9 @@ INSTALLED_APPS = [
     "symposion.teams",
     "symposion.reviews",
     "symposion.schedule",
-    
+
     # project
-    "{{ project_name }}.proposals",
+    "cdl.proposals",
 ]
 
 FIXTURE_DIRS = [
@@ -185,7 +186,7 @@ ACCOUNT_USER_DISPLAY = lambda user: user.email
 AUTHENTICATION_BACKENDS = [
     # Permissions Backends
     "symposion.teams.backends.TeamPermissionsBackend",
-    
+
     # Auth backends
     "account.auth_backends.EmailAuthenticationBackend",
 ]
@@ -208,8 +209,8 @@ CONFERENCE_ID = 1
 SYMPOSION_PAGE_REGEX = r"(([\w-]{1,})(/[\w-]{1,})*)/"
 
 PROPOSAL_FORMS = {
-    "tutorial": "{{ project_name }}.proposals.forms.TutorialProposalForm",
-    "talk": "{{ project_name }}.proposals.forms.TalkProposalForm",
+    "tutorial": "cdl.proposals.forms.TutorialProposalForm",
+    "talk": "cdl.proposals.forms.TalkProposalForm",
 }
 
 # local_settings.py can be used to override environment-specific settings
