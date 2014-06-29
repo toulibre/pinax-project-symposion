@@ -1,0 +1,44 @@
+[
+    {
+        "pk": 1, 
+        "model": "cms.page", 
+        "fields": {
+            "body": "test", 
+            "status": 2, 
+            "updated": "2014-06-29T23:32:05.258", 
+            "created": "2014-06-29T23:30:00.145", 
+            "_body_rendered": "<p>test</p>", 
+            "title": "Programme", 
+            "publish_date": "2014-06-29T23:29:28", 
+            "path": "programme/"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "cms.page", 
+        "fields": {
+            "body": "sponsors", 
+            "status": 2, 
+            "updated": "2014-06-29T23:30:32.780", 
+            "created": "2014-06-29T23:30:32.774", 
+            "_body_rendered": "<p>sponsors</p>", 
+            "title": "Sponsors", 
+            "publish_date": "2014-06-29T23:30:00", 
+            "path": "sponsors/"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "cms.page", 
+        "fields": {
+            "body": "test", 
+            "status": 2, 
+            "updated": "2014-06-29T23:31:22.033", 
+            "created": "2014-06-29T23:31:22.025", 
+            "_body_rendered": "<p>test</p>", 
+            "title": "\u00c0 propos", 
+            "publish_date": "2014-06-29T23:30:32", 
+            "path": "a-propos/"
+        }
+    }
+]
