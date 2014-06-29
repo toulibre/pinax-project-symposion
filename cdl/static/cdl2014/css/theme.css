@@ -7,6 +7,9 @@ body {
 /* Header *
  * ------ */
 
+header {
+    
+}
 #header {
     overflow: hidden;
 }
@@ -27,22 +30,22 @@ h1.text-hide, h2.text-hide {
   white-space: nowrap;
   font: 0/0 a;
   padding: 16px;
-  background: url('../icons/feed-32x32.png') no-repeat 0 0;
+  background: url('../img/feed-32x32.png') no-repeat 0 0;
 }
 #communiquer a#identica {
-  background-image: url('../icons/identica-32x32.png');
+  background-image: url('../img/identica-32x32.png');
 }
 #communiquer a#twitter {
-  background-image: url('../icons/twitter-32.png');
+  background-image: url('../img/twitter-32.png');
 }
 #communiquer a#google {
-  background-image: url('../icons/google-plus-32.png');
+  background-image: url('../img/google-plus-32.png');
 }
 #communiquer a#lanyrd {
-  background-image: url('../icons/lanyrd-32x32.png');
+  background-image: url('../img/lanyrd-32x32.png');
 }
 #communiquer a#facebook {
-  background-image: url('../icons/facebook-32.png');
+  background-image: url('../img/facebook-32.png');
 }
 
 /* Footer *
