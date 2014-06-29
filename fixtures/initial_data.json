@@ -4,7 +4,7 @@
         "model": "sites.site", 
         "fields": {
             "domain": "localhost",
-            "name": "Symposion [local]"
+            "name": "Capitole du Libre [local]"
         }
     },
     {
@@ -12,7 +12,7 @@
         "model": "sites.site", 
         "fields": {
             "domain": "example.com",
-            "name": "Symposion"
+            "name": "Capitole du Libre "
         }
     }
 ]

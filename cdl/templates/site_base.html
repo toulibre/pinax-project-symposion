@@ -56,18 +56,22 @@
             </div>
         {% endblock %}
         
-        {% block footer %}
-            <footer class="footer">
-                <div class="pull-left">
-                    &copy;2013
-                </div>
-                
-                <div class="pull-right">
-                    Site powered by <a href="http://eldarion.com/symposion/"><b>Symposion</b></a>.
-                </div>
-            </footer>
-        {% endblock %}
     </div>
+</section>
+{% endblock %}
+
+
+{% block footer %}
+        <div class="pull-left">
+            {% sitetree_menu from "footer" include "trunk" template "sitetree/menu_bootstrap.html" %}
+        </div>
+        
+        <div class="pull-right">
+            <address id="about" class="vcard pull-left">
+                Pour tout renseignement : <a class="url org" href="mailto:contact@capitoledulibre.org">contactez <span class="org">Toulibre</span></a>
+            </address> -    
+            Site powered by <a href="http://eldarion.com/symposion/"><b>Symposion</b></a>.
+        </div>
 {% endblock %}
 
 {% block script_base %}

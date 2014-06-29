@@ -5,7 +5,7 @@
         "fields": {
             "conference": 1,
             "description": "", 
-            "cost": 10000, 
+            "cost": 1000, 
             "name": "Gold", 
             "order": 0
         }
@@ -16,7 +16,7 @@
         "fields": {
             "conference": 1,
             "description": "", 
-            "cost": 5000, 
+            "cost": 400, 
             "name": "Silver", 
             "order": 1
         }
@@ -27,7 +27,7 @@
         "fields": {
             "conference": 1,
             "description": "", 
-            "cost": 2000, 
+            "cost": 200, 
             "name": "Bronze", 
             "order": 2
         }
