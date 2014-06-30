@@ -10,14 +10,14 @@
     <div class="pull-right">
         {% if not proposal.cancelled %}
             {% if request.user == proposal.speaker.user %}
-                <a href="{% url proposal_edit proposal.pk %}" class="btn">
+                <a href="{% url proposal_edit proposal.pk %}" class="btn btn-primary">
                     {% trans "Edit this proposal" %}
                 </a>
-                <a href="{% url proposal_cancel proposal.pk %}" class="btn">
+                <a href="{% url proposal_cancel proposal.pk %}" class="btn btn-primary">
                     {% trans "Cancel this proposal" %}
                 </a>
             {% else %}
-                <a href="{% url proposal_leave proposal.pk %}" class="btn">
+                <a href="{% url proposal_leave proposal.pk %}" class="btn btn-primary">
                     {% trans "Remove me from this proposal" %}
                 </a>
             {% endif %}
@@ -91,7 +91,7 @@
                 </fieldset>
                 <div class="actions">
                     <button type="submit" name="message_submit" class="btn
-		    primary">{% trans 'Submit' %}</button>
+		     btn-primary">{% trans 'Submit' %}</button>
                 </div>
             </form>
         </div>
