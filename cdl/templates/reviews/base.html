@@ -52,7 +52,7 @@
 
 {% block body_outer %}
     <div class="row">
-        <div class="span2">
+        <div class="col-sm-2">
             {% block sidebar %}
                 <ul class="nav nav-list well">
                     {% for section in review_sections %}
@@ -85,7 +85,7 @@
                 </ul>
             {% endblock %}
         </div>
-        <div class="span10">
+        <div class="col-sm-10">
             {% block body %}
             {% endblock %}
         </div>
@@ -100,7 +100,7 @@
         $(function() {
             $(".tip").tooltip();
             $("table.table-reviews").dataTable({
-                "sDom": "<'row'<'span3'l><'span3'T><'span4'f>r>t<'row'<'span3'i><'span5'p>>",
+                "sDom": "<'row'<'col-sm-3'l><'col-sm-3'T><'col-sm-4'f>r>t<'row'<'col-sm-3'i><'col-sm-5'p>>",
                 "sPaginationType": "bootstrap",
                 "bStateSave": true,
                 "oTableTools": {
