@@ -40,5 +40,33 @@
             "publish_date": "2014-06-29T23:30:32", 
             "path": "a-propos/"
         }
+    }, 
+    {
+        "pk": 4, 
+        "model": "cms.page", 
+        "fields": {
+            "body": "Photos banni\u00e8re\r\n\r\n- Logo : _Alex Druhet_\r\n- Amphi : _Guillaume Paumier_, CC-By 2.0\r\n- Imprimante 3D : photo _Julien Buabent_\r\n- Wiki Loves Monuments : photo _Pierre-Selim_,  CC-By 2.0\r\n", 
+            "status": 2, 
+            "updated": "2014-06-30T18:04:25.833", 
+            "created": "2014-06-30T18:04:25.826", 
+            "_body_rendered": "<p>Photos banni\u00e8re</p>\n<ul>\n<li>Logo : <em>Alex Druhet</em></li>\n<li>Amphi : <em>Guillaume Paumier</em>, CC-By 2.0</li>\n<li>Imprimante 3D : photo <em>Julien Buabent</em></li>\n<li>Wiki Loves Monuments : photo <em>Pierre-Selim</em>,  CC-By 2.0</li>\n</ul>", 
+            "title": "Cr\u00e9dits", 
+            "publish_date": "2014-06-30T18:02:21", 
+            "path": "credits/"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "cms.page", 
+        "fields": {
+            "body": "Le site capitoledulibre.org est h\u00e9berg\u00e9 en France, par l'association [tetaneutral.net](http://tetaneutral.net/ \"Tetaneutral.net\"):\r\n\r\n    Association tetaneutral.net\r\n    c/o Laurent GUERBY\r\n    10 chemin Tricou\r\n    31200 TOULOUSE\r\n\r\nCe site est \u00e9dit\u00e9 par l'association [Toulibre](http://toulibre.org/ \"Toulibre\"):\r\n\r\n    Association Toulibre,\r\n    57, rue Labat de Savignac,\r\n    31500 Toulouse\r\n", 
+            "status": 2, 
+            "updated": "2014-06-30T18:05:38.253", 
+            "created": "2014-06-30T18:05:38.247", 
+            "_body_rendered": "<p>Le site capitoledulibre.org est h\u00e9berg\u00e9 en France, par l'association <a href=\"http://tetaneutral.net/\" title=\"Tetaneutral.net\">tetaneutral.net</a>:</p>\n<pre><code>Association tetaneutral.net\nc/o Laurent GUERBY\n10 chemin Tricou\n31200 TOULOUSE\n</code></pre>\n<p>Ce site est \u00e9dit\u00e9 par l'association <a href=\"http://toulibre.org/\" title=\"Toulibre\">Toulibre</a>:</p>\n<pre><code>Association Toulibre,\n57, rue Labat de Savignac,\n31500 Toulouse\n</code></pre>", 
+            "title": "Mentions l\u00e9gales", 
+            "publish_date": "2014-06-30T18:04:26", 
+            "path": "mentions-legales/"
+        }
     }
 ]
