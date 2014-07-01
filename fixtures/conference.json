@@ -3,10 +3,10 @@
         "pk": 1, 
         "model": "conference.conference", 
         "fields": {
-            "timezone": "US/Eastern", 
-            "start_date": "2040-01-01", 
-            "end_date": "2040-01-04", 
-            "title": "SymposionCon"
+            "timezone": "Europe/Paris", 
+            "start_date": "2014-11-15", 
+            "end_date": "2014-11-16", 
+            "title": "Capitole du Libre"
         }
     }, 
     {
@@ -14,10 +14,10 @@
         "model": "conference.section", 
         "fields": {
             "conference": 1, 
-            "start_date": "2040-01-01", 
-            "name": "Tutorials", 
-            "end_date": "2040-01-01", 
-            "slug": "tutorials"
+            "start_date": "2014-11-15", 
+            "name": "Technique", 
+            "end_date": "2014-11-16", 
+            "slug": "technique"
         }
     }, 
     {
@@ -25,10 +25,54 @@
         "model": "conference.section", 
         "fields": {
             "conference": 1, 
-            "start_date": "2040-01-02", 
-            "name": "General Sessions", 
-            "end_date": "2040-01-04", 
-            "slug": "general-sessions"
+            "start_date": "2014-11-15", 
+            "name": "Découverte et Enjeux du Libre", 
+            "end_date": "2014-11-16", 
+            "slug": "enjeux"
+        }
+    },
+    {
+        "pk": 3, 
+        "model": "conference.section", 
+        "fields": {
+            "conference": 1, 
+            "start_date": "2014-11-15", 
+            "name": "Multimedia et Bureautique", 
+            "end_date": "2014-11-16", 
+            "slug": "enjeux"
+        }
+    },
+    {
+        "pk": 4, 
+        "model": "conference.section", 
+        "fields": {
+            "conference": 1, 
+            "start_date": "2014-11-15", 
+            "name": "Internet Libre", 
+            "end_date": "2014-11-16", 
+            "slug": "enjeux"
+        }
+    },
+    {
+        "pk": 5, 
+        "model": "conference.section", 
+        "fields": {
+            "conference": 1, 
+            "start_date": "2014-11-15", 
+            "name": "Open Hardware & Embarqué", 
+            "end_date": "2014-11-16", 
+            "slug": "enjeux"
+        }
+    },
+    {
+        "pk": 6, 
+        "model": "conference.section", 
+        "fields": {
+            "conference": 1, 
+            "start_date": "2014-11-15", 
+            "name": "DevOps", 
+            "end_date": "2014-11-16", 
+            "slug": "enjeux"
         }
     }
 ]

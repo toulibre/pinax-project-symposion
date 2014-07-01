@@ -210,7 +210,9 @@ SYMPOSION_PAGE_REGEX = r"(([\w-]{1,})(/[\w-]{1,})*)/"
 
 PROPOSAL_FORMS = {
     "tutorial": "cdl.proposals.forms.TutorialProposalForm",
-    "talk": "cdl.proposals.forms.TalkProposalForm",
+    "conference-enjeux": "cdl.proposals.forms.TalkProposalForm",
+    "conference-technique": "cdl.proposals.forms.TalkProposalForm",
+    "conference-internet": "cdl.proposals.forms.TalkProposalForm",
 }
 
 # local_settings.py can be used to override environment-specific settings
