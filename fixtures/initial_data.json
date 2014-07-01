@@ -3,16 +3,16 @@
         "pk": 1, 
         "model": "sites.site", 
         "fields": {
-            "domain": "localhost",
-            "name": "Capitole du Libre [local]"
+            "domain": "2014.capitoldulibre.org",
+            "name": "Capitole du Libre"
         }
     },
     {
         "pk": 2, 
         "model": "sites.site", 
         "fields": {
-            "domain": "example.com",
-            "name": "Capitole du Libre "
+            "domain": "localhost",
+            "name": "Capitole du Libre [local]"
         }
     }
 ]
