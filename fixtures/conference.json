@@ -3,10 +3,10 @@
         "pk": 1, 
         "model": "conference.conference", 
         "fields": {
-            "timezone": "US/Eastern", 
-            "start_date": "2040-01-01", 
-            "end_date": "2040-01-04", 
-            "title": "SymposionCon"
+            "timezone": "Europe/Paris", 
+            "start_date": "2014-11-15", 
+            "end_date": "2014-11-16", 
+            "title": "Capitole du Libre"
         }
     }, 
     {
@@ -14,10 +14,10 @@
         "model": "conference.section", 
         "fields": {
             "conference": 1, 
-            "start_date": "2040-01-01", 
-            "name": "Tutorials", 
-            "end_date": "2040-01-01", 
-            "slug": "tutorials"
+            "start_date": "2014-11-15", 
+            "name": "Conférences", 
+            "end_date": "2014-11-16", 
+            "slug": "conferences"
         }
     }, 
     {
@@ -25,10 +25,10 @@
         "model": "conference.section", 
         "fields": {
             "conference": 1, 
-            "start_date": "2040-01-02", 
-            "name": "General Sessions", 
-            "end_date": "2040-01-04", 
-            "slug": "general-sessions"
+            "start_date": "2014-11-15", 
+            "name": "Ateliers", 
+            "end_date": "2014-11-16", 
+            "slug": "ateliers"
         }
     }
 ]

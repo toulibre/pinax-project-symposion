@@ -3,22 +3,22 @@
         "pk": 1, 
         "model": "proposals.proposalsection", 
         "fields": {
-            "start": null, 
+            "start": "2014-07-01T00:00:00", 
             "section": 1, 
-            "end": null, 
-            "closed": null, 
-            "published": null
+            "end": "2014-09-15T00:00:00", 
+            "closed": false, 
+            "published": true
         }
     }, 
     {
         "pk": 2, 
         "model": "proposals.proposalsection", 
         "fields": {
-            "start": null, 
+            "start": "2014-07-01T00:00:00", 
             "section": 2, 
-            "end": null, 
-            "closed": null, 
-            "published": null
+            "end": "2014-09-15T00:00:00", 
+            "closed": false, 
+            "published": true
         }
     }, 
     {
@@ -26,17 +26,65 @@
         "model": "proposals.proposalkind", 
         "fields": {
             "section": 1, 
-            "name": "tutorial", 
-            "slug": "tutorial"
+            "name": "Atelier", 
+            "slug": "atelier"
         }
     }, 
     {
         "pk": 2, 
         "model": "proposals.proposalkind", 
         "fields": {
-            "section": 2, 
-            "name": "talk", 
-            "slug": "talk"
+            "section": 1, 
+            "name": "Conf\u00e9rence", 
+            "slug": "conference"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "proposals.proposalcategory", 
+        "fields": {
+            "name": "Enjeux du Libre", 
+            "slug": "enjeux"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "proposals.proposalcategory", 
+        "fields": {
+            "name": "Multimedia & Bureautique", 
+            "slug": "multimedia-bureautique"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "proposals.proposalcategory", 
+        "fields": {
+            "name": "Internet Libre", 
+            "slug": "internet"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "proposals.proposalcategory", 
+        "fields": {
+            "name": "Technique", 
+            "slug": "technique"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "proposals.proposalcategory", 
+        "fields": {
+            "name": "Open Hardware & Embarqu\u00e9", 
+            "slug": "openhardware"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "proposals.proposalcategory", 
+        "fields": {
+            "name": "DevOps", 
+            "slug": "devops"
         }
     }
 ]
