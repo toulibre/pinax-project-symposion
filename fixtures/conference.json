@@ -15,9 +15,9 @@
         "fields": {
             "conference": 1, 
             "start_date": "2014-11-15", 
-            "name": "Technique", 
+            "name": "Conférences", 
             "end_date": "2014-11-16", 
-            "slug": "technique"
+            "slug": "conferences"
         }
     }, 
     {
@@ -26,53 +26,9 @@
         "fields": {
             "conference": 1, 
             "start_date": "2014-11-15", 
-            "name": "Découverte et Enjeux du Libre", 
+            "name": "Ateliers", 
             "end_date": "2014-11-16", 
-            "slug": "enjeux"
-        }
-    },
-    {
-        "pk": 3, 
-        "model": "conference.section", 
-        "fields": {
-            "conference": 1, 
-            "start_date": "2014-11-15", 
-            "name": "Multimedia et Bureautique", 
-            "end_date": "2014-11-16", 
-            "slug": "multimedia-bureautique"
-        }
-    },
-    {
-        "pk": 4, 
-        "model": "conference.section", 
-        "fields": {
-            "conference": 1, 
-            "start_date": "2014-11-15", 
-            "name": "Internet Libre", 
-            "end_date": "2014-11-16", 
-            "slug": "internet-libre"
-        }
-    },
-    {
-        "pk": 5, 
-        "model": "conference.section", 
-        "fields": {
-            "conference": 1, 
-            "start_date": "2014-11-15", 
-            "name": "Open Hardware & Embarqué", 
-            "end_date": "2014-11-16", 
-            "slug": "open-hardware"
-        }
-    },
-    {
-        "pk": 6, 
-        "model": "conference.section", 
-        "fields": {
-            "conference": 1, 
-            "start_date": "2014-11-15", 
-            "name": "DevOps", 
-            "end_date": "2014-11-16", 
-            "slug": "devops"
+            "slug": "ateliers"
         }
     }
 ]

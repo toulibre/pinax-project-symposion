@@ -22,6 +22,7 @@ class TalkProposalForm(ProposalForm):
         model = TalkProposal
         fields = [
             "title",
+            "category",
             "audience_level",
             "description",
             "abstract",
@@ -40,6 +41,7 @@ class TutorialProposalForm(ProposalForm):
         model = TutorialProposal
         fields = [
             "title",
+            "category",
             "audience_level",
             "description",
             "abstract",
