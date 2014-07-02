@@ -26,6 +26,7 @@ class TalkProposalForm(ProposalForm):
             "audience_level",
             "description",
             "abstract",
+            "duration",
             "additional_notes",
             "recording_release",
         ]
@@ -45,6 +46,7 @@ class TutorialProposalForm(ProposalForm):
             "audience_level",
             "description",
             "abstract",
+            "duration",
             "additional_notes",
             "recording_release",
         ]
