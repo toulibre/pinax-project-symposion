@@ -39,7 +39,7 @@
             "start_date": "2014-11-15", 
             "name": "Multimedia et Bureautique", 
             "end_date": "2014-11-16", 
-            "slug": "enjeux"
+            "slug": "multimedia-bureautique"
         }
     },
     {
@@ -50,7 +50,7 @@
             "start_date": "2014-11-15", 
             "name": "Internet Libre", 
             "end_date": "2014-11-16", 
-            "slug": "enjeux"
+            "slug": "internet-libre"
         }
     },
     {
@@ -61,7 +61,7 @@
             "start_date": "2014-11-15", 
             "name": "Open Hardware & Embarqué", 
             "end_date": "2014-11-16", 
-            "slug": "enjeux"
+            "slug": "open-hardware"
         }
     },
     {
@@ -72,7 +72,7 @@
             "start_date": "2014-11-15", 
             "name": "DevOps", 
             "end_date": "2014-11-16", 
-            "slug": "enjeux"
+            "slug": "devops"
         }
     }
 ]
