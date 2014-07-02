@@ -3,68 +3,68 @@
         "pk": 1, 
         "model": "proposals.proposalsection", 
         "fields": {
-            "start": null, 
+            "start": "2014-07-01T00:00:00", 
             "section": 1, 
-            "end": null, 
-            "closed": null, 
-            "published": null
+            "end": "2014-09-15T00:00:00", 
+            "closed": false, 
+            "published": true
         }
     }, 
     {
         "pk": 2, 
         "model": "proposals.proposalsection", 
         "fields": {
-            "start": null, 
+            "start": "2014-07-01T00:00:00", 
             "section": 2, 
-            "end": null, 
-            "closed": null, 
-            "published": null
+            "end": "2014-09-15T00:00:00", 
+            "closed": false, 
+            "published": true
         }
-    },  
+    }, 
     {
         "pk": 3, 
         "model": "proposals.proposalsection", 
         "fields": {
-            "start": null, 
+            "start": "2014-07-01T00:00:00", 
             "section": 3, 
-            "end": null, 
-            "closed": null, 
-            "published": null
+            "end": "2014-09-15T00:00:00", 
+            "closed": false, 
+            "published": true
         }
-    },  
+    }, 
     {
         "pk": 4, 
         "model": "proposals.proposalsection", 
         "fields": {
-            "start": null, 
+            "start": "2014-07-01T00:00:00", 
             "section": 4, 
-            "end": null, 
-            "closed": null, 
-            "published": null
+            "end": "2014-09-15T00:00:00", 
+            "closed": false, 
+            "published": true
         }
     }, 
     {
         "pk": 5, 
         "model": "proposals.proposalsection", 
         "fields": {
-            "start": null, 
+            "start": "2014-07-01T00:00:00", 
             "section": 5, 
-            "end": null, 
-            "closed": null, 
-            "published": null
+            "end": "2014-09-15T00:00:00", 
+            "closed": false, 
+            "published": true
         }
     }, 
     {
         "pk": 6, 
         "model": "proposals.proposalsection", 
         "fields": {
-            "start": null, 
+            "start": "2014-07-01T00:00:00", 
             "section": 6, 
-            "end": null, 
-            "closed": null, 
-            "published": null
+            "end": "2014-09-15T00:00:00", 
+            "closed": false, 
+            "published": true
         }
-    },
+    }, 
     {
         "pk": 1, 
         "model": "proposals.proposalkind", 
@@ -79,26 +79,74 @@
         "model": "proposals.proposalkind", 
         "fields": {
             "section": 1, 
-            "name": "Conférence Découverte et Enjeux du Libre", 
+            "name": "Conf\u00e9rence D\u00e9couverte et Enjeux du Libre", 
             "slug": "conference-enjeux"
         }
-    },
+    }, 
     {
         "pk": 3, 
         "model": "proposals.proposalkind", 
         "fields": {
             "section": 2, 
-            "name": "Conférence Technique", 
+            "name": "Conf\u00e9rence Technique", 
             "slug": "conference-technique"
         }
-    },
+    }, 
     {
         "pk": 4, 
         "model": "proposals.proposalkind", 
         "fields": {
             "section": 4, 
-            "name": "Conférence Internet Libre", 
+            "name": "Conf\u00e9rence Internet Libre", 
             "slug": "conference-internet"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "proposals.proposalbase", 
+        "fields": {
+            "kind": 1, 
+            "description": "test", 
+            "title": "Mon atelier", 
+            "abstract": "test", 
+            "_abstract_rendered": "<p>test</p>", 
+            "submitted": "2014-07-02T08:54:14.922", 
+            "additional_notes": "test", 
+            "speaker": 2, 
+            "cancelled": false, 
+            "_additional_notes_rendered": "<p>test</p>"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "proposals.proposalbase", 
+        "fields": {
+            "kind": 2, 
+            "description": "test", 
+            "title": "Ma super conf", 
+            "abstract": "test", 
+            "_abstract_rendered": "<p>test</p>", 
+            "submitted": "2014-07-02T14:35:32.955", 
+            "additional_notes": "test", 
+            "speaker": 2, 
+            "cancelled": false, 
+            "_additional_notes_rendered": "<p>test</p>"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "proposals.talkproposal", 
+        "fields": {
+            "recording_release": true, 
+            "audience_level": 1
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "proposals.tutorialproposal", 
+        "fields": {
+            "recording_release": true, 
+            "audience_level": 1
         }
     }
 ]
