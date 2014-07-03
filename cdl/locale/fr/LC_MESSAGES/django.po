@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-01 00:57+0200\n"
+"POT-Creation-Date: 2014-07-03 17:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,53 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: proposals/models.py:28
+msgid "Novice"
+msgstr "Débutant"
+
+#: proposals/models.py:29
+msgid "Intermediate"
+msgstr "Intermédiaire"
+
+#: proposals/models.py:30
+msgid "Experienced"
+msgstr "Expert"
+
+#: proposals/models.py:39
+msgid ""
+"By submitting your proposal, you agree to give permission to the conference "
+"organizers to record, edit, and release audio and/or video of your "
+"presentation. If you do not agree to this, please uncheck this box."
+msgstr "En soumettant votre proposition, vous donnez l'autorisation"
+"aux organisateurs d'enregistrer, modifier et publier une retranscription"
+"audio et/ou vidéo de votre présentation. Si vous n'êtes pas d'accord"
+"avec ceci, vous pouvez décocher cette case."
+
+#: proposals/models.py:49 proposals/models.py:63
+msgid "No preference"
+msgstr "Pas de préférence"
+
+#: proposals/models.py:50
+msgid "I prefer a 20 minute slot"
+msgstr "Je préfère un créneau de 20 minutes"
+
+#: proposals/models.py:51
+msgid "I prefer a 50 minute slot"
+msgstr "Je préfère un créneau de 50 minutes"
+
+#: proposals/models.py:64
+msgid "I prefer a 1h30 slot"
+msgstr "Je préfère un créneau d'1h30"
+
+#: proposals/models.py:65
+msgid "I prefer a 3h slot"
+msgstr "Je préfère un créneau de 3h"
+
+#: proposals/models.py:71
+#, fuzzy
+msgid "tutorial proposal"
+msgstr "Modifier cette proposition"
 
 #: templates/_account_bar.html:14
 msgid "Dashboard"
@@ -80,19 +127,19 @@ msgstr "Soumis"
 
 #: templates/proposals/_pending_proposal_row.html:21
 msgid "Invited"
-msgstr ""
+msgstr "Invité"
 
 #: templates/proposals/_pending_proposal_row.html:30
 msgid "Choose Response"
-msgstr ""
+msgstr "Choisir réponse"
 
 #: templates/proposals/_pending_proposal_row.html:35
 msgid "Accept invitation"
-msgstr ""
+msgstr "Accepter l'invitation"
 
 #: templates/proposals/_pending_proposal_row.html:37
 msgid "Decline invitation"
-msgstr ""
+msgstr "Décliner l'invitation"
 
 #: templates/proposals/_proposal_fields.html:4
 msgid "Submitted by"
@@ -106,33 +153,47 @@ msgstr "Thématique"
 msgid "Audience Level"
 msgstr "Niveau du Public"
 
-#: templates/proposals/_proposal_fields.html:14
+#: templates/proposals/_proposal_fields.html:13
+#, fuzzy
+msgid "Duration"
+msgstr "Description"
+
+#: templates/proposals/_proposal_fields.html:17
 msgid "Additional Speakers"
 msgstr "Intervenants additionnels"
 
-#: templates/proposals/_proposal_fields.html:21
+#: templates/proposals/_proposal_fields.html:24
 msgid "Invitation Sent"
 msgstr "Invitation envoyée"
 
-#: templates/proposals/_proposal_fields.html:28
+#: templates/proposals/_proposal_fields.html:31
 msgid "Description"
 msgstr "Description"
 
-#: templates/proposals/_proposal_fields.html:31
+#: templates/proposals/_proposal_fields.html:34
 msgid "Abstract"
 msgstr "Résumé"
 
-#: templates/proposals/_proposal_fields.html:34
+#: templates/proposals/_proposal_fields.html:37
 msgid "Notes"
 msgstr "Notes"
 
-#: templates/proposals/_proposal_fields.html:37
+#: templates/proposals/_proposal_fields.html:40
 msgid "Speaker Bio"
 msgstr "Biographie de l'Intervenant"
 
-#: templates/proposals/_proposal_fields.html:40
+#: templates/proposals/_proposal_fields.html:43
 msgid "Documents"
 msgstr "Documents"
+
+#: templates/proposals/proposal_cancel.html:7
+#, fuzzy
+msgid "Cancel Proposal"
+msgstr "Annuler cette proposition"
+
+#: templates/proposals/proposal_cancel.html:16
+msgid "No, keep it for now"
+msgstr "Non, maintenir la proposition"
 
 #: templates/proposals/proposal_detail.html:14
 msgid "Edit this proposal"
@@ -158,7 +219,7 @@ msgstr "Documents de Support"
 
 #: templates/proposals/proposal_detail.html:38
 msgid "Reviewer Feedback"
-msgstr ""
+msgstr "Retours des relecteurs"
 
 #: templates/proposals/proposal_detail.html:57
 msgid "delete"
@@ -205,7 +266,7 @@ msgstr "Intervenants"
 
 #: templates/proposals/proposal_speaker_manage.html:20
 msgid "pending invitation"
-msgstr ""
+msgstr "en attente d'invitation"
 
 #: templates/proposals/proposal_speaker_manage.html:24
 msgid "Add another speaker"
@@ -243,35 +304,35 @@ msgstr "Votre Vote"
 
 #: templates/reviews/base.html:64
 msgid "All Reviews"
-msgstr ""
+msgstr "Toutes les revues"
 
 #: templates/reviews/base.html:77
 msgid "Voting Status"
-msgstr ""
+msgstr "Statut du vote"
 
 #: templates/reviews/result_notification.html:47
 msgid "Status"
-msgstr ""
+msgstr "Statut"
 
 #: templates/reviews/result_notification.html:48
 msgid "Notified?"
-msgstr ""
+msgstr "Notifié ?"
 
 #: templates/reviews/review_detail.html:76
 msgid "Speaker Feedback"
-msgstr ""
+msgstr "Retour de l'intervenant"
 
 #: templates/reviews/review_detail.html:84
 msgid "Current Results"
-msgstr ""
+msgstr "Résultats courants"
 
 #: templates/reviews/review_detail.html:91
 msgid "Total Responses"
-msgstr ""
+msgstr "Total des réponses"
 
 #: templates/reviews/review_detail.html:108
 msgid "Submit Review"
-msgstr ""
+msgstr "Soumettre la revue"
 
 #: templates/reviews/review_detail.html:148
 msgid "Conversation with the submitter"
@@ -293,6 +354,12 @@ msgstr ""
 #: templates/speakers/speaker_create.html:7
 #: templates/speakers/speaker_create.html:14
 msgid "Create Speaker Profile"
+msgstr "Créer votre profil d'intervenant"
+
+#: templates/speakers/speaker_edit.html:7
+#: templates/speakers/speaker_edit.html:14
+#, fuzzy
+msgid "Edit Speaker Profile"
 msgstr "Créer votre profil d'intervenant"
 
 #: templates/sponsorship/add.html:7 templates/sponsorship/add.html.py:14
