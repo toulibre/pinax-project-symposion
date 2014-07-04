@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-03 17:46+0200\n"
+"POT-Creation-Date: 2014-07-05 00:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: settings.py:49
+msgid "French"
+msgstr "Français"
+
+#: settings.py:50
+msgid "English"
+msgstr "Anglais"
+
+#: proposals/forms.py:15
+msgid "The description must be less than 400 characters"
+msgstr "La description doit être de moins de 400 caractères"
 
 #: proposals/models.py:28
 msgid "Novice"
@@ -35,10 +47,11 @@ msgid ""
 "By submitting your proposal, you agree to give permission to the conference "
 "organizers to record, edit, and release audio and/or video of your "
 "presentation. If you do not agree to this, please uncheck this box."
-msgstr "En soumettant votre proposition, vous donnez l'autorisation"
-"aux organisateurs d'enregistrer, modifier et publier une retranscription"
-"audio et/ou vidéo de votre présentation. Si vous n'êtes pas d'accord"
-"avec ceci, vous pouvez décocher cette case."
+msgstr ""
+"En soumettant votre proposition, vous donnez l'autorisationaux organisateurs "
+"d'enregistrer, modifier et publier une retranscriptionaudio et/ou vidéo de "
+"votre présentation. Si vous n'êtes pas d'accordavec ceci, vous pouvez "
+"décocher cette case."
 
 #: proposals/models.py:49 proposals/models.py:63
 msgid "No preference"
@@ -61,11 +74,11 @@ msgid "I prefer a 3h slot"
 msgstr "Je préfère un créneau de 3h"
 
 #: proposals/models.py:71
-#, fuzzy
 msgid "tutorial proposal"
-msgstr "Modifier cette proposition"
+msgstr ""
 
-#: templates/_account_bar.html:14
+#: templates/_account_bar.html:14 templates/dashboard.html:8
+#: templates/dashboard.html.py:10
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
@@ -89,29 +102,125 @@ msgstr "Connexion"
 msgid "Sign up"
 msgstr "S'inscrire"
 
-#: templates/dashboard.html:16
+#: templates/dashboard.html:18
 msgid "Speaking"
 msgstr "Conférence"
 
-#: templates/dashboard.html:92
+#: templates/dashboard.html:22
+msgid "Create a speaker profile"
+msgstr "Créer votre profil d'intervenant"
+
+#: templates/dashboard.html:26
+msgid "Edit your speaker profile"
+msgstr "Créer votre profil d'intervenant"
+
+#: templates/dashboard.html:29
+msgid "Submit a new proposal"
+msgstr "Modifier cette proposition"
+
+#: templates/dashboard.html:39
+msgid "Your Proposals"
+msgstr "Vos propositions"
+
+#: templates/dashboard.html:43 templates/dashboard.html.py:62
+#: templates/dashboard.html:78
+msgid "Title"
+msgstr "Titre"
+
+#: templates/dashboard.html:44 templates/dashboard.html.py:63
+#: templates/dashboard.html:79
+msgid "Session type"
+msgstr "Type de session"
+
+#: templates/dashboard.html:45 templates/dashboard.html.py:64
+#: templates/dashboard.html:80 templates/reviews/result_notification.html:47
+msgid "Status"
+msgstr "Statut"
+
+#: templates/dashboard.html:46 templates/dashboard.html.py:65
+#: templates/dashboard.html:81
+msgid "Actions"
+msgstr "Actions"
+
+#: templates/dashboard.html:54
+msgid "No proposals submitted yet."
+msgstr "Aucune proposition pour le moment."
+
+#: templates/dashboard.html:59
+msgid "Proposals you have joined as an additional speaker"
+msgstr ""
+"Propositions auxquelles vous avez participé en tant qu'intervenant addionnel"
+
+#: templates/dashboard.html:75
+msgid "Proposals you have been invited to join"
+msgstr "Propositions que vous avez été invité(e) à rejoindre"
+
+#: templates/dashboard.html:95
 msgid "Sponsorship"
 msgstr "Partenariat"
 
-#: templates/dashboard.html:132 templates/reviews/review_detail.html:75
+#: templates/dashboard.html:99
+#, fuzzy
+msgid "Apply to be a sponsor"
+msgstr "Devenir Sponsor"
+
+#: templates/dashboard.html:109
+msgid "Your Sponsorship"
+msgstr "Partenariat"
+
+#: templates/dashboard.html:135 templates/reviews/review_detail.html:75
 msgid "Reviews"
 msgstr "Revue"
 
-#: templates/dashboard.html:196
+#: templates/dashboard.html:139
+msgid "Review Sections"
+msgstr "Catégorie de Revue"
+
+#: templates/dashboard.html:147
+msgid "Proposals you have reviewed"
+msgstr "Propositions que vous avez été invité(e) à rejoindre"
+
+#: templates/dashboard.html:151 templates/reviews/_review_table.html:6
+#: templates/reviews/result_notification.html:45
+msgid "Speaker / Title"
+msgstr "Intervenant / Titre"
+
+#: templates/dashboard.html:152
+msgid "Your Vote"
+msgstr "Votre Vote"
+
+#: templates/dashboard.html:199
 msgid "Teams"
 msgstr "Équipes"
+
+#: templates/dashboard.html:204
+msgid "Your Teams"
+msgstr "Équipes"
+
+#: templates/dashboard.html:225
+msgid "Available Teams"
+msgstr "Équipes disponibles"
 
 #: templates/homepage.html:6
 msgid "Welcome"
 msgstr "Bienvenue"
 
+#: templates/cms/file_create.html:15
+msgid "Upload"
+msgstr "Téléverser"
+
+#: templates/cms/page_edit.html:9
+msgid "Create Page"
+msgstr "Créer la page"
+
 #: templates/cms/page_edit.html:11
 msgid "Edit page at:"
 msgstr "Modifier la page à :"
+
+#: templates/cms/page_edit.html:19
+#: templates/proposals/proposal_submit_kind.html:22
+msgid "Save"
+msgstr "Sauvegarder"
 
 #: templates/proposals/_pending_proposal_row.html:12
 msgid "Cancelled"
@@ -154,7 +263,6 @@ msgid "Audience Level"
 msgstr "Niveau du Public"
 
 #: templates/proposals/_proposal_fields.html:13
-#, fuzzy
 msgid "Duration"
 msgstr "Description"
 
@@ -171,6 +279,7 @@ msgid "Description"
 msgstr "Description"
 
 #: templates/proposals/_proposal_fields.html:34
+#: templates/reviews/review_review.html:26
 msgid "Abstract"
 msgstr "Résumé"
 
@@ -186,10 +295,23 @@ msgstr "Biographie de l'Intervenant"
 msgid "Documents"
 msgstr "Documents"
 
+#: templates/proposals/_proposal_fields.html:53
+#: templates/proposals/proposal_detail.html:57
+msgid "delete"
+msgstr "supprimer"
+
+#: templates/proposals/_proposal_fields.html:60
+#: templates/proposals/proposal_detail.html:64
+msgid "No supporting documents attached to this proposal."
+msgstr "Aucun document attaché à cette proposition."
+
 #: templates/proposals/proposal_cancel.html:7
-#, fuzzy
 msgid "Cancel Proposal"
 msgstr "Annuler cette proposition"
+
+#: templates/proposals/proposal_cancel.html:14
+msgid "Are you sure you want to cancel <b>{{ proposal.title }}</b>?"
+msgstr "Confirmer l'annulation de <b>{{ proposal.title }}</b>? "
 
 #: templates/proposals/proposal_cancel.html:16
 msgid "No, keep it for now"
@@ -219,15 +341,7 @@ msgstr "Documents de Support"
 
 #: templates/proposals/proposal_detail.html:38
 msgid "Reviewer Feedback"
-msgstr "Retours des relecteurs"
-
-#: templates/proposals/proposal_detail.html:57
-msgid "delete"
-msgstr "supprimer"
-
-#: templates/proposals/proposal_detail.html:64
-msgid "No supporting documents attached to this proposal."
-msgstr "Aucun document attaché à cette proposition."
+msgstr "Dialogue avec les relecteurs"
 
 #: templates/proposals/proposal_detail.html:66
 msgid "Add Document"
@@ -249,18 +363,23 @@ msgstr "Vous pouvez laisser un messages aux relecteurs"
 msgid "Submit"
 msgstr "Valider"
 
+#: templates/proposals/proposal_edit.html:11
+msgid "Manage speakers"
+msgstr "Gérer les intervenants"
+
+#: templates/proposals/proposal_edit.html:20
+msgid "Cancel"
+msgstr "Annuler"
+
 #: templates/proposals/proposal_speaker_manage.html:7
-#, fuzzy
 msgid "Proposal:"
 msgstr "Proposition :"
 
 #: templates/proposals/proposal_speaker_manage.html:10
-#, fuzzy
 msgid "Edit proposal"
 msgstr "Modifier cette proposition"
 
 #: templates/proposals/proposal_speaker_manage.html:14
-#, fuzzy
 msgid "Current Speakers"
 msgstr "Intervenants"
 
@@ -272,10 +391,37 @@ msgstr "en attente d'invitation"
 msgid "Add another speaker"
 msgstr "Ajouter un autre intervenant"
 
-#: templates/reviews/_review_table.html:6
-#: templates/reviews/result_notification.html:45
-msgid "Speaker / Title"
-msgstr "Intervenant / Titre"
+#: templates/proposals/proposal_submit.html:6
+msgid "Submit A Proposal"
+msgstr "Soumettre une proposition"
+
+#: templates/proposals/proposal_submit.html:12
+msgid "Select what kind of proposal you'd like to submit:"
+msgstr "Sélectionnez le type de proposition que vous souhaitez faire :"
+
+#: templates/proposals/proposal_submit.html:20
+msgid "Proposals are not currently open for submission."
+msgstr "L'appel à propositions n'est pas ouvert actuellement."
+
+#: templates/proposals/proposal_submit_kind.html:11
+#, python-format
+msgid "Submit a Proposal for a %(kind.name)s"
+msgstr "Soumettre une proposition de type %(kind.name)s"
+
+#: templates/proposals/proposal_submit_kind.html:20
+msgid ""
+"You will be able to edit your proposal after it has been submitted. The "
+"program committee may ask questions, provide feedback, and even suggest "
+"changes to your proposal as part of the review processes."
+msgstr ""
+"Vous pourrez éditer votre proposition une fois qu'elle sera soumise. Le "
+"comité de programme pourrait vous demander des question, vous faire des "
+"commentaires et même vous suggérer des changements à votre proposition "
+"durant le processus d'évaluation."
+
+#: templates/proposals/proposal_submit_kind.html:24
+msgid "Save and Add Additional Speakers"
+msgstr "Sauvegarder et ajouter des intervenants"
 
 #: templates/reviews/_review_table.html:7
 #: templates/reviews/result_notification.html:46
@@ -302,6 +448,17 @@ msgstr ""
 msgid "Your Rating"
 msgstr "Votre Vote"
 
+#: templates/reviews/access_not_permitted.html:7
+msgid ""
+"\n"
+"Sorry, you do not have permission to access this page. If you \n"
+"believe this is a bug, please contact us immediately.\n"
+msgstr ""
+"\n"
+"Désolé, vous n'avez pas la permission d'accéder à cette page. \n"
+"Si vous pensez que ceci est un bug, n'hésitez pas à contacter "
+"l'administrateur.\n"
+
 #: templates/reviews/base.html:64
 msgid "All Reviews"
 msgstr "Toutes les revues"
@@ -310,17 +467,29 @@ msgstr "Toutes les revues"
 msgid "Voting Status"
 msgstr "Statut du vote"
 
-#: templates/reviews/result_notification.html:47
-msgid "Status"
-msgstr "Statut"
-
 #: templates/reviews/result_notification.html:48
 msgid "Notified?"
 msgstr "Notifié ?"
 
+#: templates/reviews/review_admin.html:9
+msgid "Reviewer"
+msgstr "Relecteur"
+
+#: templates/reviews/review_admin.html:12
+msgid "Proposals Reviewed"
+msgstr "Propositions revues"
+
+#: templates/reviews/review_admin.html:15
+msgid "Comments"
+msgstr "Commentaires"
+
+#: templates/reviews/review_assignment.html:30
+msgid "You do not have any assignments."
+msgstr ""
+
 #: templates/reviews/review_detail.html:76
 msgid "Speaker Feedback"
-msgstr "Retour de l'intervenant"
+msgstr "Dialogue avec l'intervenant"
 
 #: templates/reviews/review_detail.html:84
 msgid "Current Results"
@@ -350,6 +519,22 @@ msgid ""
 "                            notified and given the opportunity to respond.\n"
 "                        "
 msgstr ""
+"\n"
+"Si vous souhaitez dialoguer avec le soumetteur, utilisez le formulaire "
+"suivant, il/elle sera notifié(e) et pourra vous répondre."
+
+#: templates/reviews/review_list.html:5 templates/reviews/review_list.html:6
+#: templates/reviews/review_review.html:56
+msgid "Review"
+msgstr "Revue"
+
+#: templates/reviews/review_review.html:9
+msgid "Proposal Review"
+msgstr "Détail de la proposition"
+
+#: templates/reviews/review_review.html:68
+msgid "Comment"
+msgstr "Commentaire"
 
 #: templates/speakers/speaker_create.html:7
 #: templates/speakers/speaker_create.html:14
@@ -358,19 +543,28 @@ msgstr "Créer votre profil d'intervenant"
 
 #: templates/speakers/speaker_edit.html:7
 #: templates/speakers/speaker_edit.html:14
-#, fuzzy
 msgid "Edit Speaker Profile"
-msgstr "Créer votre profil d'intervenant"
+msgstr "Modifier votre profil d'intervenant"
 
-#: templates/sponsorship/add.html:7 templates/sponsorship/add.html.py:14
-#, fuzzy
+#: templates/sponsorship/add.html:7 templates/sponsorship/add.html.py:8
+#: templates/sponsorship/add.html:15
 msgid "Add a Sponsor"
-msgstr "Devenir Sponsor"
+msgstr "Ajouter Sponsor"
 
-#: templates/sponsorship/apply.html:7
+#: templates/sponsorship/apply.html:7 templates/sponsorship/apply.html.py:8
+#: templates/sponsorship/apply.html:18
 msgid "Apply to be a Sponsor"
 msgstr "Devenir Sponsor"
 
-#: templates/sponsorship/apply.html:17
-msgid "Apply to Be a Sponsor"
-msgstr "Devenir Sponsor"
+#~ msgid "Apply to Be a Sponsor"
+#~ msgstr "Devenir Sponsor"
+
+#~ msgid "Associated"
+#~ msgstr "Associé"
+
+#~ msgid "Edit"
+#~ msgstr "Modifier"
+
+#, fuzzy
+#~ msgid "Manage Additional Speakers"
+#~ msgstr "Intervenants additionnels"

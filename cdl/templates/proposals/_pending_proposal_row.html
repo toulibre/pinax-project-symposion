@@ -13,12 +13,12 @@
         {% else %}
             {% if request.user == proposal.speaker.user %}
                 {% if proposal.result.status == "accepted" %}
-                    <span class="label label-success">{% trans 'Accepted' %}</span>
+                    <span class="label label-success">{% trans "Accepted" %}</span>
                 {% else %}
-                    <span class="label">{% trans 'Submitted' %}</span>
+                    <span class="label">{% trans "Submitted" %}</span>
                 {% endif %}
             {% else %}
-                <span class="label">{% trans 'Invited' %}</span>
+                <span class="label">{% trans "Invited" %}</span>
             {% endif %}
         {% endif %}
     </td>

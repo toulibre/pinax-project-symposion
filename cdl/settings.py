@@ -3,6 +3,7 @@
 
 import os.path
 import posixpath
+from django.utils.translation import ugettext_lazy as _
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 PACKAGE_ROOT = os.path.abspath(os.path.dirname(__file__))
@@ -44,6 +45,10 @@ TIME_ZONE = "Europe/Paris"
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = "fr-fr"
+LANGUAGES = (
+  ('fr', _('French')),
+  ('en', _('English')),
+)
 
 SITE_ID = 1
 

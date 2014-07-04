@@ -6,7 +6,7 @@
 {% block body_class %}review{% endblock %}
 
 {% block body %}
-    <h1>Proposal Review</h1>
+    <h1>{% trans "Proposal Review" %}</h1>
     
     <div class="proposal">
         <h2>{{ proposal.title }}</h2>
@@ -23,7 +23,7 @@
         
         <p><b>Type</b>: {{ proposal.get_session_type_display }}</p>
         
-        <h3>Abstract</h3>
+        <h3>{% trans "Abstract" %}</h3>
         <div class="abstract">
             {{ proposal.abstract_html|safe }}
         </div>
@@ -53,7 +53,7 @@
     
     {% markitup_media %}
 
-    <h2>Review</h2>
+    <h2>{% trans "Review" %}</h2>
     
     <form method="POST" action="{% url review_review proposal.pk %}" class="uniForm">
         {% csrf_token %}
@@ -65,7 +65,7 @@
         </fieldset>
     </form>
     
-    <h2>Comment</h2>
+    <h2>{% trans "Comment" %}</h2>
     
     <form method="POST" action="{% url review_comment proposal.pk %}" class="uniForm">
         {% csrf_token %}

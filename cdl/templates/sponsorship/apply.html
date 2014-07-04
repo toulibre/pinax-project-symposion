@@ -5,6 +5,7 @@
 {% load boxes_tags %}
 
 {% block head_title %}{% trans "Apply to be a Sponsor" %}{% endblock %}
+{% block body_title %}{% trans "Apply to be a Sponsor" %}{% endblock %}
 
 {% block body_class %}sponsorships{% endblock %}
 
@@ -14,7 +15,7 @@
 
     <form method="POST" action="" class="form-horizontal">
         {% csrf_token %}
-        <legend>{% trans "Apply to Be a Sponsor" %}</legend>
+        <legend>{% trans "Apply to be a Sponsor" %}</legend>
         {{ form|bootstrap }}
         <div class="form-actions">
             <input class="btn btn-primary" type="submit" value="Apply" />

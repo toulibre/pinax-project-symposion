@@ -1,6 +1,11 @@
 {% extends "reviews/base.html" %}
 
+{% load i18n %}
+
+{% block head_title %}{% trans "Review" %}{% endblock %}
+{% block body_title %}{% trans "Review" %}{% endblock %}
+
 {% block body %}
-    <h3>{{ section }}</h3>
+    <h2>{{ section }}</h2>
     {% include "reviews/_review_table.html" %}
 {% endblock %}

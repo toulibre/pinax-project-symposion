@@ -15,7 +15,7 @@ class ProposalCategory(models.Model):
 
     class Meta:
         verbose_name = "Capitole du Libre proposal category"
-        verbose_name_plural = "Capitole du Libre  proposal categories"
+        verbose_name_plural = "Capitole du Libre proposal categories"
 
 
 class Proposal(ProposalBase):
