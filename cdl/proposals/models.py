@@ -14,8 +14,8 @@ class ProposalCategory(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Capitole du Libre proposal category"
-        verbose_name_plural = "Capitole du Libre proposal categories"
+        verbose_name = _("Capitole du Libre proposal category")
+        verbose_name_plural = _("Capitole du Libre proposal categories")
 
 
 class Proposal(ProposalBase):
@@ -54,7 +54,7 @@ class TalkProposal(Proposal):
     duration = models.IntegerField(choices=DURATION_CHOICES)
 
     class Meta:
-        verbose_name = "talk proposal"
+        verbose_name = _(u"talk proposal")
 
 
 class TutorialProposal(Proposal):

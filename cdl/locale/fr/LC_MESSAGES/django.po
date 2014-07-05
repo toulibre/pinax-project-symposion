@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-05 00:16+0200\n"
+"POT-Creation-Date: 2014-07-05 00:53+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,14 @@ msgstr "Anglais"
 #: proposals/forms.py:15
 msgid "The description must be less than 400 characters"
 msgstr "La description doit être de moins de 400 caractères"
+
+#: proposals/models.py:17
+msgid "Capitole du Libre proposal category"
+msgstr "Catégorie de propositions pour le Capitole du Libre"
+
+#: proposals/models.py:18
+msgid "Capitole du Libre proposal categories"
+msgstr "Catégories de propositions pour le Capitole du Libre"
 
 #: proposals/models.py:28
 msgid "Novice"
@@ -65,6 +73,11 @@ msgstr "Je préfère un créneau de 20 minutes"
 msgid "I prefer a 50 minute slot"
 msgstr "Je préfère un créneau de 50 minutes"
 
+#: proposals/models.py:57
+#, fuzzy
+msgid "talk proposal"
+msgstr "proposition d'atelier"
+
 #: proposals/models.py:64
 msgid "I prefer a 1h30 slot"
 msgstr "Je préfère un créneau d'1h30"
@@ -75,7 +88,7 @@ msgstr "Je préfère un créneau de 3h"
 
 #: proposals/models.py:71
 msgid "tutorial proposal"
-msgstr ""
+msgstr "proposition d'atelier"
 
 #: templates/_account_bar.html:14 templates/dashboard.html:8
 #: templates/dashboard.html.py:10
@@ -112,11 +125,11 @@ msgstr "Créer votre profil d'intervenant"
 
 #: templates/dashboard.html:26
 msgid "Edit your speaker profile"
-msgstr "Créer votre profil d'intervenant"
+msgstr "Modifier votre profil d'intervenant"
 
 #: templates/dashboard.html:29
 msgid "Submit a new proposal"
-msgstr "Modifier cette proposition"
+msgstr "Soumettre une proposition"
 
 #: templates/dashboard.html:39
 msgid "Your Proposals"
