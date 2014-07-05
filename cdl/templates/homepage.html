@@ -1,13 +1,35 @@
-{% extends "site_base.html" %}
+{% extends "site_base_onecolumn.html" %}
 
 {% load i18n %}
 {% load boxes_tags %}
 
 {% block head_title %}{% trans "Welcome" %}{% endblock %}
+{% block body_title %}Le Capitole du Libre 2014{% endblock %}
 
 {% block body_class %}home{% endblock %}
 
 {% block body %}
-    {% box "homepage" %}
+<div class="row">
+    <div class="col-md-5">
+        {% box "solibre" %}
+    </div>
+    <div class="col-md-7">
+        {% box "cdl" %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        {% box "homepage-row2-col1" %}
+    </div>
+    <div class="col-md-4">
+        {% box "homepage-row2-col2" %}
+    </div>
+    <div class="col-md-4">
+        <h2>Communiquez !</h2>
+        {% include "_comm_box.html" %}
+    </div>
+    
+</div>
     &nbsp;
 {% endblock %}
