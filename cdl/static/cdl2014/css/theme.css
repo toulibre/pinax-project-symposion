@@ -1,29 +1,24 @@
-
+/*
+@import "custom_bootstrap.less";
+*/
 body {
-    background-color: #E8E8E8;
-    font-size: 16px;
+  background-color: #E8E8E8;
+  font-size: 16px;
 }
-
 /* Header *
  * ------ */
-
-header {
-    
-}
 #header {
-    overflow: hidden;
+  overflow: hidden;
 }
-h1.text-hide, h2.text-hide {
-    margin: 0;
+h1.text-hide,
+h2.text-hide {
+  margin: 0;
 }
 #main {
-    background-color: #FFFFFF;
+  background-color: #FFFFFF;
 }
-
-
 /* social links *
  * ------------ */
-
 #communiquer a {
   overflow: hidden;
   text-indent: 100%;
@@ -47,15 +42,13 @@ h1.text-hide, h2.text-hide {
 #communiquer a#facebook {
   background-image: url('../img/facebook-32.png');
 }
-
 /* Footer *
  * ------ */
-
 #footer {
-    font-size: 0.875em;
-    color: #999;
-    text-align: right;
+  font-size: 0.875em;
+  color: #999;
+  text-align: right;
 }
 #footer a {
-    color: #777;
+  color: #777;
 }
