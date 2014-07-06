@@ -3,9 +3,8 @@
 {% load boxes_tags %}
 {% load i18n %}
 
-{% block page_title %}{% trans "Submit A Proposal" %}{% endblock %}
-
 {% block body %}
+    <h2>{% trans "Submit A Proposal" %}</h2>
     {% box "proposal_submit" %}
     
     {% if kinds %}

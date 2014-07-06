@@ -5,12 +5,12 @@
 {% load boxes_tags %}
 
 {% block head_title %}{% trans "Apply to be a Sponsor" %}{% endblock %}
-{% block body_title %}{% trans "Apply to be a Sponsor" %}{% endblock %}
 
 {% block body_class %}sponsorships{% endblock %}
 
 {% block body %}
 
+    <h2>{% trans "Apply to be a Sponsor" %}</h2>
     {% box "sponsorship-apply" %}
 
     <form method="POST" action="" class="form-horizontal">

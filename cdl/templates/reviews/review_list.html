@@ -3,9 +3,9 @@
 {% load i18n %}
 
 {% block head_title %}{% trans "Review" %}{% endblock %}
-{% block body_title %}{% trans "Review" %}{% endblock %}
 
 {% block body %}
-    <h2>{{ section }}</h2>
+    <h2>{% trans "Review" %}</h2>
+    <h3>{{ section }}</h3>
     {% include "reviews/_review_table.html" %}
 {% endblock %}

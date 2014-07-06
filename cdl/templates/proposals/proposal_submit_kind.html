@@ -8,7 +8,7 @@
 {% block page_title %}Submit a Proposal for a {{ kind.name }}{% endblock %}
 
 {% block body %}
-    <h1>{% blocktrans %}Submit a Proposal for a {{ kind.name }}{% endblocktrans %}</h1>
+    <h2>{% blocktrans %}Submit a Proposal for a {{ kind.name }}{% endblocktrans %}</h2>
 
     <form method="POST" action="" enctype="multipart/form-data" class="form-horizontal">
         {% csrf_token %}
