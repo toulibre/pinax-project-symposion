@@ -6225,6 +6225,11 @@ h1.text-hide,
 h2.text-hide {
   margin: 0;
 }
+h2.slogan {
+    font-size: 1em;
+    margin: 0;
+    color: #EEE;
+}
 #main {
   background-color: #FFFFFF;
 }

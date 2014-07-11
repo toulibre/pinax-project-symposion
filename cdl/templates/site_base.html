@@ -27,6 +27,7 @@
     <a href="{% url home %}" alt="home"><img src="{% static "cdl2014/img/logo-cdl.png" %}"
           alt="bannière" /></a>
     <h1 class="text-hide">{{ SITE_NAME }}</h1>
+    <h2 class="slogan hidden-xs">L'&eacute;v&eacute;nement du Libre Toulousain</h2>
 {% endblock %}
 
 {% block navbar_class %}navbar navbar-inverse{% endblock %}
@@ -39,16 +40,16 @@
 
 <section id="content_body">
     <div class="container">
-        
+
         {% include "_messages.html" %}
         
         {% block body_outer %}
             <div class="row">
-                <div class="col-sm-8 col-md-9">
+                <div class="col-sm-8">
                     {% block body %}
                     {% endblock %}
                 </div>
-                <div class=" col-sm-4 col-md-3">
+                <div class=" col-sm-4">
                     {% block sidebar %}
                         {% include "_default_sidebar.html" %}
                     {% endblock %}
