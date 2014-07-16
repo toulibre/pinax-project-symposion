@@ -3,7 +3,7 @@ from django import forms
 from markitup.widgets import MarkItUpWidget
 from django.utils.translation import ugettext_lazy as _
 
-from .models import TalkProposal, TutorialProposal
+from .models import TalkProposal, TutorialProposal, StandProposal
 
 
 class ProposalForm(forms.ModelForm):
@@ -50,6 +50,21 @@ class TutorialProposalForm(ProposalForm):
             "duration",
             "additional_notes",
             "recording_release",
+        ]
+        widgets = {
+            "abstract": MarkItUpWidget(),
+            "additional_notes": MarkItUpWidget(),
+        }
+
+class StandProposalForm(ProposalForm):
+
+    class Meta:
+        model = StandProposal
+        fields = [
+            "title",
+            "organisation",
+            "description",
+            "additional_notes",
         ]
         widgets = {
             "abstract": MarkItUpWidget(),

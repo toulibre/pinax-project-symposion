@@ -69,3 +69,11 @@ class TutorialProposal(Proposal):
 
     class Meta:
         verbose_name = _(u"tutorial proposal")
+
+
+class StandProposal(Proposal):
+
+    organisation = models.CharField(max_length=150)
+
+    class Meta:
+        verbose_name = _(u"stand proposal")
