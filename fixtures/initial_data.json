@@ -3,7 +3,7 @@
         "pk": 1, 
         "model": "sites.site", 
         "fields": {
-            "domain": "2014.capitoldulibre.org",
+            "domain": "2014.capitoledulibre.org",
             "name": "Capitole du Libre"
         }
     },
