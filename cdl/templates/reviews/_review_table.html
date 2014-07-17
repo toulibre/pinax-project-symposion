@@ -19,12 +19,12 @@
                 <td>{{ proposal.number }}</td>
                 <td>
                     <a href="{% url review_detail proposal.pk %}">
-                        <small><strong>{{ proposal.speaker }}</strong></small>
+                        <strong>{{ proposal.title }}</strong>
                         <br />
-                        {{ proposal.title }}
+                        <em>{{ proposal.speaker }}</em>
                     </a>
                 </td>
-                <td>{{ proposal.track }}</td>
+                <td>{{ proposal.kind }}<br/>{{ proposal.category }}</td>
                 <td>{{ proposal.comment_count }}</td>
                 <td>{{ proposal.plus_one }}</td>
                 <td>{{ proposal.plus_zero }}</td>

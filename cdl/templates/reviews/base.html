@@ -78,7 +78,7 @@
                         </li>
                         {% if request.user.is_staff %}
                             <li>
-                                <a href="{% url result_notification section.section.slug 'accepted' %}">Result Notification</a>
+                                <a href="{% url result_notification section.section.slug 'accepted' %}">{% trans "Result Notification" %}</a>
                             </li>
                         {% endif %}
                     {% endfor %}
@@ -100,7 +100,7 @@
         $(function() {
             $(".tip").tooltip();
             $("table.table-reviews").dataTable({
-                "sDom": "<'row'<'col-sm-3'l><'col-sm-3'T><'col-sm-4'f>r>t<'row'<'col-sm-3'i><'col-sm-5'p>>",
+                "sDom": "<'row'<'col-sm-3'l><'col-sm-3'T><'col-sm-4'f>r>t<'row'<'col-sm-3'i><'col-sm-5 pull-right'p>>",
                 "sPaginationType": "bootstrap",
                 "bStateSave": true,
                 "oTableTools": {
