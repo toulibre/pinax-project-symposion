@@ -19,6 +19,16 @@ h2, h3, h4 {
 header {
     padding-top: 80px;
     background: url('../img/photos-horizontal.jpg') repeat-x top center;
+    #communiquer {
+        text-align:right;
+        @media (min-width: @grid-float-breakpoint) {
+            position: absolute;
+            right: 0;
+            top: -25px;
+            background-color: @navbar-inverse-bg;
+            padding: 2px 15px;
+        }
+    }
 }
 #header {
     overflow: hidden;
@@ -43,6 +53,7 @@ h2.slogan {
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
+  display: inline-block;
   font: 0/0 a;
   padding: 16px;
   background: url('../img/feed-32x32.png') no-repeat 0 0;
@@ -61,6 +72,9 @@ h2.slogan {
 }
 #communiquer a#facebook {
   background-image: url('../img/facebook-32.png');
+}
+#communiquer a#flickr {
+  background-image: url('../img/flickr-32.png');
 }
 
 /* Footer *

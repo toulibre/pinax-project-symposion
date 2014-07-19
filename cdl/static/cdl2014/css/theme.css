@@ -6218,6 +6218,18 @@ header {
   padding-top: 80px;
   background: url('../img/photos-horizontal.jpg') repeat-x top center;
 }
+header #communiquer {
+  text-align: right;
+}
+@media (min-width: 768px) {
+  header #communiquer {
+    position: absolute;
+    right: 0;
+    top: -25px;
+    background-color: #222222;
+    padding: 2px 15px;
+  }
+}
 #header {
   overflow: hidden;
 }
@@ -6226,9 +6238,9 @@ h2.text-hide {
   margin: 0;
 }
 h2.slogan {
-    font-size: 1em;
-    margin: 0;
-    color: #EEE;
+  font-size: 1em;
+  margin: 0;
+  color: #eeeeee;
 }
 #main {
   background-color: #FFFFFF;
@@ -6239,6 +6251,7 @@ h2.slogan {
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
+  display: inline-block;
   font: 0/0 a;
   padding: 16px;
   background: url('../img/feed-32x32.png') no-repeat 0 0;
@@ -6257,6 +6270,9 @@ h2.slogan {
 }
 #communiquer a#facebook {
   background-image: url('../img/facebook-32.png');
+}
+#communiquer a#flickr {
+  background-image: url('../img/flickr-32.png');
 }
 /* Footer *
  * ------ */
