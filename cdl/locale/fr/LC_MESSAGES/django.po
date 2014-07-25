@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-17 01:37+0200\n"
+"POT-Creation-Date: 2014-07-26 01:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,7 +76,7 @@ msgstr "Je préfère un créneau de 50 minutes"
 #: proposals/models.py:57
 #, fuzzy
 msgid "talk proposal"
-msgstr "proposition d'atelier"
+msgstr "proposition de conférence"
 
 #: proposals/models.py:64
 msgid "I prefer a 1h30 slot"
@@ -93,7 +93,7 @@ msgstr "proposition d'atelier"
 #: proposals/models.py:79
 #, fuzzy
 msgid "stand proposal"
-msgstr "proposition d'atelier"
+msgstr "proposition de stand"
 
 #: templates/_account_bar.html:14 templates/dashboard.html:8
 #: templates/dashboard.html.py:13
@@ -119,6 +119,18 @@ msgstr "Connexion"
 #: templates/_account_bar.html:28
 msgid "Sign up"
 msgstr "S'inscrire"
+
+#: templates/builtin_pagination.html:9 templates/builtin_pagination.html:12
+#: templates/django_pagination_pagination.html:8
+#: templates/django_pagination_pagination.html:11
+msgid "Previous"
+msgstr "Précédent"
+
+#: templates/builtin_pagination.html:18 templates/builtin_pagination.html:20
+#: templates/django_pagination_pagination.html:21
+#: templates/django_pagination_pagination.html:23
+msgid "Next"
+msgstr "Suivant"
 
 #: templates/dashboard.html:17
 msgid "Speaking"
@@ -182,40 +194,50 @@ msgstr "Partenariat"
 msgid "Apply to be a sponsor"
 msgstr "Devenir Sponsor"
 
-#: templates/dashboard.html:108
+#: templates/dashboard.html:107
+#, fuzzy
+msgid ""
+"If you or your organization would be interested in sponsorship "
+"opportunities, you will find in <a href=\"/partenariat\">sponsor section</a>."
+msgstr ""
+"Si vous ou votre entreprise êtes intéressé(e) par un partenariat, "
+"voustrouverez toutes les informations sur <a href=\"/partenariat\">la page "
+"partenariats</a>."
+
+#: templates/dashboard.html:109
 msgid "Your Sponsorship"
 msgstr "Partenariat"
 
-#: templates/dashboard.html:134 templates/reviews/review_detail.html:75
+#: templates/dashboard.html:132 templates/reviews/review_detail.html:75
 msgid "Reviews"
 msgstr "Votes"
 
-#: templates/dashboard.html:138
+#: templates/dashboard.html:136
 msgid "Review Sections"
 msgstr "Catégorie de propositions"
 
-#: templates/dashboard.html:146
+#: templates/dashboard.html:144
 msgid "Proposals you have reviewed"
 msgstr "Propositions que vous avez évaluées"
 
-#: templates/dashboard.html:150 templates/reviews/_review_table.html:6
+#: templates/dashboard.html:148 templates/reviews/_review_table.html:6
 #: templates/reviews/result_notification.html:45
 msgid "Speaker / Title"
 msgstr "Intervenant / Titre"
 
-#: templates/dashboard.html:151
+#: templates/dashboard.html:149
 msgid "Your Vote"
 msgstr "Votre Vote"
 
-#: templates/dashboard.html:198
+#: templates/dashboard.html:196
 msgid "Teams"
 msgstr "Équipes"
 
-#: templates/dashboard.html:203
+#: templates/dashboard.html:201
 msgid "Your Teams"
 msgstr "Équipes"
 
-#: templates/dashboard.html:224
+#: templates/dashboard.html:222
 msgid "Available Teams"
 msgstr "Équipes disponibles"
 
@@ -286,7 +308,7 @@ msgstr "Niveau du Public"
 
 #: templates/proposals/_proposal_fields.html:13
 msgid "Duration"
-msgstr "Description"
+msgstr "Durée"
 
 #: templates/proposals/_proposal_fields.html:17
 msgid "Additional Speakers"
@@ -529,7 +551,7 @@ msgstr "Commentaires"
 
 #: templates/reviews/review_assignment.html:30
 msgid "You do not have any assignments."
-msgstr ""
+msgstr "Vous n'avez pas encore de vote assigné"
 
 #: templates/reviews/review_detail.html:28
 #: templates/reviews/review_detail.html:49
@@ -639,6 +661,12 @@ msgstr "Ajouter Sponsor"
 #: templates/sponsorship/apply.html:18
 msgid "Apply to be a Sponsor"
 msgstr "Devenir Sponsor"
+
+#, fuzzy
+#~ msgid "As staff, you can directly <a href=\""
+#~ msgstr ""
+#~ "En tant que membre de l'équipe, vous pouvez directement <a href="
+#~ "\"'%(sponsor_add_url)s'\">ajouter un partenaire</a>"
 
 #, fuzzy
 #~ msgid "Session:"
