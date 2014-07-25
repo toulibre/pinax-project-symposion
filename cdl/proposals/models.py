@@ -71,7 +71,7 @@ class TutorialProposal(Proposal):
         verbose_name = _(u"tutorial proposal")
 
 
-class StandProposal(Proposal):
+class StandProposal(ProposalBase):
 
     organisation = models.CharField(max_length=150)
 
