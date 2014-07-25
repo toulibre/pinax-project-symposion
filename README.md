@@ -3,7 +3,7 @@ Site du Capitole du Libre
 
 Capitole du Libre web site to manage call to proposals and website. It is based on symposion.
 
-# Install
+## Install
 
 Prerequistes:
 
