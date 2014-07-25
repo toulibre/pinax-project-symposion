@@ -215,6 +215,7 @@ SYMPOSION_PAGE_REGEX = r"(([\w-]{1,})(/[\w-]{1,})*)/"
 
 PROPOSAL_FORMS = {
     "conference": "cdl.proposals.forms.TalkProposalForm",
+    "conference-akademyfr": "cdl.proposals.forms.TalkProposalForm",
     "atelier": "cdl.proposals.forms.TutorialProposalForm",
     "stand-associatif": "cdl.proposals.forms.StandProposalForm",
 }
