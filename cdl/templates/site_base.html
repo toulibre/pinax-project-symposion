@@ -6,8 +6,6 @@
 {% load markitup_tags %}
 {% load static %}
 
-{% block viewport %}{% endblock %}
-
 {% block style_base %}
     <link href="{% static "font-awesome/css/font-awesome.css" %}" rel="stylesheet">
     <link href="{% static "cdl2014/css/theme.css" %}" rel="stylesheet">
@@ -90,7 +88,7 @@
         {% sitetree_menu from "footer" include "trunk" template "sitetree/menu_bootstrap.html" %}
     </div>
     
-    <div class="pull-right">
+    <div class="site-info pull-right">
         <address id="about" class="vcard pull-left">
             Pour tout renseignement : <a class="url org" href="mailto:contact@capitoledulibre.org">contactez <span class="org">Toulibre</span></a>
         </address>&nbsp;—&nbsp;Site propulsé par <a href="http://eldarion.com/symposion/"><b>Symposion</b></a>.
