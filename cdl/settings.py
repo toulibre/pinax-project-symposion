@@ -217,6 +217,7 @@ PROPOSAL_FORMS = {
     "conference": "cdl.proposals.forms.TalkProposalForm",
     "conference-akademyfr": "cdl.proposals.forms.TalkProposalForm",
     "atelier": "cdl.proposals.forms.TutorialProposalForm",
+    "atelier-akademyfr": "cdl.proposals.forms.TutorialProposalForm",
     "stand-associatif": "cdl.proposals.forms.StandProposalForm",
 }
 
