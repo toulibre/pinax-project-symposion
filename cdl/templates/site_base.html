@@ -22,12 +22,12 @@
 {% block wrapper_class %}outer-container{% endblock %}
 
 {% block site_brand %}
-    <hgroup>
+    <section>
         <a href="{% url home %}" alt="home"><img src="{% static "cdl2014/img/logo-cdl.png" %}"
               alt="bannière" /></a>
         <h1 class="text-hide">{{ SITE_NAME }}</h1>
         <h2 class="slogan hidden-xs">L'&eacute;v&eacute;nement du Libre Toulousain</h2>
-    </hgroup>
+    </section>
 {% endblock %}
 
 {% block navbar_class %}navbar navbar-inverse{% endblock %}

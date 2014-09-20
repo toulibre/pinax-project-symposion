@@ -2,18 +2,21 @@
 
 <table class="table table-striped table-bordered table-reviews">
     <thead>
+      <tr>
         <th>#</th>
         <th>{%trans "Speaker" %}</th>
         <th>{%trans "Title" %}</th>
         <th>{%trans "Category" %}</th>
         <th>{%trans "Duration" %}</th>
         <th>{%trans "Audience Level" %}</th>
+        <th>{% trans "Status" %}</th>
         <th><span class="glyphicon glyphicon-comment"></span></th>
         <th>{%trans "+1" %}</th>
         <th>{%trans "+0" %}</th>
         <th>{%trans "-0" %}</th>
         <th>{%trans "-1" %}</th>
         <th><a href="#" class="tip" title="{%trans "Your Rating" %}"><span class="glyphicon glyphicon-user"></span></a></th>
+      </tr>
     </thead>
     
     <tbody>
@@ -26,9 +29,18 @@
                         <strong>{{ proposal.title }}</strong>
                     </a>
                 </td>
-                <td>{{ proposal.kind }}, <br/>{{ proposal.category }}</td>
+                <td>{{ proposal.category }} <small>({{ proposal.kind }})</small></td>
                 <td>{{ proposal.duration }}</td>
                 <td>{{ proposal.audience_level }}</td>
+                <td>
+                    {% with proposal.result.status as status %}
+                        <div class="{{ status }}">
+                            {% if status != "undecided" %}
+                                <span>{{ status }}</span>
+                            {% endif %}
+                        </div>
+                    {% endwith %}
+                </td>
                 <td>{{ proposal.comment_count }}</td>
                 <td>{{ proposal.plus_one }}</td>
                 <td>{{ proposal.plus_zero }}</td>
