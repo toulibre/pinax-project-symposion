@@ -6245,6 +6245,11 @@ h2.slogan {
 #main {
   background-color: #FFFFFF;
 }
+/* Postface *
+ * -------- */
+#postface {
+  background-color: #FFFFFF;
+}
 /* social links *
  * ------------ */
 #communiquer a {
