@@ -15,13 +15,13 @@
 
 {% block body_outer %}
     <div class="row">
-        <div class="span12">
+        <div class="col-sm-12">
             <div class="page-head">
                 <h1>{{ schedule.section }}</h1>
                 {% block breadcrumbs %}{% sitetree_breadcrumbs from "main" %}{% endblock %}
             </div>
         </div>
-        <div class="span12">
+        <div class="col-sm-12">
             {% box "schedule_top_"|add:schedule.section.name|slugify %}
             
             {% cache 600 "schedule-table" schedule.section %}

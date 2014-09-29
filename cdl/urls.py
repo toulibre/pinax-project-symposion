@@ -31,6 +31,7 @@ urlpatterns = patterns("",
     url(r"^teams/", include("symposion.teams.urls")),
     url(r"^reviews/", include("symposion.reviews.urls")),
     url(r"^schedule/", include("symposion.schedule.urls")),
+    url(r"^conference/", include("symposion.conference.urls")),
     url(r"^markitup/", include("markitup.urls")),
     
     url(r"^", include("symposion.cms.urls")),
