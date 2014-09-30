@@ -10,9 +10,17 @@
 {% block body %}
 
 <h1>Capitole du Libre 2014</h1>
-{% box "homepage" %}
 
-    &nbsp;
+<div class="row">
+    <div class="col-sm-5 col-md-4">
+        {% box "homepage_solibre" %}
+    </div>
+    <div class="col-sm-7 col-md-8">
+        {% box "homepage_toulibre" %}
+    </div>
+
+</div>
+
 {% endblock %}
 
 {% block postface %}

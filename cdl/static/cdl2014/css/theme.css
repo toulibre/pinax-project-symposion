@@ -6212,6 +6212,22 @@ h3,
 h4 {
   color: #777777;
 }
+.logo-100 {
+  width: 100px;
+  height: auto;
+}
+.logo-120 {
+  width: 150px;
+  height: auto;
+}
+.logo-150 {
+  width: 150px;
+  height: auto;
+}
+.logo-180 {
+  width: 180px;
+  height: auto;
+}
 /* Header *
  * ------ */
 header {
@@ -6245,10 +6261,30 @@ h2.slogan {
 #main {
   background-color: #FFFFFF;
 }
+/* Homepage *
+ * -------- */
+.home .date {
+  font-size: 1.7em;
+  color: #777777;
+  margin-bottom: 0;
+}
+.home .place {
+  font-size: 1.25em;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.home h2 {
+  color: #d03d00;
+  margin-top: 0;
+}
 /* Postface *
  * -------- */
 #postface {
   background-color: #FFFFFF;
+  padding: 20px;
+}
+#postface h2 {
+  margin-bottom: 1em;
 }
 /* social links *
  * ------------ */

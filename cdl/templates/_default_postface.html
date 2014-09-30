@@ -3,24 +3,19 @@
 {% load boxes_tags %}
 
 {% sponsor_levels as levels %}
-<!--
 
-<h4>Sponsors</h4>
 
-<div class="sponsor-list">
-    {% box "sponsor-top" %}
     {% for level in levels %}
-        {% if level.sponsors %}
-            <h3 style="margin-top: 3em;">{{ level.name }}</h3>
-            
+        {% if level.name == "Or" and level.sponsors %}
+            <h3>Sponsors {{ level }}</h3>
+            <div class="sponsor-list row">
             {% for sponsor in level.sponsors %}
-                <div style="margin: 10px 0;">
-                    <a href="{{ sponsor.external_url }}">
-                        <img src="{% thumbnail sponsor.website_logo '100x60' %}" alt="{{ sponsor.name }}" />
+                <div class="col-xs-6 col-md-3 col-lg-2">
+                    <a class="thumbnail" href="{{ sponsor.external_url }}">
+                        <img class="img-responsive logo-180" src="{{ sponsor.website_logo.url }}" alt="{{ sponsor.name }}" />
                     </a>
                 </div>
             {% endfor %}
+            </div>
         {% endif %}
     {% endfor %}
-</div>
--->
