@@ -1,0 +1,48 @@
+{% extends "site_base_onecolumn.html" %}
+
+{% load bootstrap    %}
+{% load i18n %}
+
+{% block head_title %}{{ sponsor }}{% endblock %}
+
+{% block page_title %}{% trans "Sponsorship" %}{% endblock %}
+
+{% block body %}
+    <h1>{{ sponsor.name }} <small>({{ sponsor.level }})</small></h1>
+    <div class="row">
+    <form enctype="multipart/form-data" method="POST" action="" class="form-horizontal">
+        {% csrf_token %}
+        <div class="col-md-5 col-md-push-7">
+        <fieldset>
+        <legend>{% trans "Contact information" %}</legend>
+            {{ form|bootstrap }}
+        </fieldset>
+        </div>
+        <div class="col-md-7 col-md-pull-5">
+        <h2>{{ sponsor.level }} {% trans "sponsor benefits" %}</h2>
+
+        {{ formset.management_form }}
+        {{ formset.non_form_errors }}
+
+        {% for form in formset.forms %}
+            <fieldset>
+                <legend>{{ form.instance.benefit }}</legend>
+                <div class="controls">
+                    {{ form }}
+                    <p class="help-block">{{ form.instance.benefit.description }}</p>
+                </div>
+            </fieldset>
+        {% endfor %}
+        </div>
+
+        <div class="form-actions col-md-5 col-md-push-7">
+            <input class="btn btn-primary" type="submit" value="Save" />
+            <a class="btn" href="{% url dashboard %}">Cancel</a>
+        </div>
+
+    </form>
+    </div>
+{% endblock %}
+
+{% block postface_outer %}
+{% endblock %}
