@@ -70,11 +70,11 @@
 <section id="postface">
     <div class="container">
         {% block postface_outer %}
-            <h2><a href="/partenariat" alt="Partenaires">Nos Partenaires</a> </h2>
-                    {% block postface %}
-                    {% endblock %}
+            {% block postface %}
+                <h2><a href="/partenariat" alt="Partenaires">Nos Partenaires</a> </h2>
                 <div class="clearfix"></div>
                 {% include "_default_postface.html" %}
+            {% endblock %}
                 
             </div>
         {% endblock %}
