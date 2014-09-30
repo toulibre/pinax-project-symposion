@@ -70,16 +70,12 @@
 <section id="postface">
     <div class="container">
         {% block postface_outer %}
-            <div class="row">
-                <div class="col-sm-12">
-                    <h2><a href="/partenariat" alt="Partenaires">Nos Partenaires</a> 
-                <a href="http://toulibre.org/" target="_blank">
-                    <img class="logo-150" src="http://2014.capitoledulibre.org/files/5/logo-toulibre.svg" alt="Toulibre" title="Toulibre"> 
-                </a></h2>
-                        {% block postface %}
-                        {% endblock %}
-                        {% include "_default_postface.html" %}
-                </div>
+            <h2><a href="/partenariat" alt="Partenaires">Nos Partenaires</a> </h2>
+                    {% block postface %}
+                    {% endblock %}
+                <div class="clearfix"></div>
+                {% include "_default_postface.html" %}
+                
             </div>
         {% endblock %}
     </div>
