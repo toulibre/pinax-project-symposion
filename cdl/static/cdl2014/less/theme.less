@@ -13,12 +13,27 @@ h2, h3, h4 {
     color: @gray-light;
 }
 
+/* Forms *
+ * ----- */
+
+fieldset {
+    margin-bottom: 0.75em;
+    border-bottom: @legend-border-color 1px dotted;
+}
+legend {
+    margin-bottom: 0.5em;
+    border-bottom: none;
+}
+
+/* Media *
+ * ----- */
+
 .logo-100 {
     width: 100px;
     height: auto;
 }
 .logo-120 {
-    width: 150px;
+    width: 120px;
     height: auto;
 }
 .logo-150 {
@@ -64,7 +79,7 @@ h2.slogan {
 
 /* Homepage *
  * -------- */
-.home {
+.home #main-content{
 
     .date {
         font-size: 1.7em;
@@ -90,6 +105,7 @@ h2.slogan {
     padding: 20px;
     h2 {
         margin-bottom: 1em;
+        color: @red;
     }
 }
 

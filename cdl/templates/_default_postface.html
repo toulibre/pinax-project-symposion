@@ -9,7 +9,7 @@
         {% if level.name == "Or" and level.sponsors %}
             <h3>Sponsors {{ level }}</h3>
             <div class="sponsor-list row">
-            {% for sponsor in level.sponsors %}
+            {% for sponsor in level.sponsors|dictsort:"name" %}
                 <div class="col-xs-6 col-md-3 col-lg-2">
                     <a class="thumbnail" href="{{ sponsor.external_url }}">
                         <img class="img-responsive logo-180" src="{{ sponsor.website_logo.url }}" alt="{{ sponsor.name }}" />

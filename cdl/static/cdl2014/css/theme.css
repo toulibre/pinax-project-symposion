@@ -918,7 +918,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Verdena, "Lucida Grande", sans-serif;
   font-size: 16px;
   line-height: 1.42857143;
   color: #333333;
@@ -969,7 +969,7 @@ img {
   padding: 4px;
   line-height: 1.42857143;
   background-color: #ffffff;
-  border: 1px solid #dddddd;
+  border: 1px solid transparent;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -2327,7 +2327,7 @@ legend {
   line-height: inherit;
   color: #333333;
   border: 0;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #ffffff;
 }
 label {
   display: inline-block;
@@ -4604,7 +4604,7 @@ a.list-group-item.active > .badge,
   margin-bottom: 22px;
   line-height: 1.42857143;
   background-color: #ffffff;
-  border: 1px solid #dddddd;
+  border: 1px solid transparent;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -6212,6 +6212,18 @@ h3,
 h4 {
   color: #777777;
 }
+/* Forms *
+ * ----- */
+fieldset {
+  margin-bottom: 0.75em;
+  border-bottom: #ffffff 1px dotted;
+}
+legend {
+  margin-bottom: 0.5em;
+  border-bottom: none;
+}
+/* Media *
+ * ----- */
 .logo-100 {
   width: 100px;
   height: auto;
@@ -6263,17 +6275,17 @@ h2.slogan {
 }
 /* Homepage *
  * -------- */
-.home .date {
+.home #main-content .date {
   font-size: 1.7em;
   color: #777777;
   margin-bottom: 0;
 }
-.home .place {
+.home #main-content .place {
   font-size: 1.25em;
   margin-bottom: 0;
   font-weight: bold;
 }
-.home h2 {
+.home #main-content h2 {
   color: #d03d00;
   margin-top: 0;
 }
@@ -6285,6 +6297,7 @@ h2.slogan {
 }
 #postface h2 {
   margin-bottom: 1em;
+  color: #d03d00;
 }
 /* social links *
  * ------------ */
