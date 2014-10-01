@@ -23,7 +23,7 @@ urlpatterns = patterns("",
     url(r"^account/login/$", symposion.views.LoginView.as_view(), name="account_login"),
     url(r"^account/", include("account.urls")),
     
-    url(r"^partenariat/", direct_to_template, {"template": "sponsorship/list.html"}, name="sponsor_list"),
+    #~ url(r"^partenariat/", direct_to_template, {"template": "sponsorship/list.html"}, name="sponsor_list"),
     url(r"^dashboard/", symposion.views.dashboard, name="dashboard"),
     url(r"^speaker/", include("symposion.speakers.urls")),
     url(r"^proposals/", include("symposion.proposals.urls")),

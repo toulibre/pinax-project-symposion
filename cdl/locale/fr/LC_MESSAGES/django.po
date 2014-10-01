@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-26 01:09+0200\n"
+"POT-Creation-Date: 2014-10-01 02:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -95,6 +95,10 @@ msgstr "proposition d'atelier"
 msgid "stand proposal"
 msgstr "proposition de stand"
 
+#: speakers/models.py:26
+msgid "If the speaker need to be hosted."
+msgstr "Si l'intervenant a besoin d'être hébergé."
+
 #: templates/_account_bar.html:14 templates/dashboard.html:8
 #: templates/dashboard.html.py:13
 msgid "Dashboard"
@@ -153,7 +157,8 @@ msgid "Your Proposals"
 msgstr "Vos propositions"
 
 #: templates/dashboard.html:42 templates/dashboard.html.py:61
-#: templates/dashboard.html:77
+#: templates/dashboard.html:77 templates/reviews/_review_table.html:8
+#: templates/reviews/result_notification.html:50
 msgid "Title"
 msgstr "Titre"
 
@@ -163,7 +168,8 @@ msgid "Session type"
 msgstr "Type de session"
 
 #: templates/dashboard.html:44 templates/dashboard.html.py:63
-#: templates/dashboard.html:79 templates/reviews/result_notification.html:47
+#: templates/dashboard.html:79 templates/reviews/_review_table.html:12
+#: templates/reviews/result_notification.html:52
 msgid "Status"
 msgstr "Statut"
 
@@ -185,7 +191,8 @@ msgstr ""
 msgid "Proposals you have been invited to join"
 msgstr "Propositions que vous avez été invité(e) à rejoindre"
 
-#: templates/dashboard.html:94
+#: templates/dashboard.html:94 templates/sponsorship/detail.html:8
+#: templates/sponsorship/list.html:8
 msgid "Sponsorship"
 msgstr "Partenariat"
 
@@ -198,11 +205,16 @@ msgstr "Devenir Sponsor"
 #, fuzzy
 msgid ""
 "If you or your organization would be interested in sponsorship "
-"opportunities, you will find in <a href=\"/partenariat\">sponsor section</a>."
+"opportunities, you will find in"
 msgstr ""
 "Si vous ou votre entreprise êtes intéressé(e) par un partenariat, "
 "voustrouverez toutes les informations sur <a href=\"/partenariat\">la page "
 "partenariats</a>."
+
+#: templates/dashboard.html:107
+#, fuzzy
+msgid "sponsor section"
+msgstr "Partenariat"
 
 #: templates/dashboard.html:109
 msgid "Your Sponsorship"
@@ -220,8 +232,7 @@ msgstr "Catégorie de propositions"
 msgid "Proposals you have reviewed"
 msgstr "Propositions que vous avez évaluées"
 
-#: templates/dashboard.html:148 templates/reviews/_review_table.html:6
-#: templates/reviews/result_notification.html:45
+#: templates/dashboard.html:148
 msgid "Speaker / Title"
 msgstr "Intervenant / Titre"
 
@@ -303,10 +314,12 @@ msgid "Track"
 msgstr "Thématique"
 
 #: templates/proposals/_proposal_fields.html:10
+#: templates/reviews/_review_table.html:11
 msgid "Audience Level"
 msgstr "Niveau du Public"
 
 #: templates/proposals/_proposal_fields.html:13
+#: templates/reviews/_review_table.html:10
 msgid "Duration"
 msgstr "Durée"
 
@@ -486,27 +499,33 @@ msgid "Save and Add Additional Speakers"
 msgstr "Sauvegarder et ajouter des intervenants"
 
 #: templates/reviews/_review_table.html:7
-#: templates/reviews/result_notification.html:46
+#: templates/reviews/result_notification.html:49
+#, fuzzy
+msgid "Speaker"
+msgstr "Biographie de l'Intervenant"
+
+#: templates/reviews/_review_table.html:9
+#: templates/reviews/result_notification.html:51
 msgid "Category"
 msgstr "Catégorie"
 
-#: templates/reviews/_review_table.html:9
+#: templates/reviews/_review_table.html:14
 msgid "+1"
 msgstr ""
 
-#: templates/reviews/_review_table.html:10
+#: templates/reviews/_review_table.html:15
 msgid "+0"
 msgstr ""
 
-#: templates/reviews/_review_table.html:11
+#: templates/reviews/_review_table.html:16
 msgid "-0"
 msgstr ""
 
-#: templates/reviews/_review_table.html:12
+#: templates/reviews/_review_table.html:17
 msgid "-1"
 msgstr ""
 
-#: templates/reviews/_review_table.html:13
+#: templates/reviews/_review_table.html:18
 msgid "Your Rating"
 msgstr "Votre Vote"
 
@@ -521,19 +540,38 @@ msgstr ""
 "Si vous pensez que ceci est un bug, n'hésitez pas à contacter "
 "l'administrateur.\n"
 
-#: templates/reviews/base.html:64
+#: templates/reviews/base.html:71
 msgid "All Reviews"
 msgstr "Toutes les évaluations"
 
-#: templates/reviews/base.html:77
+#: templates/reviews/base.html:84
 msgid "Voting Status"
 msgstr "Statut du vote"
 
-#: templates/reviews/base.html:82
+#: templates/reviews/base.html:89
+#: templates/reviews/result_notification.html:24
 msgid "Result Notification"
 msgstr "Notification des résultats"
 
-#: templates/reviews/result_notification.html:48
+#: templates/reviews/result_notification.html:17
+#, fuzzy
+msgid "accepted"
+msgstr "Acceptée"
+
+#: templates/reviews/result_notification.html:19
+#, fuzzy
+msgid "rejected"
+msgstr "Rejetée"
+
+#: templates/reviews/result_notification.html:21
+#: templates/reviews/review_detail.html:29
+#: templates/reviews/review_detail.html:39
+#: templates/reviews/review_detail.html:59
+#, fuzzy
+msgid "standby"
+msgstr "En suspens"
+
+#: templates/reviews/result_notification.html:53
 msgid "Notified?"
 msgstr "Notifié ?"
 
@@ -559,13 +597,6 @@ msgstr "Vous n'avez pas encore de vote assigné"
 #, fuzzy
 msgid "reject"
 msgstr "rejeter"
-
-#: templates/reviews/review_detail.html:29
-#: templates/reviews/review_detail.html:39
-#: templates/reviews/review_detail.html:59
-#, fuzzy
-msgid "standby"
-msgstr "En suspens"
 
 #: templates/reviews/review_detail.html:30
 #: templates/reviews/review_detail.html:40
@@ -661,6 +692,26 @@ msgstr "Ajouter Sponsor"
 #: templates/sponsorship/apply.html:18
 msgid "Apply to be a Sponsor"
 msgstr "Devenir Sponsor"
+
+#: templates/sponsorship/detail.html:17
+msgid "Contact information"
+msgstr "Informations du contact"
+
+#: templates/sponsorship/detail.html:22
+msgid "sponsor benefits"
+msgstr "avantages"
+
+#: templates/sponsorship/list.html:13
+msgid "Nos partenaires"
+msgstr ""
+
+#, fuzzy
+#~ msgid "About our sponsors"
+#~ msgstr "Partenariat"
+
+#, fuzzy
+#~ msgid "About Our Sponsors"
+#~ msgstr "Partenariat"
 
 #, fuzzy
 #~ msgid "As staff, you can directly <a href=\""
