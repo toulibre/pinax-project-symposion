@@ -42,7 +42,7 @@
     {% for speaker in presentation.speakers %}
         <h3><em>{{ speaker }}</em></h3>
         <div class="speaker-bio">{{ speaker.biography }}</div>
-        <p><a href="{% url speaker_profile speaker.pk %}">{% trans "See more" %}</p>
+        <p><a href="{% url speaker_profile speaker.pk %}">{% trans "See more" %}</a></p>
     
     {% endfor %}
     
