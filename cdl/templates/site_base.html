@@ -23,7 +23,7 @@
 
 {% block site_brand %}
     <section>
-        <a href="{% url home %}" alt="home"><img src="{% static "cdl2014/img/logo-cdl.png" %}"
+        <a href="{% url home %}"><img src="{% static "cdl2014/img/logo-cdl.png" %}"
               alt="bannière" /></a>
         <h1 class="text-hide">{{ SITE_NAME }}</h1>
         <h2 class="slogan hidden-xs">L'&eacute;v&eacute;nement du Libre Toulousain</h2>
@@ -71,12 +71,10 @@
     <div class="container">
         {% block postface_outer %}
             {% block postface %}
-                <h2><a href="/partenariat" alt="Partenaires">Nos Partenaires</a> </h2>
+                <h2><a href="/sponsors">Nos Partenaires</a> </h2>
                 <div class="clearfix"></div>
                 {% include "_default_postface.html" %}
             {% endblock %}
-                
-            </div>
         {% endblock %}
     </div>
 </section>

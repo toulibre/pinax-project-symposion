@@ -1,0 +1,30 @@
+{% extends "site_base_onecolumn.html" %}
+
+{% load i18n %}
+{% load cache %}
+{% load sitetree %}
+
+{% block head_title %}Presentation Listing{% endblock %}
+
+{% block breadcrumbs %}{% sitetree_breadcrumbs from "main" %}{% endblock %}
+
+{% block body %}
+    <h2>Accepted {{ schedule.section.name }}</h2>
+    {% cache 600 "schedule-list" schedule.section.name %}
+        {% for presentation in presentations %}
+        <div class="col-sm-6 col-md-4 presentation well">
+            <h3><a href="{% url schedule_presentation_detail presentation.pk %}">{{ presentation.title }}</a></h3>
+            <h4>{{ presentation.speakers|join:", " }} in {{ presentation.proposal.category }}</h4>
+            {{ presentation.description }}
+            {% if presentation.slot %}
+                <h4>
+                    {{ presentation.slot.day.date|date:"l" }}
+                    {{ presentation.slot.start}}&ndash;{{ presentation.slot.end }}
+                    in
+                    {{ presentation.slot.rooms|join:", " }}
+                </h4>
+            {% endif %}
+        </div>
+        {% endfor %}
+    {% endcache %}
+{% endblock %}

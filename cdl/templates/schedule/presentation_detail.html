@@ -1,0 +1,50 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+{% load bootstrap %}
+{% load sitetree %}
+
+{% block head_title %}{{ presentation.title }}{% endblock %}
+
+{% block breadcrumbs %}{% sitetree_breadcrumbs from "main" %}{% endblock %}
+
+{% block body %}
+    {% if presentation.slot %}
+    <div class="pull-right">
+    <span>{{ presentation.slot.day.date|date:"l" }} {{ presentation.slot.start}}&ndash;{{ presentation.slot.end }}</span>
+    <span>{{ presentation.slot }}</span>
+    </div>
+    {% endif %}
+    <h1>{{ presentation.title }}</h1>
+
+    <p>
+        {% for speaker in presentation.speakers %}<em>{{ speaker }}</em>{% if not forloop.last %}, {% endif %}{% endfor %}
+    </p>
+    
+    <dl class="dl-horizontal">
+        <dt>Th&eacute;matique</dt>
+        <dd>{{ presentation.proposal.category }}</dd>
+        <dt>Niveau</dt>
+        <dd style="margin-bottom: 0;">{{ presentation.proposal.get_audience_level_display }}</dd>
+    </dl>
+    <h2>Description</h2>
+
+    <div class="description">{{ presentation.description }}</div>
+
+    <h2>{% trans "Abstract" %}</h2>
+
+    <div class="abstract">{{ presentation.abstract|safe }}</div>
+{% endblock %}
+
+{% block sidebar %}
+<section>
+    <h2>{% trans "Speakers" %}</h2>
+    {% for speaker in presentation.speakers %}
+        <h3><em>{{ speaker }}</em></h3>
+        <div class="speaker-bio">{{ speaker.biography }}</div>
+        <p><a href="{% url speaker_profile speaker.pk %}">{% trans "See more" %}</p>
+    
+    {% endfor %}
+    
+</section>
+{% endblock %}

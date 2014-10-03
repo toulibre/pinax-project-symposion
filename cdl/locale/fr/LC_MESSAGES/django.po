@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-01 02:23+0200\n"
+"POT-Creation-Date: 2014-10-04 00:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -337,6 +337,7 @@ msgstr "Description"
 
 #: templates/proposals/_proposal_fields.html:34
 #: templates/reviews/review_review.html:26
+#: templates/schedule/presentation_detail.html:34
 msgid "Abstract"
 msgstr "Résumé"
 
@@ -673,6 +674,15 @@ msgstr "Détail de la proposition"
 msgid "Comment"
 msgstr "Commentaire"
 
+#: templates/schedule/presentation_detail.html:41
+#, fuzzy
+msgid "Speakers"
+msgstr "Intervenants"
+
+#: templates/schedule/presentation_detail.html:45
+msgid "See more"
+msgstr "Voir plus"
+
 #: templates/speakers/speaker_create.html:7
 #: templates/speakers/speaker_create.html:14
 msgid "Create Speaker Profile"
@@ -703,7 +713,7 @@ msgstr "avantages"
 
 #: templates/sponsorship/list.html:13
 msgid "Nos partenaires"
-msgstr ""
+msgstr "Nos partenaires"
 
 #, fuzzy
 #~ msgid "About our sponsors"

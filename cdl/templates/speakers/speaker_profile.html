@@ -1,4 +1,4 @@
-{% extends "site_base.html" %}
+{% extends "site_base_onecolumn.html" %}
 
 {% load i18n %}
 {% load thumbnail %}
@@ -22,6 +22,8 @@
             <h1>{{ speaker.name }}</h1>
             <div class="bio">{{ speaker.biography|safe }}</div>
             
+        </div>
+        <div class="col-sm-12">
             <h2>Presentations</h2>
             {% for presentation in presentations %}
                 <h3><a href="{% url schedule_presentation_detail presentation.pk %}">{{ presentation.title }}</a></h3>
@@ -38,4 +40,7 @@
             {% endfor %}
         </div>
     </div>
+{% endblock %}
+
+{% block sidebar %}
 {% endblock %}
