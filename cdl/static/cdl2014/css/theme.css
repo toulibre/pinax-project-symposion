@@ -6229,7 +6229,7 @@ legend {
   height: auto;
 }
 .logo-120 {
-  width: 150px;
+  width: 120px;
   height: auto;
 }
 .logo-150 {
@@ -6340,4 +6340,19 @@ footer a {
 }
 footer .site-info {
   padding: 16px 10px;
+}
+/* Presentations 
+ * ------------- */
+.presentation h3 {
+  margin: 0;
+}
+.presentation .presentation-category {
+  float: right;
+  color: white;
+  margin-right: -15px;
+  padding-left: 3px;
+  padding-right: 3px;
+  background-color: black;
+  font-size: 0.9em;
+  font-weight: bold;
 }
