@@ -6343,16 +6343,14 @@ footer .site-info {
 }
 /* Presentations 
  * ------------- */
-.presentation h3 {
-  margin: 0;
-}
 .presentation .presentation-category {
-  float: right;
-  color: white;
-  margin-right: -15px;
+  position: absolute;
+  top: 0;
+  right: 15px;
   padding-left: 3px;
   padding-right: 3px;
+  color: white;
   background-color: black;
-  font-size: 0.9em;
+  font-size: 0.85em;
   font-weight: bold;
 }

@@ -15,18 +15,18 @@
         {% for presentation in presentations %}
         <div class="col-sm-6 presentation">
             <div class=" well">
-            <h3><a href="{% url schedule_presentation_detail presentation.pk %}">{{ presentation.title }}</a></h3>
-            <div class="presentation-category">{{ presentation.proposal.category }}</div>
-            <h4>{{ presentation.speakers|join:", " }}</h4>
-            {{ presentation.description }}
-            {% if presentation.slot %}
-                <div class="presentation-slot">
-                    {{ presentation.slot.day.date|date:"l" }}
-                    {{ presentation.slot.start}}&ndash;{{ presentation.slot.end }}
-                    in
-                    {{ presentation.slot.rooms|join:", " }}
-                </div>
-            {% endif %}
+                <h3><a href="{% url schedule_presentation_detail presentation.pk %}">{{ presentation.title }}</a></h3>
+                <div class="presentation-category">{{ presentation.proposal.category }}</div>
+                <h4>{{ presentation.speakers|join:", " }}</h4>
+                {{ presentation.description }}
+                {% if presentation.slot %}
+                    <div class="presentation-slot">
+                        {{ presentation.slot.day.date|date:"l" }}
+                        {{ presentation.slot.start}}&ndash;{{ presentation.slot.end }}
+                        in
+                        {{ presentation.slot.rooms|join:", " }}
+                    </div>
+                {% endif %}
             </div>
         </div>
         {% endfor %}
