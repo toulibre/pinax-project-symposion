@@ -8,13 +8,11 @@
 
 {% block body %}
     <div class="row">
+        {% if speaker.photo %}
         <div class="col-sm-2">
-            {% if speaker.photo %}
-                <img src="{% thumbnail speaker.photo '128x128' %}" alt="{{ speaker.name }}" />
-            {% else %}
-                &nbsp;
-            {% endif %}
+            <img src="{% thumbnail speaker.photo '128x128' %}" alt="{{ speaker.name }}" />
         </div>
+        {% endif %}
         <div class="col-sm-6">
             {% if speaker.user == request.user or request.user.is_staff %}
                 <a class="btn pull-right" href="{% url speaker_edit speaker.pk %}">Edit</a>

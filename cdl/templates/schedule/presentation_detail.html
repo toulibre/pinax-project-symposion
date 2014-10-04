@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load bootstrap %}
+{% load thumbnail %}
 {% load sitetree %}
 
 {% block head_title %}{{ presentation.title }}{% endblock %}
@@ -41,6 +42,9 @@
     <h2>{% trans "Speakers" %}</h2>
     {% for speaker in presentation.speakers %}
         <h3><em>{{ speaker }}</em></h3>
+        {% if speaker.photo %}
+        <img src="{% thumbnail speaker.photo '128x128' %}" class="pull-right" alt="{{ speaker.name }}" />
+        {% endif %}
         <div class="speaker-bio">{{ speaker.biography }}</div>
         <p><a href="{% url speaker_profile speaker.pk %}">{% trans "See more" %}</a></p>
     
