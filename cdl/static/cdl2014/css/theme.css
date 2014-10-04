@@ -6343,6 +6343,12 @@ footer .site-info {
 }
 /* Presentations 
  * ------------- */
+.presentation h2 {
+  font-size: 1.7em;
+}
+.presentation h3 {
+  font-size: 1.25em;
+}
 .presentation .presentation-category {
   position: absolute;
   top: 0;
