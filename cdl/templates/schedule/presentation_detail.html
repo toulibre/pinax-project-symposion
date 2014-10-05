@@ -23,18 +23,23 @@
     </p>
     
     <dl class="dl-horizontal">
+        {% if presentation.proposal.category %}
         <dt>Th&eacute;matique</dt>
         <dd>{{ presentation.proposal.category }}</dd>
+        {% endif %}
+        {% if presentation.proposal.get_audience_level_display %}
         <dt>Niveau</dt>
         <dd style="margin-bottom: 0;">{{ presentation.proposal.get_audience_level_display }}</dd>
+        {% endif %}
     </dl>
     <h2>Description</h2>
 
     <div class="description">{{ presentation.description }}</div>
 
+    {% if presentation.abstract %}
     <h2>{% trans "Abstract" %}</h2>
-
     <div class="abstract">{{ presentation.abstract|safe }}</div>
+    {% endif %}
 {% endblock %}
 
 {% block sidebar %}
