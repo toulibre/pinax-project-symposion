@@ -1,0 +1,2 @@
+"#","Title","Speakers","Description"{% for p in presentations %}
+{{p.pk}},"{{p.title}}","{{p.speakers|join:"\n"}}","{{p.description|striptags}}"{% endfor %}
