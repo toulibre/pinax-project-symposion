@@ -32,7 +32,7 @@ def speaker_edit_staff(request, pk=None):
             if request.user.is_staff:
                 return redirect("user_list")
             else:
-                return redirect("speaker_profile")
+                return redirect("dashboard")
     else:
         form = SpeakerForm(instance=speaker)
     
