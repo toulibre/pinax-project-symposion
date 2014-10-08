@@ -75,9 +75,9 @@
                                 <td>{{ user.get_full_name }}</td>
                                 <td>
                                     {% if user.speaker_profile %}
-                                        <a href="{% url speaker_profile user.speaker_profile.pk %}">{{ user.speaker_profile }}</a> 
-                                        <a href="/admin/speakers/speaker/{{ user.speaker_profile.pk }}" title="Edit in admin" alt="Edit in admin" target="_blank">
-                                            <span class="glyphicon glyphicon-pencil"></span><span class="text-hide">Edit in admin</span></a>
+                                        <a href="{% url speaker_profile user.speaker_profile.pk %}">{{ user.speaker_profile }}</a> &mdash;
+                                        <small><a href="{% url speaker_edit_staff user.speaker_profile.pk %}" title="Edit" alt="Edit" >
+                                            <span class="glyphicon glyphicon-pencil"></span> Edit</a></small>
                                     {% else %}
                                         <a href="{% url speaker_create_staff user.pk %}" class="btn btn-xs btn-default">create</a>
                                     {% endif %}
