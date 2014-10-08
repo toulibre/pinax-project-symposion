@@ -85,7 +85,7 @@
                                 <td><ul>{% for presentation in user.speaker_profile.all_presentations %}
                                 <li><a href="{% url schedule_presentation_detail presentation.pk %}">#{{ presentation.proposal.number }} &mdash; {{ presentation.title }}</a> <small>{{ presentation.section|cut:"Capitole du Libre " }}</small></li>
                                 {% endfor %}</ul></td>
-                                <td>{{ user.annotation }}</td>
+                                <td>{{ user.speaker_profile.annotation }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
