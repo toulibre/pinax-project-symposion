@@ -29,7 +29,10 @@ def speaker_edit_staff(request, pk=None):
         if form.is_valid():
             form.save()
             messages.success(request, "Speaker profile updated.")
-            return redirect("user_list")
+            if request.user.is_staff:
+                return redirect("user_list")
+            else:
+                return redirect("speaker_profile")
     else:
         form = SpeakerForm(instance=speaker)
     
