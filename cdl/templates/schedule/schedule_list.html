@@ -10,7 +10,22 @@
 
 {% block body %}
     <h1>{{ schedule.section.name }}</h1>
-    {% cache 600 "schedule-list" schedule.section.name %}
+
+    {% if schedule.section.slug != "stand-associatif" %}
+        <ul class="nav nav-tabs">
+            <li {% if not category %}class="active"{% endif %}><a href="{% url schedule_list schedule.section.slug %}"><small>&lt;&lt;</small></a></li>
+            {% for categ in categories %}
+            <li {% if category and categ == category %}class="active"{% endif %}><a href="{% url schedule_list_category schedule.section.slug categ.slug %}">{{ categ }}</a></li>
+            {% endfor %}
+        </ul>
+        {% if category  %}
+            <h2>{{ category }}</h2>
+            {% if not presentations %}<p>Pas de pr&eacute;sentations dans cette th&eacute;matique. <a href="{% url schedule_list schedule.section.slug %}">Retour &agrave; toutes les th&eacute;matiques</a></p>{% endif %}
+        {% else %}
+            <h2>Toutes th&eacute;matiques</h2>
+        {% endif %}
+    {% endif %}
+
     <div class="row">
         {% for presentation in presentations %}
         <div class="col-sm-6 presentation">
@@ -31,5 +46,4 @@
         </div>
         {% endfor %}
     </div>
-    {% endcache %}
 {% endblock %}
