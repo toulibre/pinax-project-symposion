@@ -50,39 +50,51 @@
     </style>
 {% endblock %}
 
-{% block body_outer %}
-    <div class="row">
-        <div class="span12">
-            <h1>User List</h1>
-            <table class="table table-striped table-bordered table-reviews">
-                <thead>
-                    <th>{% trans "Email" %}</th>
-                    <th>{% trans "Name" %}</th>
-                    <th>{% trans "Speaker Profile?" %}</th>
-                    <th>{% trans "Proposals" %}</th>
-                </thead>
-                
-                <tbody>
-                    {% for user in users %}
-                        <tr>
-                            <td>{{ user.email }}</td>
-                            <td>{{ user.get_full_name }}</td>
-                            <td>
-                                {% if user.speaker_profile %}
-                                    <a href="{% url speaker_profile user.speaker_profile.pk %}">{{ user.speaker_profile }}</a>
-                                {% else %}
-                                    <a href="{% url speaker_create_staff user.pk %}" class="btn btn-xs btn-default">create</a>
-                                {% endif %}
-                            </td>
-                            <td><ul>{% for presentation in user.speaker_profile.all_presentations %}
-                            <li><a href="{% url schedule_presentation_detail presentation.pk %}">{{ presentation.title }}</a> <small>{{ presentation.section|cut:"Capitole du Libre " }}</small></li>
-                            {% endfor %}</ul></td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+{% block body_base %}
+
+<section id="main-content">
+    <div class="container-fluid">
+
+    {% block body_outer %}
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>User List</h1>
+                <table class="table table-striped table-bordered table-reviews">
+                    <thead>
+                        <th>{% trans "Email" %}</th>
+                        <th>{% trans "Name" %}</th>
+                        <th>{% trans "Speaker Profile?" %}</th>
+                        <th>{% trans "Proposals" %}</th>
+                        <th>{% trans "Annotations" %}</th>
+                    </thead>
+                    
+                    <tbody>
+                        {% for user in users %}
+                            <tr>
+                                <td>{{ user.email }}</td>
+                                <td>{{ user.get_full_name }}</td>
+                                <td>
+                                    {% if user.speaker_profile %}
+                                        <a href="{% url speaker_profile user.speaker_profile.pk %}">{{ user.speaker_profile }}</a> 
+                                        <a href="/admin/speakers/speaker/{{ user.speaker_profile.pk }}" title="Edit in admin" alt="Edit in admin" target="_blank">
+                                            <span class="glyphicon glyphicon-pencil"></span><span class="text-hide">Edit in admin</span></a>
+                                    {% else %}
+                                        <a href="{% url speaker_create_staff user.pk %}" class="btn btn-xs btn-default">create</a>
+                                    {% endif %}
+                                </td>
+                                <td><ul>{% for presentation in user.speaker_profile.all_presentations %}
+                                <li><a href="{% url schedule_presentation_detail presentation.pk %}">#{{ presentation.proposal.number }} &mdash; {{ presentation.title }}</a> <small>{{ presentation.section|cut:"Capitole du Libre " }}</small></li>
+                                {% endfor %}</ul></td>
+                                <td>{{ user.annotation }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>
+    {% endblock %}
     </div>
+</section>
 {% endblock %}
 
 {% block extra_script %}
