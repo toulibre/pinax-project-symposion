@@ -81,7 +81,8 @@
                                     {% endif %}
                                 </td>
                                 <td><ul>{% for presentation in user.speaker_profile.all_presentations %}
-                                <li><a href="{% url schedule_presentation_detail presentation.pk %}">#{{ presentation.proposal.number }} &mdash; {{ presentation.title }}</a> <small>{{ presentation.section|cut:"Capitole du Libre " }}</small></li>
+                                <li><a href="{% url schedule_presentation_detail presentation.pk %}">#{{ presentation.proposal.number }} &mdash; {{ presentation.title }}</a> <small>{{ presentation.proposal.kind }} {{ presentation.proposal.category }}</small> <a href="/admin/schedule/presentation/{{ presentation.pk }}" title="Edit" alt="Edit" >
+                                            <span class="glyphicon glyphicon-pencil"></span> Edit</a></li>
                                 {% endfor %}</ul></td>
                                 <td>{{ user.speaker_profile.annotation|linebreaks }}</td>
                             </tr>
