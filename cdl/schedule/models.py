@@ -6,7 +6,7 @@ from symposion.schedule.models import Presentation, Room, Day
 
 class PresentationSession(models.Model):
 
-    presentation = models.OneToOneField(Presentation, related_name="presentation")
+    presentation = models.OneToOneField(Presentation, related_name="session")
     day = models.ForeignKey(Day, related_name="day")
     start = models.TimeField()
     end = models.TimeField()
@@ -16,4 +16,4 @@ class PresentationSession(models.Model):
         return u"%s - %s to %s : %s" % (self.day, self.start, self.end, self.presentation, )
 
     class Meta:
-        ordering = ["day", "start", "end"]
+        ordering = ["room", "day", "start", "end"]

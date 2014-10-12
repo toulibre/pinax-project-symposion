@@ -34,14 +34,12 @@
 
                 <div class="presentation-category">{{ presentation.proposal.category }}</div>
 
-                {% for session in presentation_sessions %}
-                    {% if presentation == session.presentation %}
-                    <p class="session"><span class="date">{{ session.day.date|date:"l d b" }}</span>,
-                    <span class="time">{{ session.start|date:"H:i" }} &ndash; {{ session.end|date:"H:i" }}</span>
-                    <span class="label label-danger">{{ session.room }}</span>
-                    </p>
-                    {% endif %}
-                {% endfor %}
+                {% if presentation.session %}
+                <p class="presentation.session"><span class="date">{{ presentation.session.day.date|date:"l d b" }}</span>,
+                <span class="time">{{ presentation.session.start|date:"H:i" }} &ndash; {{ presentation.session.end|date:"H:i" }}</span>
+                <span class="label label-danger">{{ presentation.session.room }}</span>
+                </p>
+                {% endif %}
 
                 {{ presentation.description }}
 
