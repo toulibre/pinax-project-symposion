@@ -31,6 +31,13 @@
         <dt>Niveau</dt>
         <dd style="margin-bottom: 0;">{{ presentation.proposal.get_audience_level_display }}</dd>
         {% endif %}
+        {% if presentation.session %}
+        <dt>Horaire</dt><dd><span class="date">{{ presentation.session.day.date|date:"l d b" }}</span>,
+        <span class="time">{{ presentation.session.start|date:"H:i" }} &ndash; {{ presentation.session.end|date:"H:i" }}</span></dd>
+        <dt>Salle</dt><dd><span class="label label-danger">{{ presentation.session.room }}</span></dd>
+        </p>
+        {% endif %}
+
     </dl>
     <h2>Description</h2>
 
@@ -44,7 +51,7 @@
 
 {% block sidebar %}
 <section class="media">
-    <h2>{% trans "Speakers" %}</h2>
+    <h2 class="text-hide">Intervenant(es)</h2>
     {% for speaker in presentation.speakers %}
         <h3><em>{{ speaker }}</em></h3>
         {% if speaker.photo %}

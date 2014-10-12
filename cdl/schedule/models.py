@@ -16,4 +16,4 @@ class PresentationSession(models.Model):
         return u"%s - %s to %s : %s" % (self.day, self.start, self.end, self.presentation, )
 
     class Meta:
-        ordering = ["room", "day", "start", "end"]
+        ordering = ["day", "room", "start", "end"]
