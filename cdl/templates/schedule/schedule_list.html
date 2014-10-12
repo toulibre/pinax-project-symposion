@@ -30,18 +30,21 @@
         {% for presentation in presentations %}
         <div class="col-sm-6 presentation">
             <div class=" well">
-                <h2><a href="{% url schedule_presentation_detail presentation.pk %}">{{ presentation.title }}</a></h2>
+                <h2><a href="{% url schedule_presentation_detail presentation.pk %}">{{ presentation.title }}</a> <small>{{ presentation.speakers|join:", " }}</small></h2>
+
                 <div class="presentation-category">{{ presentation.proposal.category }}</div>
-                <h3>{{ presentation.speakers|join:", " }}</h3>
+
+                {% for session in presentation_sessions %}
+                    {% if presentation == session.presentation %}
+                    <p class="session"><span class="date">{{ session.day.date|date:"l d b" }}</span>,
+                    <span class="time">{{ session.start|date:"H:i" }} &ndash; {{ session.end|date:"H:i" }}</span>
+                    <span class="label label-danger">{{ session.room }}</span>
+                    </p>
+                    {% endif %}
+                {% endfor %}
+
                 {{ presentation.description }}
-                {% if presentation.slot %}
-                    <div class="presentation-slot">
-                        {{ presentation.slot.day.date|date:"l" }}
-                        {{ presentation.slot.start}}&ndash;{{ presentation.slot.end }}
-                        in
-                        {{ presentation.slot.rooms|join:", " }}
-                    </div>
-                {% endif %}
+
             </div>
         </div>
         {% endfor %}
