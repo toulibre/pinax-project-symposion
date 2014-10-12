@@ -13,7 +13,7 @@
 
     {% if schedule.section.slug != "stand-associatif" %}
         <ul class="nav nav-tabs">
-            <li {% if not category %}class="active"{% endif %}><a href="{% url schedule_list schedule.section.slug %}"><small>&lt;&lt;</small></a></li>
+            <li {% if not category %}class="active"{% endif %}><a href="{% url schedule_list schedule.section.slug %}"><small>&laquo;</small></a></li>
             {% for categ in categories %}
             <li {% if category and categ == category %}class="active"{% endif %}><a href="{% url schedule_list_category schedule.section.slug categ.slug %}">{{ categ }}</a></li>
             {% endfor %}
