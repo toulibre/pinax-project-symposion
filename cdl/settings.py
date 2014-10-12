@@ -168,6 +168,8 @@ INSTALLED_APPS = [
 
     # project
     "cdl.proposals",
+    "cdl.schedule",
+    "cdl.speakers",
 ]
 
 FIXTURE_DIRS = [
