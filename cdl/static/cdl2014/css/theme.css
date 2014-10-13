@@ -6360,7 +6360,10 @@ footer .site-info {
   font-size: 0.85em;
   font-weight: bold;
 }
-.presentation .session {
+.session {
   font-size: 0.85em;
   font-weight: bold;
+}
+.page-speaker .session {
+  padding-left: 3em;
 }

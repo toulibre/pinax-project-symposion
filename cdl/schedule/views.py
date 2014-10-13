@@ -27,8 +27,6 @@ def schedule_list_category(request, slug=None, category_slug=None):
     presentations = Presentation.objects.filter(section=schedule.section)
     presentations = presentations.exclude(cancelled=True)
 
-    presentation_sessions = PresentationSession.objects.all
-
     if category_slug:
         results = []
         for presentation in presentations:
@@ -40,7 +38,6 @@ def schedule_list_category(request, slug=None, category_slug=None):
         "schedule": schedule,
         "presentations": presentations,
         "categories" : categories,
-        "presentation_sessions" : presentation_sessions,
         "category" : category or None,
     }
 

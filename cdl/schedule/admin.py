@@ -5,5 +5,5 @@ from cdl.schedule.models import PresentationSession
 
 admin.site.register(
     PresentationSession,
-    list_display=("room", "day", "start", "end", "presentation")
+    list_display=("day", "room", "start", "end", "presentation")
 )

@@ -3,6 +3,7 @@
 {% load i18n %}
 {% load thumbnail %}
 
+{% block body_class %}page-speaker{% endblock %}
 
 {% block head_title %}{{ speaker.name }}{% endblock %}
 
@@ -24,15 +25,14 @@
         <div class="col-sm-12">
             <h2>Presentations</h2>
             {% for presentation in presentations %}
-                <h3><a href="{% url schedule_presentation_detail presentation.pk %}">{{ presentation.title }}</a></h3>
-                {% if presentation.slot %}
-                    <p>
-                        {{ presentation.slot.day.date|date:"l" }}
-                        {{ presentation.slot.start}}&ndash;{{ presentation.slot.end }}
-                        in
-                        {{ presentation.slot.rooms|join:", " }}
-                    </p>
+                <h3 class="h4"><a href="{% url schedule_presentation_detail presentation.pk %}">{{ presentation.title }}</a></h3>
+                {% if presentation.session %}
+                <p class="session"><span class="date">{{ presentation.session.day.date|date:"l d b" }}</span>,
+                <span class="time">{{ presentation.session.start|date:"H:i" }} &ndash; {{ presentation.session.end|date:"H:i" }}</span>
+                <span class="label label-danger">{{ presentation.session.room }}</span>
+                </p>
                 {% endif %}
+
             {% empty %}
                 <p>No presentations. This page is only visible to staff until there is a presentation.<p>
             {% endfor %}
