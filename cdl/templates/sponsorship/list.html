@@ -16,42 +16,30 @@
     {% sponsor_levels as levels %}
     {% for level in levels %}
         {% if level.sponsors %}
-            
-            {% if level.name == "Or" %}
-                <h2>Sponsor {{ level.name }}</h2>
-                {% for sponsor in level.sponsors|dictsort:"name"  %}
-                <div class="row">
+            <h2><small>Sponsor</small> {{ level.name }}</h2>
+            <div class="row">
+            {% for sponsor in level.sponsors|dictsort:"name"  %}
+                {% if level.name == "Or" %}
                     <div class="col-sm-4 col-lg-3">
                         <h3>{% include "sponsorship/_sponsor_logo_or_name.html" %}</h3>
                     </div>
                     <div class="col-sm-8 col-lg-9">
-                        <p>{{ sponsor.listing_text|urlize|linebreaks }}</p>
+                        <div>{{ sponsor.listing_text|urlize|linebreaks }}</div>
                         <p><a href="{{ sponsor.external_url }}" target="_blank">{{ sponsor.external_url }}</a></p>
                     </div>
+                {% elif level.name == "Argent" %}
+                <div class="col-sm-6">
+                    <h3>{% include "sponsorship/_sponsor_logo_or_name.html" %}</h3>
+                    <div>{{ sponsor.listing_text|urlize|linebreaks }}</div>
+                    <p><a href="{{ sponsor.external_url }}" target="_blank">{{ sponsor.external_url }}</a></p>
                 </div>
-                {% endfor %}
-            {% elif level.name == "Argent" %}
-                <h2>Sponsor {{ level.name }}</h2>
-                <div class="row">
-                    {% for sponsor in level.sponsors|dictsort:"name"  %}
-                    <div class="col-sm-6">
-                        <h3>{% include "sponsorship/_sponsor_logo_or_name.html" %}</h3>
-                        <p>{{ sponsor.listing_text|urlize|linebreaks }}</p>
-                        <p><a href="{{ sponsor.external_url }}" target="_blank">{{ sponsor.external_url }}</a></p>
-                    </div>
-                    {% endfor %}
+                {% elif level.name == "Bronze" %}
+                <div class="col-xs-6 col-sm-3">
+                    <h3>{% include "sponsorship/_sponsor_logo_or_name.html" %}</h3>
                 </div>
-            {% elif level.name == "Bronze" %}
-                <h2>Sponsor {{ level.name }}</h2>
-                <div class="row">
-                    {% for sponsor in level.sponsors|dictsort:"name"  %}
-                    <div class="col-xs-6 col-sm-3">
-                        <h3>{% include "sponsorship/_sponsor_logo_or_name.html" %}</h3>
-                    </div>
-                    {% endfor %}
-                </div>
-            {% endif %}
-
+                {% endif %}
+            {% endfor %}
+            </div>
         {% endif %}
     {% endfor %}
 
