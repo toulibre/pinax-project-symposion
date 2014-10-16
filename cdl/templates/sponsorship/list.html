@@ -19,7 +19,7 @@
             
             {% if level.name == "Or" %}
                 <h2>Sponsor {{ level.name }}</h2>
-                {% for sponsor in level.sponsors %}
+                {% for sponsor in level.sponsors|dictsort:"name"  %}
                 <div class="row">
                     <div class="col-sm-4 col-lg-3">
                         <h3>{% include "sponsorship/_sponsor_logo_or_name.html" %}</h3>
@@ -33,7 +33,7 @@
             {% elif level.name == "Argent" %}
                 <h2>Sponsor {{ level.name }}</h2>
                 <div class="row">
-                    {% for sponsor in level.sponsors %}
+                    {% for sponsor in level.sponsors|dictsort:"name"  %}
                     <div class="col-sm-6">
                         <h3>{% include "sponsorship/_sponsor_logo_or_name.html" %}</h3>
                         <p>{{ sponsor.listing_text|urlize|linebreaks }}</p>
@@ -44,7 +44,7 @@
             {% elif level.name == "Bronze" %}
                 <h2>Sponsor {{ level.name }}</h2>
                 <div class="row">
-                    {% for sponsor in level.sponsors %}
+                    {% for sponsor in level.sponsors|dictsort:"name"  %}
                     <div class="col-xs-6 col-sm-3">
                         <h3>{% include "sponsorship/_sponsor_logo_or_name.html" %}</h3>
                     </div>
