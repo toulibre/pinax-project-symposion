@@ -45,7 +45,7 @@ def schedule_list_category(request, slug=None, category_slug=None):
 def schedule_conference(request):
 
     days = Day.objects.all()
-    rooms = Room.objects.all()
+    rooms = Room.objects.all().order_by("name")
     
     sections = []
     for day in days:
