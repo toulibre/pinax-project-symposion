@@ -24,8 +24,10 @@
             {% box "schedule_top" %}
             
             {% for section in sections %}
-            <h2>{{ section.day.date|date:"l d b" }}{% comment %} &mdash; {{ section.schedule.section.name }} {% endcomment %}</h2>
-                {% include "schedule/_grid2.html" %}
+                {% if section.sessions %}
+                <h2>{{ section.day.date|date:"l d b" }} &mdash; {{ section.schedule.section.name }}</h2>
+                    {% include "schedule/_grid2.html" %}
+                {% endif %}
             {% endfor %}
             
             {% box "schedule_bottom" %}
