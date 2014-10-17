@@ -22,11 +22,10 @@
         </div>
         <div class="col-sm-12">
             {% box "schedule_top" %}
-            
             {% for section in sections %}
-                {% if section.sessions %}
-                <h2>{{ section.day.date|date:"l d b" }} &mdash; {{ section.schedule.section.name }}</h2>
-                    {% include "schedule/_grid2.html" %}
+                {% if section.rooms_sessions %}
+                <h2><span class="date">{{ section.day.date|date:"l d b" }}</span> <small>{{ section.schedule.section.name }}</small></h2>
+                    {% include "schedule/_grid.html" %}
                 {% endif %}
             {% endfor %}
             

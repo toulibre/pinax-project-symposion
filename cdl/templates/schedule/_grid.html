@@ -1,3 +1,17 @@
+{% for room in section.rooms_sessions %}
+    {% if room.sessions %}
+    <h3>{{ room.room }}</h3>
+        <ul>
+        {% for session in room.sessions %}
+        <li class="">{{ session.start|date:"H:i" }} &ndash; {{ session.end|date:"H:i" }} &mdash; {{ session.presentation.title }} <em>{{ session.presentation.speaker }}</em></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endfor %}
+
+{% comment %}
+{% with timetable=section.timetable %}
+
 <table class="calendar table table-bordered">
     <thead>
         <tr>
@@ -7,12 +21,15 @@
             {% endfor %}
         </tr>
     </thead>
+
     <tbody>
         {% for row in timetable %}
             <tr>
                 <td class="time">{{ row.time|date:"H:i" }}</td>
                 {% for slot in row.slots %}
                     <td class="slot slot-{{ slot.kind.label }}" colspan="{{ slot.colspan }}" rowspan="{{ slot.rowspan }}">
+                        {{ slot.presentation.title }}<br />
+                        {{ slot.presentation.speaker.name }}
                         {% if slot.kind.label != "" %}
                             {% if not slot.content %}
                             {% else %}
@@ -38,4 +55,8 @@
             </tr>
         {% endfor %}
     </tbody>
+
 </table>
+
+{% endwith %}
+{% endcomment %}

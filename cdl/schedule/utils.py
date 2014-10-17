@@ -44,4 +44,25 @@ class TimeTable(object):
     @staticmethod
     def rowspan(times, start, end):
         return times.index(end) - times.index(start)
-
+#~ 
+#~ class TimeList(object):
+    #~ """Return session list by room"""
+#~ 
+    #~ def __init__(self, day):
+        #~ self.day = day
+#~ 
+    #~ def rooms(self):
+        #~ qs = Room.objects.all()
+        #~ qs = qs.filter(schedule=self.day.schedule)
+        #~ qs = qs.filter(pk__in=PresentationSession.objects.filter(room__in=self.sessions_qs().values("pk")).values("room"))
+        #~ qs = qs.order_by("order")
+        #~ return qs
+#~ 
+    #~ def __iter__():
+        #~ times = sorted(set(itertools.chain(*self.sessions_qs().values_list("start", "end"))))
+        #~ slots = PresentationSession.objects.filter(pk__in=self.sessions_qs().values("pk"))
+        #~ slots = slots.order_by("start", "order")
+        #~ for room in rooms:
+            #~ session_room = slots.filter(room=room)
+            #~ 
+        #~ 

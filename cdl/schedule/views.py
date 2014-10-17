@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from symposion.schedule.forms import SlotEditForm
 from symposion.schedule.models import Schedule, Day, Slot, Presentation, Room
 from cdl.schedule.models import PresentationSession
-from cdl.schedule.timetable import TimeTable
+from cdl.schedule.utils import TimeTable
 from symposion.schedule.views import fetch_schedule
 
 from cdl.proposals.models import ProposalCategory
@@ -43,24 +43,23 @@ def schedule_list_category(request, slug=None, category_slug=None):
     return render(request, "schedule/schedule_list.html", ctx)
 
 def schedule_conference(request):
-    
-    schedules = Schedule.objects.filter(published=True, hidden=False)
-    presentation_sessions = PresentationSession.objects.all()
+
     days = Day.objects.all()
-    #~ import pdb;pdb.set_trace()
+    rooms = Room.objects.all()
     
     sections = []
     for day in days:
-        presentation_sessions = PresentationSession.objects.filter(day=day)
-        schedules = Schedule.objects.filter(section=day.schedule.section)
-        timetable = TimeTable(day)
-        #~ presentations = Presentation.objects.filter(section=schedule.section)
+        rooms_sessions = []
+        for room in rooms:
+            presentation_sessions = PresentationSession.objects.filter(day=day).filter(room=room).order_by("start")
+            rooms_sessions.append({
+                "room" : room,
+                "sessions" : presentation_sessions,
+            })
         sections.append({
             "schedule": day.schedule,
-            "schedules": schedules,
             "day" : day,
-            "timetable" : timetable,
-            "sessions" : presentation_sessions,
+            "rooms_sessions" : rooms_sessions,
         })
     
     ctx = {
