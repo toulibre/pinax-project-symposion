@@ -1,8 +1,10 @@
-
-{% for session in section.sessions|dictsort:"room" %}
-<div class=""> {{ session.room }} &mdash; {{ session.start }} {{ session.end }}{{ session.presentation }}</div>
+<ul>
+{% for session in section.sessions|dictsort:"room.name" %}
+<li class="">{{ session.start|date:"H:i" }} &mdash; {{ session.end|date:"H:i" }} <span class="label label-default">{{ session.room }}</span> {{ session.presentation.title }} <em>{{ session.presentation.speaker }}</em></li>
 {% endfor %}
+</ul>
 
+{% comment %}
 {% with timetable=section.timetable %}
 
 <table class="calendar table table-bordered">
@@ -52,3 +54,4 @@
 </table>
 
 {% endwith %}
+{% endcomment %}
