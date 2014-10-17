@@ -2,20 +2,23 @@
 <div class="row">
 {% for room in section.rooms_sessions %}
     {% if room.sessions %}
-    <div class="col-sm-6 col-md-3">
+    <div class="col-sm-6 col-md-4">
         <h3>{{ room.room }}</h3>
         <div class="list-group">
             {% for session in room.sessions %}
-            <a class="list-group-item" href="{% url schedule_presentation_detail session.presentation.pk %}">
+            <a class="list-group-item" href="{% url schedule_presentation_detail session.presentation.pk %}" alt="{{ session.presentation.title }}">
                 <small class="time">{{ session.start|date:"H:i" }} &ndash; {{ session.end|date:"H:i" }}</small><br/>
                 <strong class="title">{{ session.presentation.title }} </strong><br/>
-                <em>{{ session.presentation.speaker }}</em></a>
+                <em>{{ session.presentation.speakers|join:", " }}</em></a>
             {% endfor %}
         </div>
     </div>
     {% endif %}
 {% endfor %}
 </div>
+
+
+
 
 {% comment %}
 {% with timetable=section.timetable %}
