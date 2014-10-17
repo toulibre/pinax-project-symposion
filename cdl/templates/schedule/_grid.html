@@ -2,7 +2,7 @@
 <div class="row">
 {% for room in section.rooms_sessions %}
     {% if room.sessions %}
-    <div class="col-sm-6">
+    <div class="col-sm-6 col-md-3">
         <h3>{{ room.room }}</h3>
         <div class="list-group">
             {% for session in room.sessions %}
