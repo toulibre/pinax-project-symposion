@@ -11,10 +11,15 @@
 
 {% block body %}
     <h2>{% trans "Dashboard" %}</h2>
-    <div class="dashboard-panel">
-        <div class="dashboard-panel-header">
+    <div class="panel-group" id="dashboard-accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
             <i class="icon-bullhorn"></i>
-            <h3>{% trans "Speaking" %}</h3>
+            <h3 class="panel-title"><a data-toggle="collapse" href="#collapseSpeaker">{% trans "Speaking" %}</a></h3>
+        </div>
+
+        <div id="collapseSpeaker" class="panel-collapse collapse in">
+        <div class="panel-body">
             <div class="pull-right header-actions">
                 {% if not user.speaker_profile %}
                     <a href="{% url speaker_create %}" class="btn btn-primary">
@@ -29,9 +34,6 @@
                     </a>
                 {% endif %}
             </div>
-        </div>
-        
-        <div class="dashboard-panel-content">
             {% if not user.speaker_profile %}
                 <p>To submit a proposal, you must first <a href="{% url speaker_create %}">create a speaker profile</a>.</p>
             {% else %}
@@ -88,10 +90,10 @@
         </div>
     </div>
     
-    <div class="dashboard-panel">
-        <div class="dashboard-panel-header">
+    <div class="panel panel-default">
+        <div class="panel-heading">
             <i class="icon-briefcase"></i>
-            <h3>{% trans "Sponsorship" %}</h3>
+            <h3 class="panel-title"><a data-toggle="collapse" href="#collapseSponsorship">{% trans "Sponsorship" %}</a></h3>
             <div class="pull-right header-actions">
                 {% if not user.sponsorships.exists %}
                     <a href="{% url sponsor_apply %}" class="btn btn-primary">
@@ -101,7 +103,8 @@
             </div>
         </div>
         
-        <div class="dashboard-panel-content">
+        <div id="collapseSponsorship" class="panel-collapse collapse">
+        <div class="panel-body">
 			{% url sponsor_add  as sponsor_add %}
             {% if not user.sponsorships.exists %}
                 <p>{% trans 'If you or your organization would be interested in sponsorship opportunities, you will find in' %} <a href="{{ SITE_BASE }}/partenariat">{% trans 'sponsor section' %}</a>.</p>
@@ -126,13 +129,14 @@
     </div>
         
     {% if review_sections %}
-        <div class="dashboard-panel">
-            <div class="dashboard-panel-header">
+        <div class="panel panel-default">
+            <div class="panel-heading">
                 <i class="icon-briefcase"></i>
-                <h3>{% trans "Reviews" %}</h3>
+                <h3 class="panel-title"><a data-toggle="collapse" href="#collapseReview">{% trans "Reviews" %}</a></h3>
             </div>
+            <div id="collapseReview" class="panel-collapse collapse">
             {% user_reviews as user_reviews %}
-            <div class="dashboard-panel-content">
+            <div class="panel-body">
                 <h4>{% trans "Review Sections" %}</h4>
                 
                 <ul>
@@ -140,28 +144,37 @@
                         <li><a href="{% url review_section section.section.slug %}">{{ section }}</a></li>
                     {% endfor %}
                 </ul>
-                
-                <h4>{% trans "Proposals you have reviewed" %}</h4>
-                <table class="table table-condensed">
-                    <thead>
-                        <th>#</th>
-                        <th>{% trans "Speaker / Title" %}</th>
-                        <th>{% trans "Your Vote" %}</th>
-                    </thead>
-                    <tbody>
-                        {% for review in user_reviews %}
-                            <tr>
-                                <td>{{ review.proposal.number }}</td>
-                                <td>
-                                    <b>{{ review.proposal.speaker }}</b>
-                                    <br />
-                                    {{ review.proposal.title }}
-                                </td>
-                                <td>{{ review.vote }}</td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                    <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#collapseVote">
+                    {% trans "Proposals you have reviewed" %}</a></h4>
+                    </div>
+                    <div id="collapseVote" class="panel-collapse collapse">
+                      <div class="panel-body">
+                    <table class="table table-condensed">
+                        <thead>
+                            <th>#</th>
+                            <th>{% trans "Speaker / Title" %}</th>
+                            <th>{% trans "Your Vote" %}</th>
+                        </thead>
+                        <tbody>
+                            {% for review in user_reviews %}
+                                <tr>
+                                    <td>{{ review.proposal.number }}</td>
+                                    <td>
+                                        <b>{{ review.proposal.speaker }}</b>
+                                        <br />
+                                        {{ review.proposal.title }}
+                                    </td>
+                                    <td>{{ review.vote }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
                 
                 {% comment %}
                 <h4>{% trans "My Assignments</h4>
@@ -184,18 +197,20 @@
                 {% endcomment %}
                 
             </div>
+        </div>
     </div>
     {% endif %}
     
     {% available_teams as available_teams %}
     {% if user.memberships.exists or available_teams %}
-        <div class="dashboard-panel">
-            <div class="dashboard-panel-header">
+        <div class="panel panel-default">
+            <div class="panel-heading">
                 <i class="icon-group"></i>
-                <h3>{% trans "Teams" %}</h3>
+                <h3 class="panel-title"><a data-toggle="collapse" href="#collapseTeams">{% trans "Teams" %}</a></h3>
             </div>
-            
-            <div class="dashboard-panel-content">
+
+            <div id="collapseTeams" class="panel-collapse collapse in">
+            <div class="panel-body">
                 {% if user.memberships.exists %}
                     <h4>{% trans "Your Teams" %}</h4>
                     <table class="table table-striped">
@@ -236,5 +251,7 @@
                 {% endif %}
             </div>
         </div>
+        </div>
     {% endif %}
+    </div>
 {% endblock %}
