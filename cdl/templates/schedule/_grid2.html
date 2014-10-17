@@ -1,0 +1,54 @@
+
+{% for session in section.sessions|dictsort:"room" %}
+<div class=""> {{ session.room }} &mdash; {{ session.start }} {{ session.end }}{{ session.presentation }}</div>
+{% endfor %}
+
+{% with timetable=section.timetable %}
+
+<table class="calendar table table-bordered">
+    <thead>
+        <tr>
+            <th class="time">&nbsp;</th>
+            {% for room in timetable.rooms %}
+                <th>{{ room.name }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for row in timetable %}
+            <tr>
+                <td class="time">{{ row.time|date:"H:i" }}</td>
+                {% for slot in row.slots %}
+                    <td class="slot slot-{{ slot.kind.label }}" colspan="{{ slot.colspan }}" rowspan="{{ slot.rowspan }}">
+                        {{ slot.presentation.title }}<br />
+                        {{ slot.presentation.speaker.name }}
+                        {% if slot.kind.label != "" %}
+                            {% if not slot.content %}
+                            {% else %}
+                                <span class="title">
+                                    <a href="{% url schedule_presentation_detail slot.content.pk %}">{{ slot.content.title }}</a>
+                                </span>
+                                <em class="speaker">
+                                    {{ slot.content.speakers|join:", " }}
+                                </em>
+                            {% endif %}
+                        {% else %}
+                            {% if slot.content_override.raw %}
+                                {{ slot.content_override.rendered|safe }}
+                            {% else %}
+                                {{ slot.kind.label }}
+                            {% endif %}
+                        {% endif %}
+                    </td>
+                {% endfor %}
+                {% if forloop.last %}
+                    <td colspan="{{ timetable.rooms|length }}"></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endwith %}
