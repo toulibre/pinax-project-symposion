@@ -27,15 +27,13 @@
         {% endif %}
     {% endif %}
 
-    <div  class="affix affix-bottom" data-offset-top="60" data-offset-bottom="200" style="right: 20px;">
     <ul class="nav">
     {% for presentation in presentations %}
         <li><a href="#presentation-{{ presentation.pk }}">{{ presentation.title }} &ndash; 
         <small><em>{{ presentation.speakers|join:", " }}</em></small></a></li>
     {% endfor %}
-    <li><a href="#top" alt="top">back to top</a></li>
     </ul>
-    </div>
+    <div  class="affix affix-bottom" data-offset-top="60" data-offset-bottom="200" style="right: 20px;"><a href="#top" alt="top">back to top</a></div>
 
     <div class="row">
         {% for presentation in presentations %}
