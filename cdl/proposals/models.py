@@ -14,8 +14,8 @@ class ProposalCategory(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = _("Capitole du Libre proposal category")
-        verbose_name_plural = _("Capitole du Libre proposal categories")
+        verbose_name = _(u"Capitole du Libre proposal category")
+        verbose_name_plural = _(u"Capitole du Libre proposal categories")
 
 
 class Proposal(ProposalBase):
@@ -77,6 +77,9 @@ class TutorialProposal(Proposal):
 class StandProposal(ProposalBase):
 
     organisation = models.CharField(max_length=150)
+
+    def __unicode__(self):
+        return u"#%s - %s (%s)" % (self.number, self.title, self.speaker)
 
     class Meta:
         verbose_name = _(u"stand proposal")

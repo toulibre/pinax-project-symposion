@@ -64,6 +64,7 @@ class StandProposalForm(ProposalForm):
             "title",
             "organisation",
             "description",
+            "abstract",
             "additional_notes",
         ]
         widgets = {
