@@ -28,11 +28,11 @@
         {% endblock %}
     </head>
     <body class="{% block body_class %}{% endblock %}">
-        <div class="{% block wrapper_class %}{% endblock %}">
+        <div class="{% block wrapper_class %}{% endblock %}" id="top">
 
             {% block topbar_base %}
                 <header>
-                    <div class="navbar navbar-default {% block navbar_class %}navbar-fixed-top{% endblock %}">
+                    <nav class="navbar navbar-default {% block navbar_class %}navbar-fixed-top{% endblock %}" role="navigation">
                         <div class="container">
                         {% block topbar %}
                             <div class="navbar-header">
@@ -59,7 +59,7 @@
                             {% endblock %}
                         {% endblock %}
                         </div>
-                    </div>
+                    </nav>
                 </header>
             {% endblock %}
 
