@@ -1,2 +1,2 @@
-"#","Title","Speakers","Description"{% for p in presentations %}
-{{p.pk}},"{{p.title}}","{{p.speakers|join:"\n"}}","{{p.description|striptags}}"{% endfor %}
+"#","Room","Start","End","Title","Speakers","Description"{% for p in presentations %}
+{{p.pk}},{{p.session.room.name}},{{p.session.start|date:"H:i"}},{{p.session.end|date:"H:i"}},"{{p.title}}","{{p.speakers|join:"\n"}}","{{p.description|striptags}}"{% endfor %}
