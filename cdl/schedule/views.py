@@ -25,6 +25,7 @@ def schedule_list_category(request, slug=None, category_slug=None):
 
     presentations = Presentation.objects.filter(section=schedule.section)
     presentations = presentations.exclude(cancelled=True)
+    presentations = presentations.order_by("session")
 
     if category_slug:
         results = []
