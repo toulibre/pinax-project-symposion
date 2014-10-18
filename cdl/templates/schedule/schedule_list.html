@@ -22,18 +22,19 @@
         {% if category  %}
             <h2>{{ category }}</h2>
             {% if not presentations %}<p>Pas de pr&eacute;sentations dans cette th&eacute;matique. <a href="{% url schedule_list schedule.section.slug %}">Retour &agrave; toutes les th&eacute;matiques</a></p>{% endif %}
+                    
+            <ul class="nav">
+            {% for presentation in presentations %}
+                <li><a href="#presentation-{{ presentation.pk }}">{{ presentation.title }} &ndash; 
+                <small><em>{{ presentation.speakers|join:", " }}</em></small></a></li>
+            {% endfor %}
+            </ul>
+            <div  class="affix affix-top" data-offset-top="60" data-offset-bottom="200" style="right: 20px;"><a href="#top" alt="top">back to top</a></div>
+
         {% else %}
             <h2>Toutes th&eacute;matiques</h2>
         {% endif %}
     {% endif %}
-
-    <ul class="nav">
-    {% for presentation in presentations %}
-        <li><a href="#presentation-{{ presentation.pk }}">{{ presentation.title }} &ndash; 
-        <small><em>{{ presentation.speakers|join:", " }}</em></small></a></li>
-    {% endfor %}
-    </ul>
-    <div  class="affix affix-bottom" data-offset-top="60" data-offset-bottom="200" style="right: 20px;"><a href="#top" alt="top">back to top</a></div>
 
     <div class="row">
         {% for presentation in presentations %}
