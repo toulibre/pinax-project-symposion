@@ -49,6 +49,7 @@
                         </tr>
                         {% for proposal in user.speaker_profile.proposals.all %}
                             {% include "proposals/_proposal_row.html" %}
+                            {% include "subscription/_presentation_attendees.html" %}
                         {% endfor %}
                     </table>
                 {% else %}

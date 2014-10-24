@@ -170,6 +170,7 @@ INSTALLED_APPS = [
     "cdl.proposals",
     "cdl.schedule",
     "cdl.speakers",
+    "cdl.subscription",
 ]
 
 FIXTURE_DIRS = [
