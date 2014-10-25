@@ -21,7 +21,6 @@
     <p>
         {% for speaker in presentation.speakers %}<em>{{ speaker }}</em>{% if not forloop.last %}, {% endif %}{% endfor %}
     </p>
-    
     <dl class="dl-horizontal">
         {% if presentation.proposal.category %}
         <dt>Th&eacute;matique</dt>
@@ -36,6 +35,11 @@
         <span class="time">{{ presentation.session.start|date:"H:i" }} &ndash; {{ presentation.session.end|date:"H:i" }}</span></dd>
         <dt>Salle</dt><dd><span class="label label-danger">{{ presentation.session.room }}</span></dd>
         {% endif %}
+        
+        {% if presentation.subscription %}
+        <dt>Acc&egrave;s</dt>
+        <dd><a href="{% url subscribe_to_presentation presentation.pk %}">Sur inscription</a></dd>
+        {% endif %}
 
     </dl>
     <h2>Description</h2>
@@ -46,6 +50,12 @@
     <h2>{% trans "Abstract" %}</h2>
     <div class="abstract">{{ presentation.abstract|safe }}</div>
     {% endif %}
+
+    {% if presentation.subscription %}
+    <p class="text-info">L'inscription &agrave; cet atelier est n&eacute;cessaire : 
+        <a class="btn btn-default" href="{% url subscribe_to_presentation presentation.pk %}">Je m'inscris !</a></p>
+    {% endif %}
+
 {% endblock %}
 
 {% block sidebar %}

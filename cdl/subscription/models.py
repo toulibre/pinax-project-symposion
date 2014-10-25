@@ -22,9 +22,9 @@ class Attendee(models.Model):
 
     #~ user = models.OneToOneField(User, null=True, related_name="attendee_profile")
     subscribe_to = models.ForeignKey('Subscription', related_name="attendees")
-    email = models.EmailField()
+    email = models.EmailField(help_text="Used in case of cancelling")
     name = models.CharField(max_length=100, help_text="Your name")
-    interests = models.TextField(help_text="Your project")
+    interests = models.TextField(help_text="Your project", null=True, blank=True)
 
     def __unicode__(self):
         return self.name

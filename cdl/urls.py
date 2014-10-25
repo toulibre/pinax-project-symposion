@@ -33,6 +33,7 @@ urlpatterns = patterns("",
     url(r"^boxes/", include("symposion.boxes.urls")),
     url(r"^teams/", include("symposion.teams.urls")),
     url(r"^reviews/", include("symposion.reviews.urls")),
+    url(r"^subscribe/", include("cdl.subscription.urls")),
     url(r"^programme/", include("cdl.schedule.urls")),
     url(r"^schedule/", include("cdl.schedule.urls")),
 
