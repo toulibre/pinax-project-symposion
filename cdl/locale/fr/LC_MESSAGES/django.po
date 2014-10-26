@@ -98,7 +98,7 @@ msgstr "proposition de stand"
 #: subscription/models.py:15
 #, fuzzy, python-format
 msgid "Subscription to %s"
-msgstr "S'inscrire"
+msgstr "Inscription à %s"
 
 #: subscription/models.py:34
 msgid "Used in case of cancelling"
@@ -758,7 +758,7 @@ msgstr "Inscrits&nbsp;:"
 #: templates/subscription/subscribe_to.html:7
 #: templates/subscription/subscribe_to.html:13
 msgid "Subscribe to"
-msgstr "S'inscrire"
+msgstr "S'inscrire à"
 
 #~ msgid "If the speaker need to be hosted."
 #~ msgstr "Si l'intervenant a besoin d'être hébergé."
