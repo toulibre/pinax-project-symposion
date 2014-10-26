@@ -10,7 +10,7 @@
 
 <form method="POST" action="" enctype="multipart/form-data">
     {% csrf_token %}
-    <legend>{% trans "Subscribe to" %} {{ presentation }}</legend>
+    <legend>{% trans "Subscribe to" %} &ldquo;{{ presentation.title }}&rdquo;</legend>
     <fieldset>
         {{ form|bootstrap }}
     </fieldset>

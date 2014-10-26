@@ -40,6 +40,7 @@
                 <h4>{% trans "Your Proposals" %}</h4>
                 {% if user.speaker_profile.proposals.exists %}
                     <table class="table">
+                        <thead>
                         <tr>
                             <th>{% trans "Title" %}</th>
                             <th>{% trans "Session type" %}</th>
@@ -47,6 +48,7 @@
                             <th>{% trans "Actions" %}</th>
 
                         </tr>
+                        </thead>
                         {% for proposal in user.speaker_profile.proposals.all %}
                             {% include "proposals/_proposal_row.html" %}
                             {% include "subscription/_presentation_attendees.html" %}
@@ -60,12 +62,14 @@
                 {% if associated_proposals %}
                     <h4>{% trans "Proposals you have joined as an additional speaker" %}</h4>
                     <table class="table">
+                        <thead>
                         <tr>
                             <th>{% trans "Title" %}</th>
                             <th>{% trans "Session type" %}</th>
                             <th>{% trans "Status" %}</th>
                             <th>{% trans "Actions" %}</th>
                         </tr>
+                        </thead>
                         {% for proposal in associated_proposals %}
                             {% include "proposals/_proposal_row.html" %}
                         {% endfor %}
@@ -76,18 +80,21 @@
                 {% if pending_proposals %}
                     <h4>{% trans "Proposals you have been invited to join" %}</h4>
                     <table class="table">
+                        <thead>
                         <tr>
                             <th>{% trans "Title" %}</th>
                             <th>{% trans "Session type" %}</th>
                             <th>{% trans "Status" %}</th>
                             <th>{% trans "Actions" %}</th>
                         </tr>
+                        </thead>
                         {% for proposal in pending_proposals %}
                             {% include "proposals/_pending_proposal_row.html" %}
                         {% endfor %}
                     </table>
                 {% endif %}
             {% endif %}
+        </div>
         </div>
     </div>
     
@@ -155,35 +162,40 @@
                     </div>
                     <div id="collapseVote" class="panel-collapse collapse">
                       <div class="panel-body">
-                    <table class="table table-condensed">
-                        <thead>
-                            <th>#</th>
-                            <th>{% trans "Speaker / Title" %}</th>
-                            <th>{% trans "Your Vote" %}</th>
-                        </thead>
-                        <tbody>
-                            {% for review in user_reviews %}
+                        <table class="table table-condensed">
+                            <thead>
                                 <tr>
-                                    <td>{{ review.proposal.number }}</td>
-                                    <td>
-                                        <b>{{ review.proposal.speaker }}</b>
-                                        <br />
-                                        {{ review.proposal.title }}
-                                    </td>
-                                    <td>{{ review.vote }}</td>
+                                    <th>#</th>
+                                    <th>{% trans "Speaker / Title" %}</th>
+                                    <th>{% trans "Your Vote" %}</th>
                                 </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {% for review in user_reviews %}
+                                    <tr>
+                                        <td>{{ review.proposal.number }}</td>
+                                        <td>
+                                            <b>{{ review.proposal.speaker }}</b>
+                                            <br />
+                                            {{ review.proposal.title }}
+                                        </td>
+                                        <td>{{ review.vote }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                      </div>
+                    </div>
                   </div>
-                </div>
                 
                 {% comment %}
                 <h4>{% trans "My Assignments</h4>
                 <table class="table">
                     <thead>
-                        <td>{% trans "Proposal Title" %}</td>
-                        <td>{% trans "Score</td>
+                      <tr>
+                        <th>{% trans "Proposal Title" %}</th>
+                        <th>{% trans "Score</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
@@ -199,8 +211,8 @@
                 {% endcomment %}
                 
             </div>
+            </div>
         </div>
-    </div>
     {% endif %}
     
     {% available_teams as available_teams %}
@@ -252,7 +264,7 @@
                     </table>
                 {% endif %}
             </div>
-        </div>
+            </div>
         </div>
     {% endif %}
     </div>

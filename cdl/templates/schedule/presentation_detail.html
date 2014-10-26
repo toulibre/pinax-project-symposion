@@ -38,7 +38,11 @@
         
         {% if presentation.subscription %}
         <dt>Acc&egrave;s</dt>
-        <dd><a href="{% url subscribe_to_presentation presentation.pk %}">Sur inscription</a></dd>
+            {% if presentation.subscription.is_closed %}
+            <dd>Sur inscription. <span class="text-danger">Les inscriptions sont closes</span>.</dd>
+            {% else %}
+            <dd><a href="{% url subscribe_to_presentation presentation.pk %}">Sur inscription</a></dd>
+            {% endif %}
         {% endif %}
 
     </dl>
@@ -52,8 +56,10 @@
     {% endif %}
 
     {% if presentation.subscription %}
-    <p class="text-info">L'inscription &agrave; cet atelier est n&eacute;cessaire : 
-        <a class="btn btn-default" href="{% url subscribe_to_presentation presentation.pk %}">Je m'inscris !</a></p>
+        {% if not presentation.subscription.is_closed %}
+        <p class="text-info">L'inscription &agrave; cet atelier est n&eacute;cessaire : 
+            <a class="btn btn-default" href="{% url subscribe_to_presentation presentation.pk %}">Je m'inscris !</a></p>
+        {% endif %}
     {% endif %}
 
 {% endblock %}
