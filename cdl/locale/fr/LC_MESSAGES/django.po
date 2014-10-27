@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-26 22:46+0100\n"
+"POT-Creation-Date: 2014-10-27 14:45+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,19 +99,40 @@ msgstr "proposition de stand"
 msgid "How much 3 + 4 makes?"
 msgstr "Combien font 3 + 4 ?"
 
-#: subscription/models.py:15
+#: subscription/models.py:12
+msgid "Softwares to be installed, version, etc."
+msgstr "Logiciels à installer, version, etc."
+
+#: subscription/models.py:16
 #, fuzzy, python-format
 msgid "Subscription to %s"
 msgstr "Inscription à %s"
 
-#: subscription/models.py:34
+#: subscription/models.py:35
 msgid "Used in case of cancelling"
 msgstr "En cas d'annulation"
 
 #: subscription/models.py:36
 #, fuzzy
+msgid "Your name"
+msgstr "Votre nom"
+
+#: subscription/models.py:37
+#, fuzzy
 msgid "Your project"
-msgstr "Votre Vote"
+msgstr "Votre projet"
+
+#: subscription/views.py:20
+msgid "You subscribed successfully."
+msgstr "Votre inscription a bien été prise en compte."
+
+#: subscription/views.py:43
+msgid "Subscription form has been created successfully."
+msgstr "Le formulaire d'inscription a bien été créé."
+
+#: subscription/views.py:65
+msgid "Subscription form has been updated successfully."
+msgstr "Le formulaire d'inscription a bien été mis à jour."
 
 #: templates/_account_bar.html:14 templates/dashboard.html:8
 #: templates/dashboard.html.py:13
@@ -170,52 +191,52 @@ msgstr "Soumettre une proposition"
 msgid "Your Proposals"
 msgstr "Vos propositions"
 
-#: templates/dashboard.html:45 templates/dashboard.html.py:67
-#: templates/dashboard.html:85 templates/reviews/_review_table.html:8
+#: templates/dashboard.html:45 templates/dashboard.html.py:69
+#: templates/dashboard.html:87 templates/reviews/_review_table.html:8
 #: templates/reviews/result_notification.html:50
 msgid "Title"
 msgstr "Titre"
 
-#: templates/dashboard.html:46 templates/dashboard.html.py:68
-#: templates/dashboard.html:86
+#: templates/dashboard.html:46 templates/dashboard.html.py:70
+#: templates/dashboard.html:88
 msgid "Session type"
 msgstr "Type de session"
 
-#: templates/dashboard.html:47 templates/dashboard.html.py:69
-#: templates/dashboard.html:87 templates/reviews/_review_table.html:12
+#: templates/dashboard.html:47 templates/dashboard.html.py:71
+#: templates/dashboard.html:89 templates/reviews/_review_table.html:12
 #: templates/reviews/result_notification.html:52
 msgid "Status"
 msgstr "Statut"
 
-#: templates/dashboard.html:48 templates/dashboard.html.py:70
-#: templates/dashboard.html:88
+#: templates/dashboard.html:48 templates/dashboard.html.py:72
+#: templates/dashboard.html:90
 msgid "Actions"
 msgstr "Actions"
 
-#: templates/dashboard.html:58
+#: templates/dashboard.html:60
 msgid "No proposals submitted yet."
 msgstr "Aucune proposition pour le moment."
 
-#: templates/dashboard.html:63
+#: templates/dashboard.html:65
 msgid "Proposals you have joined as an additional speaker"
 msgstr ""
 "Propositions auxquelles vous avez participé en tant qu'intervenant addionnel"
 
-#: templates/dashboard.html:81
+#: templates/dashboard.html:83
 msgid "Proposals you have been invited to join"
 msgstr "Propositions que vous avez été invité(e) à rejoindre"
 
-#: templates/dashboard.html:104 templates/sponsorship/detail.html:8
+#: templates/dashboard.html:106 templates/sponsorship/detail.html:8
 #: templates/sponsorship/list.html:8
 msgid "Sponsorship"
 msgstr "Partenariat"
 
-#: templates/dashboard.html:108
+#: templates/dashboard.html:110
 #, fuzzy
 msgid "Apply to be a sponsor"
 msgstr "Devenir Sponsor"
 
-#: templates/dashboard.html:118
+#: templates/dashboard.html:120
 #, fuzzy
 msgid ""
 "If you or your organization would be interested in sponsorship "
@@ -225,51 +246,51 @@ msgstr ""
 "voustrouverez toutes les informations sur <a href=\"/partenariat\">la page "
 "partenariats</a>."
 
-#: templates/dashboard.html:118
+#: templates/dashboard.html:120
 #, fuzzy
 msgid "sponsor section"
 msgstr "Partenariat"
 
-#: templates/dashboard.html:120
+#: templates/dashboard.html:122
 msgid "Your Sponsorship"
 msgstr "Partenariat"
 
-#: templates/dashboard.html:134
+#: templates/dashboard.html:136
 #, fuzzy
 msgid "As staff, you can directly"
 msgstr ""
 "En tant que membre de l'équipe, vous pouvez directement <a href="
 "\"'%(sponsor_add_url)s'\">ajouter un partenaire</a>"
 
-#: templates/dashboard.html:144 templates/reviews/review_detail.html:75
+#: templates/dashboard.html:146 templates/reviews/review_detail.html:75
 msgid "Reviews"
 msgstr "Votes"
 
-#: templates/dashboard.html:149
+#: templates/dashboard.html:151
 msgid "Review Sections"
 msgstr "Catégorie de propositions"
 
-#: templates/dashboard.html:161
+#: templates/dashboard.html:163
 msgid "Proposals you have reviewed"
 msgstr "Propositions que vous avez évaluées"
 
-#: templates/dashboard.html:169
+#: templates/dashboard.html:171
 msgid "Speaker / Title"
 msgstr "Intervenant / Titre"
 
-#: templates/dashboard.html:170
+#: templates/dashboard.html:172
 msgid "Your Vote"
 msgstr "Votre Vote"
 
-#: templates/dashboard.html:224
+#: templates/dashboard.html:226
 msgid "Teams"
 msgstr "Équipes"
 
-#: templates/dashboard.html:230
+#: templates/dashboard.html:232
 msgid "Your Teams"
 msgstr "Équipes"
 
-#: templates/dashboard.html:251
+#: templates/dashboard.html:253
 msgid "Available Teams"
 msgstr "Équipes disponibles"
 
@@ -291,6 +312,8 @@ msgstr "Modifier la page à :"
 
 #: templates/cms/page_edit.html:19
 #: templates/proposals/proposal_submit_kind.html:22
+#: templates/subscription/subscribe_to.html:18
+#: templates/subscription/subscription_edit.html:18
 msgid "Save"
 msgstr "Sauvegarder"
 
@@ -484,6 +507,8 @@ msgid "Manage speakers"
 msgstr "Gérer les intervenants"
 
 #: templates/proposals/proposal_edit.html:21
+#: templates/subscription/subscribe_to.html:19
+#: templates/subscription/subscription_edit.html:19
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -719,7 +744,7 @@ msgstr "Commentaire"
 msgid "Edit Slot"
 msgstr "Modifier"
 
-#: templates/schedule/presentation_detail.html:76
+#: templates/schedule/presentation_detail.html:75
 msgid "See more"
 msgstr "Voir plus"
 
@@ -759,10 +784,21 @@ msgstr "Nos partenaires"
 msgid "Attendees:"
 msgstr "Inscrits&nbsp;:"
 
+#: templates/subscription/_presentation_attendees.html:27
+#, fuzzy
+msgid "Edit subscription"
+msgstr "Description"
+
 #: templates/subscription/subscribe_to.html:7
 #: templates/subscription/subscribe_to.html:13
 msgid "Subscribe to"
 msgstr "S'inscrire à"
+
+#: templates/subscription/subscription_edit.html:7
+#: templates/subscription/subscription_edit.html:13
+#, fuzzy
+msgid "Subscription form to"
+msgstr "Inscription à %s"
 
 #~ msgid "If the speaker need to be hosted."
 #~ msgstr "Si l'intervenant a besoin d'être hébergé."
