@@ -1,5 +1,5 @@
 {% load i18n %}
-{% if proposal.presentation.subscription %}
+
 <tr>
     <td colspan="4">
         {% if proposal.presentation.subscription.attendees_nb > 0 %}
@@ -24,7 +24,8 @@
         {% else %}
         Insription ouvertes pour {{ proposal.presentation.subscription.max_attendees }}. Pas d'inscrit pour le moment.
         {% endif %}
+        <a class="btn btn-default btn-sm" href="{% url subscription_edit proposal.presentation.pk %}">{% trans "Edit subscription" %}</a>
     
     </td>
 </tr>
-{% endif %}
+

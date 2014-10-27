@@ -76,6 +76,16 @@
         <p><a href="{% url speaker_profile speaker.pk %}">{% trans "See more" %}</a></p>
     
     {% endfor %}
-    
+    <div class="clearfix"></div>
+    {% if user.is_staff %}
+        <h2>Admin</h2>
+        <p>
+        {% if presentation.subscription %}
+        <a class="btn btn-sm btn-default" href="{% url subscription_edit presentation.pk %}">&Eacute;diter le formulaire</a>
+        {% else %}
+        <a class="btn btn-sm btn-default" href="{% url subscription_add presentation.pk %}">Ajouter un formulaire</a>
+        {% endif %}
+        </p>
+    {% endif %}
 </section>
 {% endblock %}
