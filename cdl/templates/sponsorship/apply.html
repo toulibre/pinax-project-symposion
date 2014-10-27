@@ -13,7 +13,7 @@
     <h2>{% trans "Apply to be a Sponsor" %}</h2>
     {% box "sponsorship-apply" %}
 
-    <form method="POST" action="" class="form-horizontal">
+    <form method="POST" action="">
         {% csrf_token %}
         <legend>{% trans "Apply to be a Sponsor" %}</legend>
         {{ form|bootstrap }}

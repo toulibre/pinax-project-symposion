@@ -133,7 +133,7 @@
                 </ul>
             {% endif %}
             {% if user.is_staff %}
-                <p>{% trans "As staff, you can directly" %} <a href="'{{ sponsor_add_url }}'">add a sponsor</a></p>
+                <p>{% trans "As staff, you can directly" %} <a href="{% url sponsor_add %}">add a sponsor</a></p>
             {% endif %}
         </div>
         </div>
