@@ -8,6 +8,8 @@
 
 {% block body %}
 
+<h1>{% trans "Subscribe form" %} </h1>
+
 <form method="POST" action="" enctype="multipart/form-data">
     {% csrf_token %}
     <legend>{% trans "Subscribe to" %} &ldquo;{{ presentation.title }}&rdquo;</legend>
@@ -23,5 +25,7 @@
 {% endblock %}
 
 {% block sidebar %}
-    {% box "subscribe-info" %}
+    {% box "subscribe_info" %}
+    <h2>{% trans "Prerequistes" %}</h2>
+    <div class="prerequistes">{{ presentation.subscription.prerequistes|safe }}</div>
 {% endblock %}

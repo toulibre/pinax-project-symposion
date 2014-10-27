@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-27 14:45+0100\n"
+"POT-Creation-Date: 2014-10-27 19:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -95,32 +95,50 @@ msgstr "proposition d'atelier"
 msgid "stand proposal"
 msgstr "proposition de stand"
 
-#: subscription/forms.py:11
+#: subscription/forms.py:12
 msgid "How much 3 + 4 makes?"
 msgstr "Combien font 3 + 4 ?"
 
-#: subscription/models.py:12
+#: subscription/forms.py:13
+msgid "Anti-bot"
+msgstr ""
+
+#: subscription/models.py:13
 msgid "Softwares to be installed, version, etc."
 msgstr "Logiciels à installer, version, etc."
 
-#: subscription/models.py:16
+#: subscription/models.py:14 templates/subscription/subscribe_to.html:29
+msgid "Prerequistes"
+msgstr "Prérequis"
+
+#: subscription/models.py:17
+msgid "Max attendees"
+msgstr "Nombre maximum d'inscrits"
+
+#: subscription/models.py:20
 #, fuzzy, python-format
 msgid "Subscription to %s"
 msgstr "Inscription à %s"
 
-#: subscription/models.py:35
+#: subscription/models.py:40
 msgid "Used in case of cancelling"
 msgstr "En cas d'annulation"
 
-#: subscription/models.py:36
-#, fuzzy
+#: subscription/models.py:41 templates/conference/user_list.html:64
+msgid "Email"
+msgstr "Courriel"
+
+#: subscription/models.py:42
 msgid "Your name"
 msgstr "Votre nom"
 
-#: subscription/models.py:37
-#, fuzzy
+#: subscription/models.py:44
 msgid "Your project"
 msgstr "Votre projet"
+
+#: subscription/models.py:47
+msgid "Interests"
+msgstr "Intérêts"
 
 #: subscription/views.py:20
 msgid "You subscribed successfully."
@@ -288,7 +306,7 @@ msgstr "Équipes"
 
 #: templates/dashboard.html:232
 msgid "Your Teams"
-msgstr "Équipes"
+msgstr "Équipes dont vous faîtes partie"
 
 #: templates/dashboard.html:253
 msgid "Available Teams"
@@ -312,14 +330,10 @@ msgstr "Modifier la page à :"
 
 #: templates/cms/page_edit.html:19
 #: templates/proposals/proposal_submit_kind.html:22
-#: templates/subscription/subscribe_to.html:18
+#: templates/subscription/subscribe_to.html:20
 #: templates/subscription/subscription_edit.html:18
 msgid "Save"
 msgstr "Sauvegarder"
-
-#: templates/conference/user_list.html:64
-msgid "Email"
-msgstr "Courriel"
 
 #: templates/conference/user_list.html:65
 #, fuzzy
@@ -507,7 +521,7 @@ msgid "Manage speakers"
 msgstr "Gérer les intervenants"
 
 #: templates/proposals/proposal_edit.html:21
-#: templates/subscription/subscribe_to.html:19
+#: templates/subscription/subscribe_to.html:21
 #: templates/subscription/subscription_edit.html:19
 msgid "Cancel"
 msgstr "Annuler"
@@ -744,7 +758,7 @@ msgstr "Commentaire"
 msgid "Edit Slot"
 msgstr "Modifier"
 
-#: templates/schedule/presentation_detail.html:75
+#: templates/schedule/presentation_detail.html:76
 msgid "See more"
 msgstr "Voir plus"
 
@@ -785,39 +799,19 @@ msgid "Attendees:"
 msgstr "Inscrits&nbsp;:"
 
 #: templates/subscription/_presentation_attendees.html:27
-#, fuzzy
 msgid "Edit subscription"
-msgstr "Description"
+msgstr "Éditer le formulaire d'inscription"
 
 #: templates/subscription/subscribe_to.html:7
-#: templates/subscription/subscribe_to.html:13
+#: templates/subscription/subscribe_to.html:15
 msgid "Subscribe to"
 msgstr "S'inscrire à"
 
+#: templates/subscription/subscribe_to.html:11
+msgid "Subscribe form"
+msgstr "Formulaire d'inscription"
+
 #: templates/subscription/subscription_edit.html:7
 #: templates/subscription/subscription_edit.html:13
-#, fuzzy
 msgid "Subscription form to"
-msgstr "Inscription à %s"
-
-#~ msgid "If the speaker need to be hosted."
-#~ msgstr "Si l'intervenant a besoin d'être hébergé."
-
-#, fuzzy
-#~ msgid "Speakers"
-#~ msgstr "Intervenants"
-
-#, fuzzy
-#~ msgid "About our sponsors"
-#~ msgstr "Partenariat"
-
-#, fuzzy
-#~ msgid "About Our Sponsors"
-#~ msgstr "Partenariat"
-
-#, fuzzy
-#~ msgid "Session:"
-#~ msgstr "Session :"
-
-#~ msgid "Apply to Be a Sponsor"
-#~ msgstr "Devenir Sponsor"
+msgstr "Inscription à"

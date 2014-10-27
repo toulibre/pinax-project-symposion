@@ -9,8 +9,12 @@ class Subscription(models.Model):
     """
 
     presentation = models.OneToOneField(Presentation, related_name="subscription")
-    prerequistes = models.TextField(help_text=_(u"Softwares to be installed, version, etc."), null=True, blank=True)
-    max_attendees = models.IntegerField()
+    prerequistes = models.TextField(
+        help_text = _(u"Softwares to be installed, version, etc."), 
+        verbose_name = _("Prerequistes"),
+        null = True, 
+        blank = True,)
+    max_attendees = models.IntegerField(verbose_name = _("Max attendees"),)
 
     def __unicode__(self):
         return _(u"Subscription to %s") % self.presentation
@@ -32,9 +36,15 @@ class Attendee(models.Model):
 
     #~ user = models.OneToOneField(User, null=True, related_name="attendee_profile")
     subscribe_to = models.ForeignKey('Subscription', related_name="attendees")
-    email = models.EmailField(help_text=_(u"Used in case of cancelling"))
-    name = models.CharField(max_length=100, help_text=_(u"Your name"))
-    interests = models.TextField(help_text=_(u"Your project"), null=True, blank=True)
+    email = models.EmailField(
+        help_text = _(u"Used in case of cancelling"), 
+        verbose_name = _("Email"),)
+    name = models.CharField(max_length = 100, verbose_name = _(u"Your name"),)
+    interests = models.TextField(
+        help_text = _(u"Your project"), 
+        null=True, 
+        blank=True, 
+        verbose_name = _("Interests"),)
 
     def __unicode__(self):
         return self.name
