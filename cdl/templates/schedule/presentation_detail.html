@@ -57,7 +57,7 @@
 
     {% if presentation.subscription %}
         {% if not presentation.subscription.is_closed %}
-        <p class="text-info">L'inscription &agrave; cet atelier est n&eacute;cessaire : 
+        <p class="text-info">L'inscription &agrave; cet atelier est n&eacute;cessaire, il reste {{ presentation.subscription.places_left }} places.
             <a class="btn btn-default" href="{% url subscribe_to_presentation presentation.pk %}">Je m'inscris !</a></p>
         {% endif %}
     {% endif %}

@@ -26,6 +26,9 @@ class Subscription(models.Model):
     def attendees_nb(self):
         return self.attendees.count()
 
+    def places_left(self):
+        return (self.max_attendees - self.attendees_nb)
+
     def is_closed(self):
         """True if max attendees number is reached"""
         return self.max_attendees <= self.attendees_nb
