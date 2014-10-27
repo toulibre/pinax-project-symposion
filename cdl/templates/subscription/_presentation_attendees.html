@@ -13,6 +13,7 @@
             </div>
 
             <div id="collapseAttendees{{ proposal.presentation.pk }}" class="panel-collapse collapse">
+                <a class="btn btn-default btn-sm pull-right" href="{% url subscription_edit proposal.presentation.pk %}">{% trans "Edit subscription" %}</a>
                 <ul>
                     {% for attendee in proposal.presentation.subscription.all_attendees %}
                     <li>{{ attendee }} &mdash; {{ attendee.email }}
@@ -23,9 +24,10 @@
             </div>
         </div>
         {% else %}
-        Insription ouvertes pour {{ proposal.presentation.subscription.max_attendees }}. Pas d'inscrit pour le moment.
+        <p>Insription ouvertes pour {{ proposal.presentation.subscription.max_attendees }} personnes. Pas d'inscrit pour le moment. 
+        <a class="btn btn-default btn-sm" href="{% url subscription_edit proposal.presentation.pk %}">{% trans "Edit subscription" %}</a></p>
         {% endif %}
-        <a class="btn btn-default btn-sm" href="{% url subscription_edit proposal.presentation.pk %}">{% trans "Edit subscription" %}</a>
+        
     
     </td>
 </tr>
