@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
+from markitup.fields import MarkupField
 
 from symposion.schedule.models import Presentation
 
@@ -9,7 +10,7 @@ class Subscription(models.Model):
     """
 
     presentation = models.OneToOneField(Presentation, related_name="subscription")
-    prerequistes = models.TextField(
+    prerequistes = MarkupField(
         help_text = _(u"Softwares to be installed, version, etc."), 
         verbose_name = _("Prerequistes"),
         null = True, 
