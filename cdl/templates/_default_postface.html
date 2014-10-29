@@ -8,7 +8,8 @@
     {% for level in levels %}
         {% if level.sponsors and level.name != "Bronze" %}
             <div class="col-xs-12 col-sm-6">
-            <h3>{{ level }}</h3>
+            <h3 class="h4">{{ level }}</h3>
+            <div class="row">
             {% for sponsor in level.sponsors|dictsort:"name" %}
                 <div class="col-xs-6 col-md-4">
                 <a class="thumbnail" href="{{ sponsor.external_url }}">
@@ -22,16 +23,19 @@
                 </div>
             {% endfor %}
             </div>
+            </div>
         {% elif level.sponsors and level.name == "Bronze" %}
             <div class="col-xs-12">
-            <h3>{{ level }}</h3>
+            <h3 class="h4">{{ level }}</h3>
+            <div class="row">
             {% for sponsor in level.sponsors|dictsort:"name" %}
-                <div class="col-xs-3 col-md-2">
+                <div class="col-xs-4 col-md-2">
                 <a class="thumbnail" href="{{ sponsor.external_url }}">
                     <img class="img-responsive logo-80" src="{{ sponsor.website_logo.url }}" alt="{{ sponsor.name }}" />
                 </a>
                 </div>
             {% endfor %}
+            </div>
             </div>
         {% endif %}
     {% endfor %}
