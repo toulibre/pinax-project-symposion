@@ -244,6 +244,7 @@
                                     {% if membership.team.applicants %}{{ membership.team.applicants.count }} applicant{{ membership.team.applicants.count|pluralize }}{% endif %}
                                 {% endif %}
                                 {% if membership.team.members %}{{ membership.team.members.count }} member{{ membership.team.members.count|pluralize }}{% endif %}
+                                {% if membership.team.managers %}{{ membership.team.managers.count }} manager{{ membership.team.managers.count|pluralize }}{% endif %}
                                 </td>
                             </tr>
                         {% endfor %}
@@ -260,6 +261,10 @@
                                 </td>
                                 <td>
                                     <span class="label">{{ team.get_access_display }}</span>
+                                </td>
+                                <td>
+                                {% if team.members %}{{ team.members.count }} member{{ team.members.count|pluralize }}{% endif %}
+                                {% if team.managers %}{{ team.managers.count }} manager{{ team.managers.count|pluralize }}{% endif %}
                                 </td>
                             </tr>
 
