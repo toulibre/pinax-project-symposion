@@ -6359,10 +6359,8 @@ footer .site-info {
   right: 15px;
   padding-left: 3px;
   padding-right: 3px;
-  color: white;
-  background-color: black;
-  font-size: 0.85em;
-  font-weight: bold;
+  text-align: right;
+  font-size: 0.9em;
 }
 .session {
   font-size: 0.85em;
@@ -6370,4 +6368,9 @@ footer .site-info {
 }
 .page-speaker .session {
   padding-left: 3em;
+}
+.label-tag {
+  background-color: #111;
+  color: white;
+  font-weight: bold;
 }

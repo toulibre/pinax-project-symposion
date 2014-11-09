@@ -34,7 +34,9 @@
             <div class=" well">
                 <h2><a href="{% url schedule_presentation_detail presentation.pk %}">{{ presentation.title }}</a> &ndash; <small>{{ presentation.speakers|join:", " }}</small></h2>
 
-                <div class="presentation-category">{{ presentation.proposal.category }}</div>
+                <div class="presentation-category"><span class="label label-tag">{{ presentation.proposal.category }}</span>
+                {% if presentation.proposal.audience_level %}
+                <br /><em class="label label-primary">{{ presentation.proposal.get_audience_level_display }}</em>{% endif %}</div>
 
                 {% if presentation.session %}
                 <p class="session"><span class="date">{{ presentation.session.day.date|date:"l d b" }}</span>,
