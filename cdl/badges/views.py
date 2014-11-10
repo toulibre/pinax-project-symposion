@@ -1,24 +1,20 @@
 # -*- coding: utf-8 -*-
 
 from django.http import Http404, HttpResponse
-from django.shortcuts import render
 from django.template import loader, Context
 
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
 from symposion.speakers.models import Speaker
-from symposion.teams.models import Team
+from symposion.teams.models import Membership
 
-
+@login_required
 def badges_list_csv(request):
 
     if not request.user.is_staff:
         raise Http404()
 
     attendees = []
-    benevoles_team = Team.objects.filter(slug="benevoles")[0]
-    #~ import pdb;pdb.set_trace()
-    benevoles = benevoles_team.members() # + benevoles_team.managers()
+    benevoles = Membership.objects.filter(team__slug="benevoles").order_by("user__first_name")
     for benevole in benevoles:
         attendee = {}
         if hasattr(benevole.user,'speaker_profile'):
@@ -27,9 +23,11 @@ def badges_list_csv(request):
             attendee['name'] = u" ".join([benevole.user.first_name, benevole.user.last_name])
         attendee['organisation'] = u" "
         attendee['function'] = u"Bénévole"
+        if benevole.user.is_staff:
+            attendee['function'] = u" / ".join([u"Organisation", attendee['function']])
         attendees.append(attendee)
 
-    speakers = Speaker.objects.exclude(presentations__isnull=True)
+    speakers = Speaker.objects.exclude(presentations__isnull=True).order_by("name")
     for speaker in speakers:
         attendee = {}
         attendee['name'] = speaker.name
