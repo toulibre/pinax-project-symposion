@@ -41,6 +41,7 @@ urlpatterns = patterns("",
     url(r"^schedule/", include("symposion.schedule.urls")),
     url(r"^programme/", include("symposion.schedule.urls")),
     url(r"^conference/", include("symposion.conference.urls")),
+    url(r"^badges/", include("cdl.badges.urls")),
     url(r"^markitup/", include("markitup.urls")),
     
     url(r"^", include("symposion.cms.urls")),
