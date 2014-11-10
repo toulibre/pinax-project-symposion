@@ -1,0 +1,3 @@
+-,Tetaneutral.net,Animateur
+{% for a in attendees %}
+"{{a.name}}","{{a.organisation}}","{{a.function}}"{% endfor %}
