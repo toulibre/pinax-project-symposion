@@ -21,7 +21,7 @@ def badges_list_csv(request):
     benevoles = benevoles_team.members() # + benevoles_team.managers()
     for benevole in benevoles:
         attendee = {}
-        if benevole.user.speaker_profile:
+        if hasattr(benevole.user,'speaker_profile'):
             attendee['name'] = benevole.user.speaker_profile.name
         else:
             attendee['name'] = u" ".join([benevole.user.first_name, benevole.user.last_name])
