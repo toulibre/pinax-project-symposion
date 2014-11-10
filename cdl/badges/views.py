@@ -32,6 +32,8 @@ def badges_list_csv(request):
         attendee = {}
         attendee['name'] = speaker.name
         attendee['organisation'] = u" "
+        if hasattr(speaker, 'organisation'):
+            attendee['organisation'] = speaker.organisation
         attendee['function'] = u"Orateur"
         attendees.append(attendee)
     

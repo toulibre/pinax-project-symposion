@@ -1,2 +1,9 @@
+"Arnaud Versini","","Organisation Hackfest LibreOffice"
+"Organizer Michaël Lefèvre","","Hackfest LibreOffice"
+"Bjoern Michaelsen","","Hackfest LibreOffice"
+"Michael Meeks","","Hackfest LibreOffice"
+"Markus Mohrhard"," ","Hackfest LibreOffice"
+"David Venancio","RepRap / Open3D-Print.fr","Stand Impression 3D"
+"Anthony Berna","RepRap","Stand Impression 3D"
 {% for a in attendees %}"{{a.name}}","{{a.organisation}}","{{a.function}}"
 {% endfor %}

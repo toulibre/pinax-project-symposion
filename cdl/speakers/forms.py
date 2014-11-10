@@ -12,6 +12,7 @@ class SpeakerForm(forms.ModelForm):
         fields = [
             "name",
             "biography",
+            "organisation",
             "photo",
             "annotation",
         ]
