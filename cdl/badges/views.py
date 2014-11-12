@@ -19,39 +19,37 @@ def badges_list_csv(request):
     benevoles = Membership.objects.filter(team__slug="benevoles").order_by("user__first_name")
     for benevole in benevoles:
         attendee = {}
-        attendee['organisation'] = u" "
         if hasattr(benevole.user,'speaker_profile'):
             attendee['name'] = benevole.user.speaker_profile.name
             attendee['organisation'] = benevole.user.speaker_profile.organisation
         else:
             attendee['name'] = u" ".join([benevole.user.first_name, benevole.user.last_name])
-        attendee['function'] = u"Bénévole"
+        attendee['role'] = u"Bénévole"
         if benevole.user.is_staff:
-            attendee['function'] = u" / ".join([u"Organisation", attendee['function']])
+            attendee['role'] = u" / ".join([u"Organisation", attendee['role']])
         attendees.append(attendee)
 
     speakers = Speaker.objects.filter(~Q(copresentations__isnull=True) | ~Q(presentations__isnull=True)).order_by("name")
     for speaker in speakers:
         attendee = {}
-        attendee['name'] = speaker.name
-        attendee['organisation'] = u""
+        attendee['name'] = speaker.name or u"_"
         if hasattr(speaker, 'organisation'):
             attendee['organisation'] = speaker.organisation or u""
         presentation_kinds = [presentation.proposal.kind.slug for presentation in speaker.all_presentations]
-        attendee_functions = []
+        attendee_roles = []
         if "stand-associatif" in presentation_kinds:
-            attendee_functions.append(u"Stand")
+            attendee_roles.append(u"Stand")
         if "atelier" in presentation_kinds or "conference" in presentation_kinds:
-            attendee_functions.append(u"Orateur")
-        attendee['function'] = " / ".join(attendee_functions)
+            attendee_roles.append(u"Orateur")
+        attendee['role'] = " / ".join(attendee_roles)
         attendees.append(attendee)
 
     sponsors = Sponsor.objects.exclude(active=False).order_by("contact_name")
     for sponsor in sponsors:
         attendee = {}
-        attendee['name'] = sponsor.contact_name
+        attendee['name'] = sponsor.contact_name or "_"
         attendee['organisation'] = sponsor.name
-        attendee['function'] = u"Sponsor"
+        attendee['role'] = u"Sponsor"
         attendees.append(attendee)
         
 
