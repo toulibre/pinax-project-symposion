@@ -7,6 +7,7 @@ from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from symposion.speakers.models import Speaker
 from symposion.teams.models import Membership
+from symposion.sponsorship.models import Sponsor
 
 @login_required
 def badges_list_csv(request):
@@ -35,11 +36,25 @@ def badges_list_csv(request):
         attendee['name'] = speaker.name
         attendee['organisation'] = u""
         if hasattr(speaker, 'organisation'):
-            attendee['organisation'] = speaker.organisation
-        attendee['function'] = u"Orateur"
+            attendee['organisation'] = speaker.organisation or u""
+        presentation_kinds = [presentation.proposal.kind.slug for presentation in speaker.all_presentations]
+        attendee_functions = []
+        if "stand-associatif" in presentation_kinds:
+            attendee_functions.append(u"Stand")
+        if "atelier" in presentation_kinds or "conference" in presentation_kinds:
+            attendee_functions.append(u"Orateur")
+        attendee['function'] = " / ".join(attendee_functions)
         attendees.append(attendee)
-    
-    
+
+    sponsors = Sponsor.objects.exclude(active=False).order_by("contact_name")
+    for sponsor in sponsors:
+        attendee = {}
+        attendee['name'] = sponsor.contact_name
+        attendee['organisation'] = sponsor.name
+        attendee['function'] = u"Sponsor"
+        attendees.append(attendee)
+        
+
     response = HttpResponse(mimetype="text/csv")
     response["Content-Disposition"] = 'attachment; filename="badges_list.csv"'
 
