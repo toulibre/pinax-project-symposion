@@ -42,3 +42,10 @@
 "_","Foy","Bar team"
 {% for a in attendees %}{{a.name}},{{a.organisation}},{{a.role}}
 {% endfor %}
+
+
+
+
+
+
+
