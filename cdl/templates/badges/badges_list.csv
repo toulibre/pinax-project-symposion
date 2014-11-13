@@ -11,10 +11,6 @@
 "Bjoern Michaelsen",,"Hackfest LibreOffice"
 "Michael Meeks",,"Hackfest LibreOffice"
 "Markus Mohrhard",,"Hackfest LibreOffice"
-"Laura Médioni","Logilab","Sponsor"
-"Denis Laxalde","Logilab","Sponsor"
-"Jean-Pierre Oliva","Makina Corpus","Sponsor"
-"Simon Bats","Makina Corpus","Sponsor"
 "Julien D","TVn7","Captation vidéo"
 "Manon G","TVn7","Captation vidéo"
 "Vivian G","TVn7","Captation vidéo"
@@ -50,3 +46,10 @@
 "_","Foy","Bar team"
 {% for a in attendees %}{{a.name}},{{a.organisation}},{{a.role}}
 {% endfor %}
+"Laura Médioni","Logilab","Sponsor"
+"Denis Laxalde","Logilab","Sponsor"
+"Catherine Tillous","Makina Corpus","Sponsor"
+"Simon Bats","Makina Corpus","Sponsor"
+"Fabien Dupont","Fullsave","Sponsor"
+"Emmanuel Prat","Fullsave","Sponsor"
+"Florian Simoni","Fullsave","Sponsor"
