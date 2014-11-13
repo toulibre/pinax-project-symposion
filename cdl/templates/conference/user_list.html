@@ -63,6 +63,7 @@
                     <thead>
                         <th>{% trans "Email" %}</th>
                         <th>{% trans "Speaker Profile?" %}</th>
+                        <th>{% trans "Organisation" %}</th>
                         <th>{% trans "Proposals" %}</th>
                         <th>{% trans "Annotations" %}</th>
                     </thead>
@@ -78,6 +79,11 @@
                                             <span class="glyphicon glyphicon-pencil"></span> Edit</a></small>
                                     {% else %}
                                         {{ user.get_full_name }} &mdash; <a href="{% url speaker_create_staff user.pk %}" class="btn btn-xs btn-default">create profile</a>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if user.speaker_profile %}
+                                        {{ user.speaker_profile.organisation }}
                                     {% endif %}
                                 </td>
                                 <td><ul>{% for presentation in user.speaker_profile.all_presentations %}
