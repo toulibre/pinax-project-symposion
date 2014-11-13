@@ -17,15 +17,16 @@ def badges_list_csv(request):
 
     attendees = []
     benevoles = Membership.objects.filter(team__slug="benevoles").order_by("user__first_name")
-    for benevole in benevoles:
+    users = [b.user for b in benevoles]
+    for user in users:
         attendee = {}
-        if hasattr(benevole.user,'speaker_profile'):
-            attendee['name'] = benevole.user.speaker_profile.name
-            attendee['organisation'] = benevole.user.speaker_profile.organisation
+        if hasattr(user,'speaker_profile'):
+            attendee['name'] = user.speaker_profile.name
+            attendee['organisation'] = user.speaker_profile.organisation
         else:
-            attendee['name'] = u" ".join([benevole.user.first_name, benevole.user.last_name])
+            attendee['name'] = u" ".join([user.first_name, user.last_name])
         attendee['role'] = u"Bénévole"
-        if benevole.user.is_staff:
+        if user.is_staff:
             attendee['role'] = u" / ".join([u"Organisation", attendee['role']])
         attendees.append(attendee)
 
