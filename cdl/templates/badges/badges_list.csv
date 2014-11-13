@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 "Arnaud Versini",,"Organisation Hackfest LibreOffice"
 "Michaël Lefèvre",,"Hackfest LibreOffice"
 "Bjoern Michaelsen",,"Hackfest LibreOffice"
@@ -42,10 +50,3 @@
 "_","Foy","Bar team"
 {% for a in attendees %}{{a.name}},{{a.organisation}},{{a.role}}
 {% endfor %}
-
-
-
-
-
-
-
