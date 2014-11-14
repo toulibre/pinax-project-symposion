@@ -1,0 +1,49 @@
+{% extends "site_base_onecolumn.html" %}
+
+{% load i18n %}
+{% load bootstrap %}
+{% load boxes_tags %}
+{% load cache %}
+{% block extra_style %}
+<style media="print" type="text/css" >
+    .break-page {
+        page-break-before: always;
+    }
+</style>
+{% endblock %}
+{% block head_title %}Conference Schedule{% endblock %}
+
+{% block body_class %}full{% endblock %}
+
+{% block right %}{% endblock %}
+
+{% block body_outer %}
+
+    {% for section in sections %}
+        {% if section.rooms_sessions %}
+        <section>
+        <h1 class="jumbotron"><span class="date">{{ section.day.date|date:"l d b" }}</span> <small>{{ section.schedule.section.name }}</small></h1>
+            {% for room in section.rooms_sessions %}
+                {% if room.sessions %}
+                <div class="break-page">
+                <h2>{{ room.room }}</h2>
+                    {% for session in room.sessions %}
+                    <h3><small>{{ session.start|date:"H:i" }} &ndash; {{ session.end|date:"H:i" }}</small><br />
+                    {{ session.presentation.title }}<br />
+                    <small><em>{{ session.presentation.speakers|join:", " }}</em></small></h3>
+                    <h4>R&eacute;sum&eacute;</h4>
+                    <div>{{ session.presentation.description }}</div>
+                    <h4>Description d&eacute;taill&eacute;e</h4>
+                    <div>{{ session.presentation.abstract }}</div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            {% endfor %}
+        </section>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+
+{% block postface %}{% endblock %}
+
+{% block footer %}{% endblock %}

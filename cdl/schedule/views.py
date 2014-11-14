@@ -68,3 +68,29 @@ def schedule_conference(request):
         "sections": sections,
     }
     return render(request, "schedule/schedule_conference.html", ctx)
+
+def schedule_conference_detail(request):
+
+    schedules = Schedule.objects.filter(published=True, hidden=False)
+    days = Day.objects.filter(schedule__in=schedules)
+    rooms = Room.objects.all().order_by("order")
+    
+    sections = []
+    for day in days:
+        rooms_sessions = []
+        for room in rooms:
+            presentation_sessions = PresentationSession.objects.filter(day=day).filter(room=room).order_by("start")
+            rooms_sessions.append({
+                "room" : room,
+                "sessions" : presentation_sessions,
+            })
+        sections.append({
+            "schedule": day.schedule,
+            "day" : day,
+            "rooms_sessions" : rooms_sessions,
+        })
+    
+    ctx = {
+        "sections": sections,
+    }
+    return render(request, "schedule/schedule_conference_detail.html", ctx)
