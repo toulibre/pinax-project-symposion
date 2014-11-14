@@ -27,10 +27,12 @@
                 {% if room.sessions %}
                 <div class="break-page">
                 <h2>{{ room.room }}</h2>
+                <p><span class="date">{{ section.day.date|date:"l d b" }}</span></p>
                     {% for session in room.sessions %}
                     <h3><small>{{ session.start|date:"H:i" }} &ndash; {{ session.end|date:"H:i" }}</small><br />
                     {{ session.presentation.title }}<br />
                     <small><em>{{ session.presentation.speakers|join:", " }}</em></small></h3>
+                    <p><small>({{ section.day.date|date:"l d b" }} &ndash; {{ room.room }})</small></p>
                     <h4>R&eacute;sum&eacute;</h4>
                     <div>{{ session.presentation.description }}</div>
                     <h4>Description d&eacute;taill&eacute;e</h4>
