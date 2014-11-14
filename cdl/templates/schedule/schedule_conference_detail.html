@@ -6,8 +6,16 @@
 {% load cache %}
 {% block extra_style %}
 <style media="print" type="text/css" >
+    p {
+        font-size: 10pt;
+    }
     .room, h1.jumbotron {
-        page-break-before: right;
+        page-break-before: left;
+        page-break-after: right;
+    }
+    .room {
+        border-bottom: 1px solid black;
+        margin-bottom: 10pt;
     }
 </style>
 {% endblock %}
