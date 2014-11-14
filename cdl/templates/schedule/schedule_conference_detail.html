@@ -6,8 +6,8 @@
 {% load cache %}
 {% block extra_style %}
 <style media="print" type="text/css" >
-    .break-page {
-        page-break-before: always;
+    .room, h1 {
+        page-break-before: right;
     }
 </style>
 {% endblock %}
@@ -25,7 +25,7 @@
         <h1 class="jumbotron"><span class="date">{{ section.day.date|date:"l d b" }}</span> <small>{{ section.schedule.section.name }}</small></h1>
             {% for room in section.rooms_sessions %}
                 {% if room.sessions %}
-                <div class="break-page">
+                <div class="room">
                 <h2>{{ room.room }}</h2>
                 <p><span class="date">{{ section.day.date|date:"l d b" }}</span></p>
                     {% for session in room.sessions %}
