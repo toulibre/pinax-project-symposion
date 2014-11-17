@@ -32,7 +32,7 @@
                     <h2>Managers</h2>
                     <ul>
                         {% for membership in team.managers %}
-                            <li>{{ membership.user.first_name }} {{ membership.user.last_name }} / {{ membership.user.email }}</li>
+                            <li>{{ membership.user.first_name }} {{ membership.user.last_name }} &lt;{{ membership.user.email }}&gt;</li>
                         {% endfor %}
                     </ul>
                 {% endif %}
@@ -40,7 +40,7 @@
                     <h2>Team Members</h2>
                     <ul>
                         {% for membership in team.members %}
-                            <li>{{ membership.user.first_name }} {{ membership.user.last_name }} / {{ membership.user.email }}</li>
+                            <li>{{ membership.user.first_name }} {{ membership.user.last_name }} &lt;{{ membership.user.email }}&gt;</li>
                         {% endfor %}
                     </ul>
                 {% endif %}
@@ -48,7 +48,7 @@
                     <h2>Applicants</h2>
                     <ul class="ul ul-striped">
                         {% for membership in team.applicants %}
-                            <li>{{ membership.user.first_name }} {{ membership.user.last_name }} / {{ membership.user.email }}</li>
+                            <li>{{ membership.user.first_name }} {{ membership.user.last_name }} &lt;{{ membership.user.email }}&gt;</li>
                         {% endfor %}
                     </ul>
                 {% endif %}
@@ -56,7 +56,7 @@
                     <h2>Invitees</h2>
                     <ul class="ul ul-striped">
                         {% for membership in team.invitees %}
-                            <li>{{ membership.user.first_name }} {{ membership.user.last_name }} / {{ membership.user.email }}</li>
+                            <li>{{ membership.user.first_name }} {{ membership.user.last_name }} &lt;{{ membership.user.email }}&gt;</li>
                         {% endfor %}
                     </ul>
                 {% endif %}
