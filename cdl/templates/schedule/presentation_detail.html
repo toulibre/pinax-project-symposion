@@ -66,6 +66,17 @@
 
 {% block sidebar %}
 <section class="media">
+    {% if presentation.coverages.exists %}
+    <h2>{% trans "Coverage" %}</h2>
+        <ul>
+        {% for coverage in presentation.coverages.all %}
+        <li><a href="{{ coverage.url }}" alt="{{ coverage.title }}">{{ coverage.title }}</a> 
+        <small>&ndash; {{ coverage.licence }}
+        <a href="{{ coverage.licence.url }}"><span class="glyphicon glyphicon-link"></span></a></small></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
     <h2 class="text-hide">Intervenant(es)</h2>
     {% for speaker in presentation.speakers %}
         <h3><em>{{ speaker }}</em></h3>
