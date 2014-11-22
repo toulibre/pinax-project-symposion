@@ -8,6 +8,8 @@ COVERAGE_TYPES = (
     ('link', _(u"Link")),
     ('video', _(u"Video")),
     ('audio', _(u"Audio")),
+    ('photos', _(u"Photos")),
+    ('writeup', _(u"Write-up")),
     ('slides', _(u"Slides")),
     ('transcription', _(u"Transcription")),
 )
@@ -34,7 +36,7 @@ class Coverage(models.Model):
     Add one or several coverage for a presentation.
     """
 
-    presentation = models.ForeignKey(Presentation, related_name="coverages")
+    presentation = models.ForeignKey(Presentation, related_name="coverages", blank=True, null=True)
     title = models.CharField(max_length=200, verbose_name=_(u"Link text"))
     coverage_type = models.CharField(max_length=30, choices=COVERAGE_TYPES, verbose_name=_(u"Coverage type"))
     licence = models.ForeignKey(Licence, verbose_name=_(u"Coverage licence"),)
