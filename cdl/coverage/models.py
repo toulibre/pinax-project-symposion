@@ -42,7 +42,7 @@ class Coverage(models.Model):
     licence = models.ForeignKey(Licence, verbose_name=_(u"Coverage licence"),)
     url = models.URLField(blank=True)
     url2 = models.URLField(blank=True)
-    poster = models.FileField(upload_to=uuid_filename, blank=True)
+    poster = models.URLField(blank=True)
     coverage_file = models.FileField(upload_to=uuid_filename, blank=True)
 
     def __unicode__(self):
