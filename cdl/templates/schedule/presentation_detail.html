@@ -87,13 +87,23 @@
 <section class="media">
     {% if presentation.coverages.exists %}
     <h2>{% trans "Coverage" %}</h2>
-        <ul>
+        <ul class="list-group">
         {% for coverage in presentation.coverages.all %}
-        <li><a href="{{ coverage.url }}" alt="{{ coverage.title }}">{{ coverage.title }}</a> 
+        <li class="list-group-item"><a href="{{ coverage.url }}" alt="{{ coverage.title }}">{{ coverage.title }}</a>
         <small>&ndash; {{ coverage.licence }}
-        <a href="{{ coverage.licence.url }}"><span class="glyphicon glyphicon-link"></span></a></small></li>
+        <a href="{{ coverage.licence.url }}"><span class="glyphicon glyphicon-link"></span></a></small>
+        {% if user.is_staff %}
+            <a href="{% url coverage_edit coverage.pk %}" class="pull-right"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
+        </li>
         {% endfor %}
         </ul>
+    {% endif %}
+    
+    {% if user.is_staff or user.speaker_profile == presentation.speaker or user.speaker in presentation.additionnal_speakers %}
+        <p class="text-right">
+        <a class="btn btn-sm btn-default" href="{% url coverage_add presentation.pk %}">Ajouter un media</a>
+        </p>
     {% endif %}
 
     <h2 class="text-hide">Intervenant(es)</h2>

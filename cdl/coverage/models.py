@@ -43,7 +43,7 @@ class Coverage(models.Model):
     url = models.URLField(blank=True)
     url2 = models.URLField(blank=True)
     poster = models.URLField(blank=True)
-    coverage_file = models.FileField(upload_to=uuid_filename, blank=True)
+    coverage_file = models.FileField(upload_to=uuid_filename, verbose_name=_(u"Coverage file"), blank=True)
 
     def __unicode__(self):
         return u"%s - %s" % (self.title, self.presentation)

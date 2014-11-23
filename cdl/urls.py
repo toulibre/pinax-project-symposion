@@ -37,6 +37,7 @@ urlpatterns = patterns("",
     url(r"^teams/", include("symposion.teams.urls")),
 
     url(r"^reviews/", include("symposion.reviews.urls")),
+    url(r"^coverage/", include("cdl.coverage.urls")),
     url(r"^subscribe/", include("cdl.subscription.urls")),
     url(r"^schedule/", include("cdl.schedule.urls")),
     url(r"^programme/", include("cdl.schedule.urls")),
