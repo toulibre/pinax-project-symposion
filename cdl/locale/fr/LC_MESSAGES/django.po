@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-27 19:27+0100\n"
+"POT-Creation-Date: 2014-11-23 16:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,55 @@ msgstr "Français"
 #: settings.py:50
 msgid "English"
 msgstr "Anglais"
+
+#: coverage/models.py:8
+msgid "Link"
+msgstr "Lien"
+
+#: coverage/models.py:9
+msgid "Video"
+msgstr "Vidéo"
+
+#: coverage/models.py:10
+msgid "Audio"
+msgstr "Audio"
+
+#: coverage/models.py:11
+msgid "Photos"
+msgstr "Photos"
+
+#: coverage/models.py:12
+msgid "Write-up"
+msgstr "Document"
+
+#: coverage/models.py:13
+msgid "Slides"
+msgstr "Diaporama"
+
+#: coverage/models.py:14
+#, fuzzy
+msgid "Transcription"
+msgstr "Description"
+
+#: coverage/models.py:25
+msgid "Url to licence text"
+msgstr "Url vers le texte de la licence"
+
+#: coverage/models.py:31
+msgid "Licence"
+msgstr "Licence"
+
+#: coverage/models.py:40
+msgid "Link text"
+msgstr "Texte de lien"
+
+#: coverage/models.py:41
+msgid "Coverage type"
+msgstr "Type de media"
+
+#: coverage/models.py:42
+msgid "Coverage licence"
+msgstr "Licence du media"
 
 #: proposals/forms.py:15
 msgid "The description must be less than 400 characters"
@@ -103,40 +152,40 @@ msgstr "Combien font 3 + 4 ?"
 msgid "Anti-bot"
 msgstr ""
 
-#: subscription/models.py:13
+#: subscription/models.py:14
 msgid "Softwares to be installed, version, etc."
 msgstr "Logiciels à installer, version, etc."
 
-#: subscription/models.py:14 templates/subscription/subscribe_to.html:29
+#: subscription/models.py:15 templates/subscription/subscribe_to.html:29
 msgid "Prerequistes"
 msgstr "Prérequis"
 
-#: subscription/models.py:17
+#: subscription/models.py:18
 msgid "Max attendees"
 msgstr "Nombre maximum d'inscrits"
 
-#: subscription/models.py:20
+#: subscription/models.py:21
 #, fuzzy, python-format
 msgid "Subscription to %s"
 msgstr "Inscription à %s"
 
-#: subscription/models.py:40
+#: subscription/models.py:44
 msgid "Used in case of cancelling"
 msgstr "En cas d'annulation"
 
-#: subscription/models.py:41 templates/conference/user_list.html:64
+#: subscription/models.py:45 templates/conference/user_list.html:64
 msgid "Email"
 msgstr "Courriel"
 
-#: subscription/models.py:42
+#: subscription/models.py:46
 msgid "Your name"
 msgstr "Votre nom"
 
-#: subscription/models.py:44
+#: subscription/models.py:48
 msgid "Your project"
 msgstr "Votre projet"
 
-#: subscription/models.py:47
+#: subscription/models.py:51
 msgid "Interests"
 msgstr "Intérêts"
 
@@ -308,7 +357,7 @@ msgstr "Équipes"
 msgid "Your Teams"
 msgstr "Équipes dont vous faîtes partie"
 
-#: templates/dashboard.html:253
+#: templates/dashboard.html:255
 msgid "Available Teams"
 msgstr "Équipes disponibles"
 
@@ -342,10 +391,15 @@ msgstr "Modifier votre profil d'intervenant"
 
 #: templates/conference/user_list.html:66
 #, fuzzy
+msgid "Organisation"
+msgstr "Durée"
+
+#: templates/conference/user_list.html:67
+#, fuzzy
 msgid "Proposals"
 msgstr "Proposition :"
 
-#: templates/conference/user_list.html:67
+#: templates/conference/user_list.html:68
 #, fuzzy
 msgid "Annotations"
 msgstr "Actions"
@@ -414,7 +468,7 @@ msgstr "Description"
 
 #: templates/proposals/_proposal_fields.html:34
 #: templates/reviews/review_review.html:26
-#: templates/schedule/presentation_detail.html:54
+#: templates/schedule/presentation_detail.html:73
 msgid "Abstract"
 msgstr "Description détaillée"
 
@@ -444,11 +498,15 @@ msgstr "Aucun document attaché à cette proposition."
 msgid "Associated"
 msgstr "Associé"
 
-#: templates/proposals/_proposal_row.html:29
+#: templates/proposals/_proposal_row.html:30
+msgid "Display"
+msgstr "Afficher"
+
+#: templates/proposals/_proposal_row.html:32
 msgid "Edit"
 msgstr "Modifier"
 
-#: templates/proposals/_proposal_row.html:30
+#: templates/proposals/_proposal_row.html:33
 #, fuzzy
 msgid "Manage Additional Speakers"
 msgstr "Gérer les intervenants additionnels"
@@ -758,7 +816,11 @@ msgstr "Commentaire"
 msgid "Edit Slot"
 msgstr "Modifier"
 
-#: templates/schedule/presentation_detail.html:76
+#: templates/schedule/presentation_detail.html:89
+msgid "Coverage"
+msgstr "Medias"
+
+#: templates/schedule/presentation_detail.html:106
 msgid "See more"
 msgstr "Voir plus"
 
@@ -794,11 +856,12 @@ msgstr "avantages"
 msgid "Nos partenaires"
 msgstr "Nos partenaires"
 
-#: templates/subscription/_presentation_attendees.html:10
+#: templates/subscription/_presentation_attendees.html:11
 msgid "Attendees:"
 msgstr "Inscrits&nbsp;:"
 
-#: templates/subscription/_presentation_attendees.html:27
+#: templates/subscription/_presentation_attendees.html:16
+#: templates/subscription/_presentation_attendees.html:28
 msgid "Edit subscription"
 msgstr "Éditer le formulaire d'inscription"
 
