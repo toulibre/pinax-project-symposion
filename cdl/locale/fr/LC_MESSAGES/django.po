@@ -416,7 +416,7 @@ msgstr "Description"
 #: templates/reviews/review_review.html:26
 #: templates/schedule/presentation_detail.html:54
 msgid "Abstract"
-msgstr "Résumé"
+msgstr "Description détaillée"
 
 #: templates/proposals/_proposal_fields.html:37
 msgid "Notes"
