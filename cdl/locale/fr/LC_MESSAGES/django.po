@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-23 16:51+0100\n"
+"POT-Creation-Date: 2014-11-23 22:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,6 +74,21 @@ msgstr "Type de media"
 #: coverage/models.py:42
 msgid "Coverage licence"
 msgstr "Licence du media"
+
+#: coverage/models.py:46
+#, fuzzy
+msgid "Coverage file"
+msgstr "Type de media"
+
+#: coverage/views.py:23
+#, fuzzy
+msgid "Coverage."
+msgstr "Medias"
+
+#: coverage/views.py:45
+#, fuzzy
+msgid "Coverage form has been updated successfully."
+msgstr "Le formulaire d'inscription a bien été mis à jour."
 
 #: proposals/forms.py:15
 msgid "The description must be less than 400 characters"
@@ -377,7 +392,7 @@ msgstr "Créer la page"
 msgid "Edit page at:"
 msgstr "Modifier la page à :"
 
-#: templates/cms/page_edit.html:19
+#: templates/cms/page_edit.html:19 templates/coverage/coverage_edit.html:18
 #: templates/proposals/proposal_submit_kind.html:22
 #: templates/subscription/subscribe_to.html:20
 #: templates/subscription/subscription_edit.html:18
@@ -403,6 +418,19 @@ msgstr "Proposition :"
 #, fuzzy
 msgid "Annotations"
 msgstr "Actions"
+
+#: templates/coverage/coverage_edit.html:7
+#: templates/coverage/coverage_edit.html:13
+#, fuzzy
+msgid "Coverage for"
+msgstr "Medias"
+
+#: templates/coverage/coverage_edit.html:19
+#: templates/proposals/proposal_edit.html:21
+#: templates/subscription/subscribe_to.html:21
+#: templates/subscription/subscription_edit.html:19
+msgid "Cancel"
+msgstr "Annuler"
 
 #: templates/proposals/_pending_proposal_row.html:12
 #: templates/proposals/_proposal_row.html:12
@@ -577,12 +605,6 @@ msgstr "Valider"
 #: templates/proposals/proposal_edit.html:12
 msgid "Manage speakers"
 msgstr "Gérer les intervenants"
-
-#: templates/proposals/proposal_edit.html:21
-#: templates/subscription/subscribe_to.html:21
-#: templates/subscription/subscription_edit.html:19
-msgid "Cancel"
-msgstr "Annuler"
 
 #: templates/proposals/proposal_speaker_manage.html:7
 msgid "Proposal:"
@@ -820,7 +842,7 @@ msgstr "Modifier"
 msgid "Coverage"
 msgstr "Medias"
 
-#: templates/schedule/presentation_detail.html:106
+#: templates/schedule/presentation_detail.html:116
 msgid "See more"
 msgstr "Voir plus"
 
