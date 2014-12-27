@@ -20,12 +20,13 @@
         </ul>
         {% if coverage_type %}
         {% box "coverage_top_"|add:coverage_type %}
-            <h2>{{ coverage_type|capfirst }}</h1>
+            <h2>{{ coverage_type|capfirst }}</h3>
             <div class="row">
             {% for coverage in coverages %}
                 <div class="col-xs-12 col-sm-6">
                 {% if coverage.presentation %}
-                    <h3><a href="{% url schedule_presentation_detail coverage.presentation.pk %}">{{ coverage.presentation.title }}</a></h2>
+                    <h3><a href="{% url schedule_presentation_detail coverage.presentation.pk %}">{{ coverage.presentation.title }}</a>
+                        <small>{{ coverage.presentation.speakers|join:", " }}</small></h3>
                     <p class="text-right">{{ coverage.presentation.proposal.kind }} 
                         <a href="{% url schedule_list_category coverage.presentation.section.slug coverage.presentation.proposal.category.slug %}" class="label label-tag">
                             {{ coverage.presentation.proposal.category }}</a></p>
