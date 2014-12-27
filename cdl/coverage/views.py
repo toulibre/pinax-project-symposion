@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from cdl.coverage.forms import CoverageForm
 from symposion.schedule.models import Presentation
-from cdl.coverage.models import Coverage
+from cdl.coverage.models import Coverage, COVERAGE_TYPES
 
 
 @login_required
@@ -52,3 +52,31 @@ def coverage_edit(request, pk):
         "form": form,
         "presentation": presentation,
     })
+
+
+def coverage_list(request, coverage_type=None):
+    """
+    Display all coverage
+    """
+
+    coverage_types = []
+    for cov_type in COVERAGE_TYPES:
+        if Coverage.objects.filter(coverage_type = cov_type[0]):
+            coverage_types.append({
+                'slug': cov_type[0],
+                'name': cov_type[1],
+                'count': Coverage.objects.filter(coverage_type = cov_type[0]).count()
+            })
+
+    coverages = None
+    if coverage_type:
+        coverages = Coverage.objects.filter(coverage_type = coverage_type).order_by('presentation__title')
+
+    ctx = {
+        "coverages": coverages or None,
+        "coverage_type" : coverage_type or None,
+        "coverage_types": coverage_types,
+        }
+
+    return render(request, "coverage/coverage_list.html", ctx)
+

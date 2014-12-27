@@ -1,0 +1,10 @@
+<ul class="list-group">
+{% for coverage in presentation.coverages.all %}
+<li class="list-group-item"><a href="{{ coverage.url }}" alt="{{ coverage.title }}">{{ coverage.title }}</a>
+<small>&ndash; <a href="{{ coverage.licence.url }}">{{ coverage.licence }}</a></small>
+{% if user.is_staff %}
+    <a href="{% url coverage_edit coverage.pk %}" class="pull-right"><span class="glyphicon glyphicon-pencil"></span></a>
+{% endif %}
+</li>
+{% endfor %}
+</ul>
