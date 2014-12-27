@@ -23,16 +23,19 @@
             <h2>{{ coverage_type|capfirst }}</h1>
             <div class="row">
             {% for coverage in coverages %}
-                    <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="col-xs-12 col-sm-6">
                 {% if coverage.presentation %}
                     <h3><a href="{% url schedule_presentation_detail coverage.presentation.pk %}">{{ coverage.presentation.title }}</a></h2>
+                    <p class="text-right">{{ coverage.presentation.proposal.kind }} 
+                        <a href="{% url schedule_list_category coverage.presentation.section.slug coverage.presentation.proposal.category.slug %}" class="label label-tag">
+                            {{ coverage.presentation.proposal.category }}</a></p>
                 {% endif %}
                 {% if coverage_type == 'video' %}
                     {% include "coverage/_video.html" %}
                 {% else %}
                     <a href="{{ coverage.url }}" alt="{{ coverage.title }}">{{ coverage.title }}</a>
                 {% endif %}
-                    <p><small><a class="text-muted" href="{{ coverage.licence.url }}">{{ coverage.licence }}</a></small></p>
+                <p><small><a class="text-muted" href="{{ coverage.licence.url }}">{{ coverage.licence }}</a></small></p>
                 </div>
             {% endfor %}
             </div>
