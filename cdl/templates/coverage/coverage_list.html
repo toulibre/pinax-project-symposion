@@ -22,31 +22,35 @@
         {% box "coverage_top_"|add:coverage_type %}
             <h2>{{ coverage_type|capfirst }}</h2>
             {% for result in results %}
-            <section>
-                <h3>{{ result.category.name }}</h3>
-                <div class="row">
-                {% for coverage in result.coverages %}
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="coverage media-{{ coverage_type }}">
-                        {% if coverage.presentation %}
-                            <header>
-                            <h4><a href="{% url schedule_presentation_detail coverage.presentation.pk %}">{{ coverage.presentation.title }}</a>
-                                <br/><small>{{ coverage.presentation.speakers|join:", " }}</small></h4>
-                            </header>
-                        {% endif %}
-                        {% if coverage_type == 'video' %}
-                            {% include "coverage/_video.html" %}
-                        {% elif coverage_type == 'audio' %}
-                            {% include "coverage/_audio.html" %}
-                        {% else %}
-                            <p><a href="{{ coverage.url }}" alt="{{ coverage.title }}">{{ coverage.title }}</a></p>
-                        {% endif %}
-                        <footer class="text-right"><a class="text-muted" href="{{ coverage.licence.url }}">{{ coverage.licence }}</a></footer>
+                <section>
+                    <h3>{{ result.category.name }}</h3>
+                    {% if result.coverages %}
+                        <div class="row">
+                        {% for coverage in result.coverages %}
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="coverage media-{{ coverage_type }}">
+                                {% if coverage.presentation %}
+                                    <header>
+                                    <h4><a href="{% url schedule_presentation_detail coverage.presentation.pk %}">{{ coverage.presentation.title }}</a>
+                                        <br/><small>{{ coverage.presentation.speakers|join:", " }}</small></h4>
+                                    </header>
+                                {% endif %}
+                                {% if coverage_type == 'video' %}
+                                    {% include "coverage/_video.html" %}
+                                {% elif coverage_type == 'audio' %}
+                                    {% include "coverage/_audio.html" %}
+                                {% else %}
+                                    <p><a href="{{ coverage.url }}" alt="{{ coverage.title }}">{{ coverage.title }}</a></p>
+                                {% endif %}
+                                <footer class="text-right"><a class="text-muted" href="{{ coverage.licence.url }}">{{ coverage.licence }}</a></footer>
+                                </div>
+                            </div>
+                        {% endfor %}
                         </div>
-                    </div>
-                {% endfor %}
-                </div>
-            </section>
+                    {% else %}
+                        <p>Pas encore de media {{ coverage_type }} pour cette cat&eacute;gorie.</p>
+                    {% endif %}
+                </section>
             {% endfor %}
         {% else %}
         
