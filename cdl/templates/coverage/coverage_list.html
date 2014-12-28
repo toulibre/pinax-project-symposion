@@ -21,36 +21,36 @@
         </ul>
         {% box "coverage_top_"|add:coverage_type %}
             <h2>{{ coverage_type|capfirst }}</h2>
-            <div class="row">
-            {% for coverage in coverages %}
-                <div class="media-object col-xs-12 col-sm-6 col-md-4">
-                    {% if coverage.presentation %}
-                        <header>
-                        <h3><a href="{% url schedule_presentation_detail coverage.presentation.pk %}">{{ coverage.presentation.title }}</a></h3>
-                        <h4><small>{{ coverage.presentation.speakers|join:", " }}</small></h4>
-                        <p class="text-right"> 
-                            <a href="{% url schedule_list_category coverage.presentation.section.slug coverage.presentation.proposal.category.slug %}" class="label label-tag">
-                                {{ coverage.presentation.proposal.category }}</a></p>
-                        </header>
-                    {% endif %}
-                    {% if coverage_type == 'video' %}
-                        <div class="modal fade" id="video-{{ coverage.pk }}">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                {% include "coverage/_video.html" %}
+            {% for result in results %}
+                <h3>{{ result.category.name }}</h3>
+                <div class="row">
+                {% for coverage in result.coverages %}
+                    <div class="media-object col-xs-12 col-sm-6 col-md-4">
+                        {% if coverage.presentation %}
+                            <header>
+                            <h4><a href="{% url schedule_presentation_detail coverage.presentation.pk %}">{{ coverage.presentation.title }}</a>
+                                <br/><small>{{ coverage.presentation.speakers|join:", " }}</small></h4>
+                            </header>
+                        {% endif %}
+                        {% if coverage_type == 'video' %}
+                            <div class="modal fade" id="video-{{ coverage.pk }}">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                    {% include "coverage/_video.html" %}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <a data-toggle="modal" href="#video-{{ coverage.pk }}"><img src="{{ coverage.poster }}" class="img-responsive" alt="" /></a>
-                    {% elif coverage_type == 'audio' %}
-                        {% include "coverage/_audio.html" %}
-                    {% else %}
-                        <a href="{{ coverage.url }}" alt="{{ coverage.title }}">{{ coverage.title }}</a>
-                    {% endif %}
-                    <p><small><a class="text-muted" href="{{ coverage.licence.url }}">{{ coverage.licence }}</a></small></p>
+                            <a data-toggle="modal" href="#video-{{ coverage.pk }}"><img src="{{ coverage.poster }}" class="img-responsive" alt="" /></a>
+                        {% elif coverage_type == 'audio' %}
+                            {% include "coverage/_audio.html" %}
+                        {% else %}
+                            <a href="{{ coverage.url }}" alt="{{ coverage.title }}">{{ coverage.title }}</a>
+                        {% endif %}
+                        <p class="text-right"><small><a class="text-muted" href="{{ coverage.licence.url }}">{{ coverage.licence }}</a></small></p>
+                    </div>
+                {% endfor %}
                 </div>
             {% endfor %}
-            </div>
         {% else %}
         
         <ul class="list-group">

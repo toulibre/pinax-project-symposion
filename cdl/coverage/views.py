@@ -6,6 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 from cdl.coverage.forms import CoverageForm
 from symposion.schedule.models import Presentation
 from cdl.coverage.models import Coverage, COVERAGE_TYPES
+from cdl.proposals.models import ProposalCategory
 
 
 @login_required
@@ -71,11 +72,21 @@ def coverage_list(request, coverage_type=None):
     coverages = None
     if coverage_type:
         coverages = Coverage.objects.filter(coverage_type = coverage_type).order_by('presentation__title')
+        categories = ProposalCategory.objects.all()
+        results = []
+        for category in categories:
+            presentations = Presentation.objects.exclude(cancelled=True)
+            presentations = presentations.filter(proposal_base__talkproposal__category = category)
+            coverages_in_category = coverages.filter(presentation__in = presentations)
+            results.append({
+                'category' : category,
+                'coverages' : coverages_in_category,
+            }) 
 
     ctx = {
-        "coverages": coverages or None,
         "coverage_type" : coverage_type or None,
         "coverage_types": coverage_types,
+        "results": results or None,
         }
 
     return render(request, "coverage/coverage_list.html", ctx)
