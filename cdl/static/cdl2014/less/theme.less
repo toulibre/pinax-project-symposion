@@ -49,10 +49,27 @@ legend {
     height: auto;
 }
 
+.media-object {
+    .item {
+        padding: @padding-base-vertical @padding-base-horizontal;
+        background-color: #FFF;
+        border-bottom: 1px solid @gray-lighter;
+    }
+    
+    header {
+        background-color: #FFF;
+        padding: @padding-base-vertical @padding-base-horizontal;
+    }
+}
+
+video {
+    max-width: 100%;
+}
+
 /* Header *
  * ------ */
 
-header {
+header#top {
     padding-top: 80px;
     background: url('../img/photos-horizontal.jpg') repeat-x top center;
     #communiquer {

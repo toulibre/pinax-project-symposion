@@ -28,10 +28,10 @@
         {% endblock %}
     </head>
     <body class="{% block body_class %}{% endblock %}">
-        <div class="{% block wrapper_class %}{% endblock %}" id="top">
+        <div class="{% block wrapper_class %}{% endblock %}">
 
             {% block topbar_base %}
-                <header>
+                <header id="top">
                     <nav class="navbar navbar-default {% block navbar_class %}navbar-fixed-top{% endblock %}" role="navigation">
                         <div class="container">
                         {% block topbar %}
@@ -42,7 +42,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 </button>
-                                {% block site_brand %}<a class="navbar-brand" href="{% url "home" %}">{{ SITE_NAME }}</a>{% endblock %}
+                                {% block site_brand %}<a class="navbar-brand" href="{% url 'home' %}">{{ SITE_NAME }}</a>{% endblock %}
                             </div>
                             <div class="collapse navbar-collapse">
                                 {% block nav %}

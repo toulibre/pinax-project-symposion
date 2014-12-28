@@ -12,34 +12,53 @@
 {% block body %}
     <h1>Media</h1>
         {% box "coverage_top" %}
+        {% if coverage_type %}
         <ul class="nav nav-tabs">
             <li {% if not coverage_type %}class="active"{% endif %}><a href="{% url coverage_list %}"><small>&laquo;</small></a></li>
             {% for type in coverage_types %}
             <li {% if coverage_type and coverage_type == type.slug %}class="active type.slug"{% endif %}><a href="{% url coverage_list type.slug %}"><span class="badge">{{ type.count }}</span> {{ type.name }} </a></li>
             {% endfor %}
         </ul>
-        {% if coverage_type %}
         {% box "coverage_top_"|add:coverage_type %}
-            <h2>{{ coverage_type|capfirst }}</h3>
+            <h2>{{ coverage_type|capfirst }}</h2>
             <div class="row">
             {% for coverage in coverages %}
-                <div class="col-xs-12 col-sm-6">
-                {% if coverage.presentation %}
-                    <h3><a href="{% url schedule_presentation_detail coverage.presentation.pk %}">{{ coverage.presentation.title }}</a>
-                        <small>{{ coverage.presentation.speakers|join:", " }}</small></h3>
-                    <p class="text-right">{{ coverage.presentation.proposal.kind }} 
-                        <a href="{% url schedule_list_category coverage.presentation.section.slug coverage.presentation.proposal.category.slug %}" class="label label-tag">
-                            {{ coverage.presentation.proposal.category }}</a></p>
-                {% endif %}
-                {% if coverage_type == 'video' %}
-                    {% include "coverage/_video.html" %}
-                {% else %}
-                    <a href="{{ coverage.url }}" alt="{{ coverage.title }}">{{ coverage.title }}</a>
-                {% endif %}
-                <p><small><a class="text-muted" href="{{ coverage.licence.url }}">{{ coverage.licence }}</a></small></p>
+                <div class="media-object col-xs-12 col-sm-6 col-md-4">
+                    {% if coverage.presentation %}
+                        <header>
+                        <h3><a href="{% url schedule_presentation_detail coverage.presentation.pk %}">{{ coverage.presentation.title }}</a></h3>
+                        <h4><small>{{ coverage.presentation.speakers|join:", " }}</small></h4>
+                        <p class="text-right"> 
+                            <a href="{% url schedule_list_category coverage.presentation.section.slug coverage.presentation.proposal.category.slug %}" class="label label-tag">
+                                {{ coverage.presentation.proposal.category }}</a></p>
+                        </header>
+                    {% endif %}
+                    {% if coverage_type == 'video' %}
+                        <div class="modal fade" id="video-{{ coverage.pk }}">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                {% include "coverage/_video.html" %}
+                                </div>
+                            </div>
+                        </div>
+                        <a data-toggle="modal" href="#video-{{ coverage.pk }}"><img src="{{ coverage.poster }}" class="img-responsive" alt="" /></a>
+                    {% elif coverage_type == 'audio' %}
+                        {% include "coverage/_audio.html" %}
+                    {% else %}
+                        <a href="{{ coverage.url }}" alt="{{ coverage.title }}">{{ coverage.title }}</a>
+                    {% endif %}
+                    <p><small><a class="text-muted" href="{{ coverage.licence.url }}">{{ coverage.licence }}</a></small></p>
                 </div>
             {% endfor %}
             </div>
+        {% else %}
+        
+        <ul class="list-group">
+            {% for type in coverage_types %}
+            <a class="list-group-item col-sm-4" href="{% url coverage_list type.slug %}">{{ type.name }} <span class="badge">{{ type.count }}</span></a>
+            {% endfor %}
+        </ul>
+        <div class="clearfix"></div>
         {% endif %}
     {% include "schedule/_nav.html" %}
 {% endblock %}

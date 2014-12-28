@@ -6244,17 +6244,29 @@ legend {
   width: 180px;
   height: auto;
 }
+.media-object .item {
+  padding: 6px 12px;
+  background-color: #FFF;
+  border-bottom: 1px solid #eeeeee;
+}
+.media-object header {
+  background-color: #FFF;
+  padding: 6px 12px;
+}
+video {
+  max-width: 100%;
+}
 /* Header *
  * ------ */
-header {
+header#top {
   padding-top: 80px;
   background: url('../img/photos-horizontal.jpg') repeat-x top center;
 }
-header #communiquer {
+header#top #communiquer {
   text-align: right;
 }
 @media (min-width: 768px) {
-  header #communiquer {
+  header#top #communiquer {
     position: absolute;
     right: 0;
     top: -25px;

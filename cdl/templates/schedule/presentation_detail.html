@@ -48,15 +48,19 @@
     </dl>
     <h2>Description</h2>
 
-    <div class="description col-lg-6">{{ presentation.description }}</div>
+    <div class="row media">
+        <div class="description media-body col-md-6">{{ presentation.description }}</div>
 
-    {% for coverage in presentation.coverages.all %}
-        {% if coverage.coverage_type == "video" %}
-        <div class="video col-lg-6">
-            {% include "coverage/_video.html" %}
+        <div class="media-object col-md-6">
+        {% for coverage in presentation.coverages.all %}
+            {% if coverage.coverage_type == "video" %}
+                <div class="item">{% include "coverage/_video.html" %}</div>
+            {% elif coverage.coverage_type == "audio" %}
+                <div class="item">{% include "coverage/_audio.html" %}</div>
+            {% endif %}
+        {% endfor %}
         </div>
-        {% endif %}
-    {% endfor %}
+    </div>
     <div class="clearfix"></div>
     {% if presentation.abstract %}
     <h2>{% trans "Abstract" %}</h2>

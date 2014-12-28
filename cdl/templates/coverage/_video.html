@@ -1,4 +1,4 @@
-<video width="100%" controls="controls" poster="{{ coverage.poster }}">
+<video controls="controls" {% if coverage.poster %}poster="{{ coverage.poster }}"{% endif %}>
     <source src="{{ coverage.url }}" type="video/{{ coverage.url_extension }}"/>
     {% if coverage.url2 %}
         <source src="{{ coverage.url2 }}" type="video/{{ coverage.url2_extension }}"/>
