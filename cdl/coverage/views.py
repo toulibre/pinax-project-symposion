@@ -69,7 +69,7 @@ def coverage_list(request, coverage_type=None):
                 'count': Coverage.objects.filter(coverage_type = cov_type[0]).count()
             })
 
-    coverages = None
+    results = None
     if coverage_type:
         coverages = Coverage.objects.filter(coverage_type = coverage_type).order_by('presentation__title')
         categories = ProposalCategory.objects.all()
