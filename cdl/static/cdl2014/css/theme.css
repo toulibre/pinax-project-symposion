@@ -6249,8 +6249,12 @@ legend {
   background-color: #FFF;
   border-bottom: 1px solid #eeeeee;
 }
-.media-object header {
+.coverage {
   background-color: #FFF;
+}
+.coverage p,
+.coverage footer,
+.coverage header {
   padding: 6px 12px;
 }
 video {
@@ -6346,15 +6350,15 @@ h2.slogan {
 }
 /* Footer *
  * ------ */
-footer {
+footer#footer {
   background-color: #222222;
   font-size: 0.95em;
   color: #CCC;
 }
-footer a {
-  color: #777;
+footer#footer a {
+  color: #777777;
 }
-footer .site-info {
+footer#footer .site-info {
   padding: 16px 10px;
 }
 /* Presentations 

@@ -56,12 +56,13 @@ legend {
         border-bottom: 1px solid @gray-lighter;
     }
     
-    header {
-        background-color: #FFF;
+}
+.coverage {
+    background-color: #FFF;
+    p, footer, header {
         padding: @padding-base-vertical @padding-base-horizontal;
     }
 }
-
 video {
     max-width: 100%;
 }
@@ -166,16 +167,16 @@ h2.slogan {
 /* Footer *
  * ------ */
 
-footer {
-  background-color: #222222;
-  font-size: 0.95em;
-  color: #CCC;
-}
-footer a {
-  color: #777;
-}
-footer .site-info {
-    padding: @padding-large-horizontal @padding-large-vertical;
+footer#footer  {
+    background-color: @gray-darker;
+    font-size: 0.95em;
+    color: #CCC;
+    a {
+        color: @gray-light;
+    }
+    .site-info {
+        padding: @padding-large-horizontal @padding-large-vertical;
+    }
 }
 
 /* Presentations 
