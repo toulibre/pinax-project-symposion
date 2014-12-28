@@ -13,14 +13,14 @@
     <h1>Media</h1>
         {% box "coverage_top" %}
         {% if coverage_type %}
-        <ul class="nav nav-tabs">
-            <li {% if not coverage_type %}class="active"{% endif %}><a href="{% url coverage_list %}"><small>&laquo;</small></a></li>
-            {% for type in coverage_types %}
-            <li {% if coverage_type and coverage_type == type.slug %}class="active type.slug"{% endif %}><a href="{% url coverage_list type.slug %}"><span class="badge">{{ type.count }}</span> {{ type.name }} </a></li>
-            {% endfor %}
-        </ul>
-        {% box "coverage_top_"|add:coverage_type %}
+            <ul class="nav nav-tabs">
+                <li {% if not coverage_type %}class="active"{% endif %}><a href="{% url coverage_list %}"><small>&laquo;</small></a></li>
+                {% for type in coverage_types %}
+                <li {% if coverage_type and coverage_type == type.slug %}class="active type.slug"{% endif %}><a href="{% url coverage_list type.slug %}"><span class="badge">{{ type.count }}</span> {{ type.name }} </a></li>
+                {% endfor %}
+            </ul>
             <h2>{{ coverage_type|capfirst }}</h2>
+            {% box "coverage_top_"|add:coverage_type %}
             {% for result in results %}
                 <section>
                     <h3>{{ result.category.name }}</h3>
