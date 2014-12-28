@@ -22,6 +22,7 @@
         {% box "coverage_top_"|add:coverage_type %}
             <h2>{{ coverage_type|capfirst }}</h2>
             {% for result in results %}
+            <section>
                 <h3>{{ result.category.name }}</h3>
                 <div class="row">
                 {% for coverage in result.coverages %}
@@ -45,6 +46,7 @@
                     </div>
                 {% endfor %}
                 </div>
+            </section>
             {% endfor %}
         {% else %}
         

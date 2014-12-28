@@ -6251,6 +6251,7 @@ legend {
 }
 .coverage {
   background-color: #FFF;
+  margin-bottom: 1em;
 }
 .coverage p,
 .coverage footer,
