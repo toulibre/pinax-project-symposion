@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-23 22:30+0100\n"
+"POT-Creation-Date: 2014-12-29 18:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,66 +26,70 @@ msgstr "Français"
 msgid "English"
 msgstr "Anglais"
 
-#: coverage/models.py:8
+#: coverage/models.py:14
 msgid "Link"
 msgstr "Lien"
 
-#: coverage/models.py:9
+#: coverage/models.py:15
 msgid "Video"
 msgstr "Vidéo"
 
-#: coverage/models.py:10
+#: coverage/models.py:16
 msgid "Audio"
 msgstr "Audio"
 
-#: coverage/models.py:11
+#: coverage/models.py:17
 msgid "Photos"
 msgstr "Photos"
 
-#: coverage/models.py:12
+#: coverage/models.py:18
 msgid "Write-up"
 msgstr "Document"
 
-#: coverage/models.py:13
+#: coverage/models.py:19
 msgid "Slides"
 msgstr "Diaporama"
 
-#: coverage/models.py:14
+#: coverage/models.py:20
 #, fuzzy
 msgid "Transcription"
 msgstr "Description"
 
-#: coverage/models.py:25
+#: coverage/models.py:44
 msgid "Url to licence text"
 msgstr "Url vers le texte de la licence"
 
-#: coverage/models.py:31
+#: coverage/models.py:50
 msgid "Licence"
 msgstr "Licence"
 
-#: coverage/models.py:40
+#: coverage/models.py:59
 msgid "Link text"
 msgstr "Texte de lien"
 
-#: coverage/models.py:41
+#: coverage/models.py:60
 msgid "Coverage type"
 msgstr "Type de media"
 
-#: coverage/models.py:42
+#: coverage/models.py:61
 msgid "Coverage licence"
 msgstr "Licence du media"
 
-#: coverage/models.py:46
+#: coverage/models.py:63
+msgid "Url to another format for audio or video media."
+msgstr "URL vers un autre format pour les media audio ou vidéo"
+
+#: coverage/models.py:65
 #, fuzzy
 msgid "Coverage file"
 msgstr "Type de media"
 
-#: coverage/views.py:23
+#: coverage/views.py:24
 #, fuzzy
-msgid "Coverage."
-msgstr "Medias"
+msgid "Coverage has been saved successfully."
+msgstr "Le formulaire d'inscription a bien été mis à jour."
 
-#: coverage/views.py:45
+#: coverage/views.py:46
 #, fuzzy
 msgid "Coverage form has been updated successfully."
 msgstr "Le formulaire d'inscription a bien été mis à jour."
@@ -380,6 +384,10 @@ msgstr "Équipes disponibles"
 msgid "Welcome"
 msgstr "Bienvenue"
 
+#: templates/boxes/box.html:11
+msgid "Editing content:"
+msgstr "Éditer le contenu :"
+
 #: templates/cms/file_create.html:15
 msgid "Upload"
 msgstr "Téléverser"
@@ -496,7 +504,7 @@ msgstr "Description"
 
 #: templates/proposals/_proposal_fields.html:34
 #: templates/reviews/review_review.html:26
-#: templates/schedule/presentation_detail.html:73
+#: templates/schedule/presentation_detail.html:66
 msgid "Abstract"
 msgstr "Description détaillée"
 
@@ -838,11 +846,11 @@ msgstr "Commentaire"
 msgid "Edit Slot"
 msgstr "Modifier"
 
-#: templates/schedule/presentation_detail.html:89
+#: templates/schedule/presentation_detail.html:82
 msgid "Coverage"
 msgstr "Medias"
 
-#: templates/schedule/presentation_detail.html:116
+#: templates/schedule/presentation_detail.html:99
 msgid "See more"
 msgstr "Voir plus"
 
@@ -900,3 +908,7 @@ msgstr "Formulaire d'inscription"
 #: templates/subscription/subscription_edit.html:13
 msgid "Subscription form to"
 msgstr "Inscription à"
+
+#, fuzzy
+#~ msgid "Coverage."
+#~ msgstr "Medias"
