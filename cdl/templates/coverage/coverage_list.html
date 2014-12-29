@@ -40,7 +40,10 @@
                                 {% elif coverage_type == 'audio' %}
                                     {% include "coverage/_audio.html" %}
                                 {% else %}
-                                    <p><a href="{{ coverage.url }}" alt="{{ coverage.title }}">{{ coverage.title }}</a></p>
+                                    <p>
+                                        {% if coverage.get_url %}<a href="{{ coverage.get_url }}" alt="{{ coverage.title }}">{{ coverage.title }}</a>
+                                        {% else %}{{ coverage.title }}
+                                        {% endif %}</p>
                                 {% endif %}
                                 <footer class="text-right"><a class="text-muted" href="{{ coverage.licence.url }}">{{ coverage.licence }}</a></footer>
                                 </div>

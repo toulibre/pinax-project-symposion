@@ -18,5 +18,5 @@ class CoverageForm(forms.ModelForm):
             "url",
             "url2",
             "poster",
-            #~ "coverage_file",
+            "coverage_file",
         ]

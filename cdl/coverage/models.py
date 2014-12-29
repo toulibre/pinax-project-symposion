@@ -1,11 +1,14 @@
 import os
 import urlparse
 
+from django.core.files.storage import FileSystemStorage
+from django.core.urlresolvers import reverse
 from django.db import models
+from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext_lazy as _
 
-from symposion.proposals.models import uuid_filename
 from symposion.schedule.models import Presentation
+
 
 COVERAGE_TYPES = (
     ('link', _(u"Link")),
@@ -18,6 +21,12 @@ COVERAGE_TYPES = (
 )
 
 MEDIA_EXTENSION = ['mp4', 'webm', 'ogv', 'ogg', 'mp3', 'flac']
+
+
+def generate_filename(instance, filename):
+    folder_name = slugify(instance.presentation.title)
+    return os.path.join("coverage", folder_name, filename)
+
 
 def get_extension(url):
     """get extension from url"""
@@ -53,7 +62,7 @@ class Coverage(models.Model):
     url = models.URLField(blank=True)
     url2 = models.URLField(blank=True, help_text=_(u"Url to another format for audio or video media."))
     poster = models.URLField(blank=True)
-    coverage_file = models.FileField(upload_to=uuid_filename, verbose_name=_(u"Coverage file"), blank=True)
+    coverage_file = models.FileField(upload_to=generate_filename, verbose_name=_(u"Coverage file"), blank=True)
 
     def __unicode__(self):
         return u"%s - %s" % (self.title, self.presentation)
@@ -74,3 +83,16 @@ class Coverage(models.Model):
             if extension != '' and extension in MEDIA_EXTENSION:
                 return extension
 
+    def download_url(self):
+        if self.coverage_file:
+            return reverse("file_download", args=[self.pk, os.path.basename(self.file.name).lower()])
+
+    def get_url(self):
+        if self.url:
+            return self.url
+        elif self.url2:
+            return self.url2
+        elif self.coverage_file:
+            return self.coverage_file.url
+        else:
+            return None

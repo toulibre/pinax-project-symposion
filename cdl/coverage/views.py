@@ -16,12 +16,12 @@ def coverage_add(request, pk):
     presentation = get_object_or_404(Presentation, pk=pk)
 
     if request.method == "POST":
-        form = CoverageForm(request.POST)
+        form = CoverageForm(request.POST, request.FILES)
         if form.is_valid():
             coverage = form.save(commit=False)
             coverage.presentation = presentation
             coverage.save()
-            messages.success(request, _("Coverage."))
+            messages.success(request, _("Coverage has been saved successfully."))
             return redirect("schedule_presentation_detail", pk)
 
     else:
