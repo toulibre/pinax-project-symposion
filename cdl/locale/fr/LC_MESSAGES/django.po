@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-17 23:59+0100\n"
+"POT-Creation-Date: 2015-01-18 00:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -847,16 +847,13 @@ msgid "Edit Slot"
 msgstr "Modifier"
 
 #: templates/schedule/presentation_detail.html:82
+#: templates/schedule/schedule_list.html:53
 msgid "Coverage"
 msgstr "Medias"
 
 #: templates/schedule/presentation_detail.html:99
 msgid "See more"
 msgstr "Voir plus"
-
-#: templates/schedule/schedule_list.html:52
-msgid "Coverage:"
-msgstr "Medias :"
 
 #: templates/speakers/speaker_create.html:7
 #: templates/speakers/speaker_create.html:14
@@ -912,11 +909,3 @@ msgstr "Formulaire d'inscription"
 #: templates/subscription/subscription_edit.html:13
 msgid "Subscription form to"
 msgstr "Inscription à"
-
-#, fuzzy
-#~ msgid "coverage:"
-#~ msgstr "Medias"
-
-#, fuzzy
-#~ msgid "Coverage."
-#~ msgstr "Medias"
