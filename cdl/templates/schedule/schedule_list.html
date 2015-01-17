@@ -47,6 +47,24 @@
 
                 {{ presentation.description }}
 
+                {% if presentation.coverages.count > 0 %}
+                    <div class="coverages text-right text-muted">
+                    {% trans "Coverage:" %}
+                    {% for coverage in presentation.coverages.all %}
+                        {% if coverage.coverage_type == 'video' %}
+                        <span class="glyphicon glyphicon-film"></span>
+                        {% elif coverage.coverage_type == 'audio' %}
+                        <span class="glyphicon glyphicon-headphones"></span>
+                        {% elif coverage.coverage_type == 'photos' %}
+                        <span class="glyphicon glyphicon-picture"></span>
+                        {% elif coverage.coverage_type == 'slides' %}
+                        <span class="glyphicon glyphicon-file"></span>
+                        {% else %}
+                        <span class="glyphicon glyphicon-file"></span>
+                        {% endif %}
+                    {% endfor %}
+                    </div>
+                {% endif %}
             </div>
         </div>
         {% endfor %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-29 18:35+0100\n"
+"POT-Creation-Date: 2015-01-17 23:59+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -82,7 +82,7 @@ msgstr "URL vers un autre format pour les media audio ou vidéo"
 #: coverage/models.py:65
 #, fuzzy
 msgid "Coverage file"
-msgstr "Type de media"
+msgstr "Fichier de media"
 
 #: coverage/views.py:24
 #, fuzzy
@@ -854,6 +854,10 @@ msgstr "Medias"
 msgid "See more"
 msgstr "Voir plus"
 
+#: templates/schedule/schedule_list.html:52
+msgid "Coverage:"
+msgstr "Medias :"
+
 #: templates/speakers/speaker_create.html:7
 #: templates/speakers/speaker_create.html:14
 msgid "Create Speaker Profile"
@@ -908,6 +912,10 @@ msgstr "Formulaire d'inscription"
 #: templates/subscription/subscription_edit.html:13
 msgid "Subscription form to"
 msgstr "Inscription à"
+
+#, fuzzy
+#~ msgid "coverage:"
+#~ msgstr "Medias"
 
 #, fuzzy
 #~ msgid "Coverage."
